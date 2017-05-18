@@ -26,4 +26,12 @@ public class Persona {
 		return usuario;
 	}
 
+	public String getCorreo() {
+		return correo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
 }
