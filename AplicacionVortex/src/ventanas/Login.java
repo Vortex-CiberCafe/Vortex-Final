@@ -156,6 +156,7 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como socio");
+
 						break;
 					case 0:
 						System.out.println("\nError al iniciar sesion, los campos usuario o contraseña incorrectos");
