@@ -68,10 +68,28 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
-	public int login(String usu, String password) {
+	public int loginSocio(String usu, String password) {
 
 		String cadenaSQL = "Select * from socio where nick='" + usu + "' and password='" + password + "'";
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			while (reg.next()) {
+				return 1;
+			}
+			s.close();
+			this.cerrar();
+			return 0;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
 
+	public int loginAdmin(String usu, String password) {
+
+		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password
+				+ "'";
 		try {
 			this.abrir();
 			s = c.createStatement();

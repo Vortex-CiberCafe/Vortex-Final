@@ -19,6 +19,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import bbdd.BD_Vortex;
+
 public class Login extends JFrame {
 
 	/**
@@ -54,7 +56,7 @@ public class Login extends JFrame {
 	 */
 
 	public Login() {
-
+		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 		/* Titulo de la ventana Java */
 
 		setTitle("Login de Duran");
@@ -128,12 +130,47 @@ public class Login extends JFrame {
 		TypeUser.setMaximumRowCount(3);
 		TypeUser.setBounds(239, 110, 86, 20);
 		panelOrigen.add(TypeUser);
+
 		botonLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String seleccionCombo = (String) TypeUser.getSelectedItem();
-				if (seleccionCombo == "Admin") {
-					System.out.println("Por aqui nos quedamos, funciona perfe");
+
+				switch (seleccionCombo) {
+				case "Admin":
+					int filas = bd.loginAdmin(entradaUser.getText(), entradaPass.getText());
+					switch (filas) {
+					case 1:
+						System.out.println("\nConectado como Admin");
+						break;
+					case 0:
+						System.out.println("\nError al iniciar sesion, los campos usuario o contraseña incorrectos");
+						break;
+					case -1:
+						System.out.println("\nNo estas conectado");
+						break;
+					}
+					break;
+
+				case "Socio":
+					filas = bd.loginSocio(entradaUser.getText(), entradaPass.getText());
+					switch (filas) {
+					case 1:
+						System.out.println("\nConectado como socio");
+						break;
+					case 0:
+						System.out.println("\nError al iniciar sesion, los campos usuario o contraseña incorrectos");
+						break;
+					case -1:
+						System.out.println("\nNo estas conectado");
+						break;
+					}
+					break;
+
+				case "Dependiente":
+					System.out.println("Dependiente");
+					break;
 				}
+
 				String usuario = "duran";
 				char[] password = entradaPass.getPassword();
 				char[] correctPass = new char[] { 'e', 'n', 't', 'e', 'r' };
@@ -149,6 +186,7 @@ public class Login extends JFrame {
 			}
 		});
 		botonLogin.addKeyListener(new KeyAdapter() {
+
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				String usuario = "duran";
@@ -170,4 +208,5 @@ public class Login extends JFrame {
 			}
 		});
 	}
+
 }

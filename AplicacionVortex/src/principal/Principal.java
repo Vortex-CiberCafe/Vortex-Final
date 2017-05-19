@@ -20,7 +20,7 @@ public class Principal {
 			String usu = sc.nextLine();
 			System.out.println("Introduce la contraseña");
 			String pass = sc.nextLine();
-			int filas = bd.login(usu, pass);
+			int filas = bd.loginSocio(usu, pass);
 			switch (filas) {
 			case 1:
 				System.out.println("\nConectado");

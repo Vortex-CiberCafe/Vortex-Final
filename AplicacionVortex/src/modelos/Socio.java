@@ -17,6 +17,7 @@ public class Socio extends Persona {
 		super(dni, correo, usuario, password);
 		this.nombre = nombre;
 		this.direccion = direccion;
+		this.telefono = telefono;
 		this.premium = premium;
 		this.FH_Conexion = FH_Conexion;
 		this.bono = bono;
