@@ -34,10 +34,9 @@ public class BD_Vortex extends BD_Conector {
 				LocalDate Fecha_alta = f1.toLocalDate();
 				java.sql.Date f2 = reg.getDate("Fecha_baja");
 				LocalDate Fecha_baja = f2.toLocalDate();
-				socio.add(new Socio(reg.getString("dni"), reg.getString("correo"), reg.getString("nick"),
-						reg.getString("password"), reg.getString("nombre"), reg.getString("direccion"),
-						reg.getString("telefono"), reg.getInt("premium"), FH_Conexion, reg.getInt("bono"), Fecha_alta,
-						Fecha_baja));
+				socio.add(new Socio(reg.getString("dni"), reg.getString("correo"), reg.getString("nick"), reg.getString("password"),
+						reg.getString("nombre"), reg.getString("direccion"), reg.getString("telefono"), reg.getInt("premium"), FH_Conexion,
+						reg.getInt("bono"), Fecha_alta, Fecha_baja));
 			}
 			s.close();
 			this.cerrar();
@@ -53,11 +52,10 @@ public class BD_Vortex extends BD_Conector {
 		// Password Premium FH_Conexion Fecha_alta Bono Fecha_baja
 
 		String cadenaSQL = "INSERT INTO socio (DNI, Nombre, Direccion, Telefono, Correo, Nick,Password ,Premium ,FH_Conexion, Fecha_alta, Bono, Fecha_baja) VALUES('"
-				+ socio.getDni() + "','" + socio.getNombre() + "','" + socio.getDireccion() + "','"
-				+ socio.getTelefono() + "','" + socio.getCorreo() + "','" + socio.getUsuario() + "','"
-				+ socio.getPassword() + "','" + socio.getPremium() + "','" + socio.getFH_Conexion() + "','"
+				+ socio.getDni() + "','" + socio.getNombre() + "','" + socio.getDireccion() + "','" + socio.getTelefono() + "','" + socio.getCorreo()
+				+ "','" + socio.getUsuario() + "','" + socio.getPassword() + "','" + socio.getPremium() + "','" + socio.getFH_Conexion() + "','"
 				+ socio.getFechaAlta() + "','" + socio.getBono() + "','" + socio.getFechaBaja() + "')";
-		System.out.println(cadenaSQL);
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -94,8 +92,7 @@ public class BD_Vortex extends BD_Conector {
 	// metodo para iniciar sesion como Administrador
 	public int loginAdmin(String usu, String password) {
 
-		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password
-				+ "'";
+		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password + "'";
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -155,6 +152,22 @@ public class BD_Vortex extends BD_Conector {
 			s.close();
 			this.cerrar();
 			return 0;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+
+	public int bajaSocio(String usu) {
+
+		String cadenaSQL = "delete from socio where nick='" + usu + "'";
+		System.out.println(cadenaSQL);
+		try {
+			this.abrir();
+			s = c.createStatement();
+			int filas = s.executeUpdate(cadenaSQL);
+			s.close();
+			this.cerrar();
+			return filas;
 		} catch (SQLException e) {
 			return -1;
 		}

@@ -173,18 +173,16 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				// TODO Auto-generated method stub
 
 				// AQUI AÑADES LA INTRODUCCION DE DATOS A LA BBDD
-				System.out.println("DNI: " + textField.getText() + "\nNombre: " + textField_1.getText()
-						+ "\nDireccion: " + textField_2.getText() + "\nTelefono: " + textField_3.getText()
-						+ "\nCorreo: " + textField_4.getText() + "\nNick: " + textField_5.getText() + "\nPassword: "
-						+ textField_6.getText());
+				System.out.println("DNI: " + textField.getText() + "\nNombre: " + textField_1.getText() + "\nDireccion: " + textField_2.getText()
+						+ "\nTelefono: " + textField_3.getText() + "\nCorreo: " + textField_4.getText() + "\nNick: " + textField_5.getText()
+						+ "\nPassword: " + textField_6.getText());
 
-				Socio socio = new Socio(textField.getText(), textField_4.getText(), textField_5.getText(),
-						textField_6.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText(), 0,
-						LocalDate.now(), 0, LocalDate.now(), LocalDate.now());
+				Socio socio = new Socio(textField.getText(), textField_4.getText(), textField_5.getText(), textField_6.getText(),
+						textField_1.getText(), textField_2.getText(), textField_3.getText(), 0, LocalDate.now(), 0, LocalDate.now(), LocalDate.now());
 				int filas = bd.anadir_Socio(socio);
 				switch (filas) {
 				case 1:
-					System.out.println("\nAlumno añadido");
+					System.out.println("\nSocio añadido");
 					break;
 				case 0:
 					System.out.println("\nNo añadido");
@@ -194,6 +192,22 @@ public class PanelAdmin_AltaSocio extends JFrame {
 					break;
 
 				}
+
+			}
+
+		});
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(120, 273, 146, 23);
+		contentPane.add(btnVolver);
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin frame2 = new PanelAdmin();
+				frame2.setVisible(true);
+				dispose();
 
 			}
 

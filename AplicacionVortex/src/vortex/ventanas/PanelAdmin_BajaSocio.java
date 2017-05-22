@@ -3,6 +3,8 @@ package vortex.ventanas;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -82,6 +84,45 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		JButton btnEliminarSocio = new JButton("Eliminar Socio");
 		btnEliminarSocio.setBounds(215, 179, 113, 23);
 		contentPane.add(btnEliminarSocio);
+
+		btnEliminarSocio.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				String seleccionCombo = (String) comboBox.getSelectedItem();
+				System.out.println(seleccionCombo);
+				int filas = bd.bajaSocio(seleccionCombo);
+				switch (filas) {
+				case 1:
+					System.out.println("OK");
+					break;
+				case 0:
+					System.out.println("El usuario no existe");
+					break;
+				case -1:
+					System.out.println("Problemas tecnicos");
+					break;
+				}
+			}
+
+		});
+
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(120, 273, 146, 23);
+		contentPane.add(btnVolver);
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin frame2 = new PanelAdmin();
+				frame2.setVisible(true);
+				dispose();
+
+			}
+
+		});
 
 	}
 }

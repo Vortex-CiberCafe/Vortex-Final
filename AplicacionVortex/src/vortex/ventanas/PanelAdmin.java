@@ -80,7 +80,6 @@ public class PanelAdmin extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
 				PanelAdmin_AltaSocio frame3 = new PanelAdmin_AltaSocio();
 				frame3.setVisible(true);
 				dispose();
@@ -98,8 +97,9 @@ public class PanelAdmin extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("asd");
-
+				PanelAdmin_BajaSocio frame4 = new PanelAdmin_BajaSocio();
+				frame4.setVisible(true);
+				dispose();
 			}
 
 		});
@@ -140,5 +140,6 @@ public class PanelAdmin extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(120, 43, 111, 29);
 		contentPane.add(label_1);
+
 	}
 }
