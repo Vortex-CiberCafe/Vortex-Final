@@ -1,4 +1,4 @@
-package bbdd;
+package vortex.bbdd;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.Vector;
 
-import modelos.Socio;
+import vortex.modelos.Socio;
 
 public class BD_Vortex extends BD_Conector {
 
@@ -90,6 +90,24 @@ public class BD_Vortex extends BD_Conector {
 
 		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password
 				+ "'";
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			while (reg.next()) {
+				return 1;
+			}
+			s.close();
+			this.cerrar();
+			return 0;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+
+	public int loginDependiente(String usu, String password) {
+
+		String cadenaSQL = "Select * from dependiente where usuario='" + usu + "' and password='" + password + "'";
 		try {
 			this.abrir();
 			s = c.createStatement();

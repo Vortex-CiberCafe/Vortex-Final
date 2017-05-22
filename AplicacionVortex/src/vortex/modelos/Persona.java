@@ -1,4 +1,4 @@
-package modelos;
+package vortex.modelos;
 
 public class Persona {
 

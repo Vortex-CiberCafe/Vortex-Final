@@ -1,4 +1,4 @@
-package ventanas;
+package vortex.ventanas;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Arrays;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -19,7 +18,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import bbdd.BD_Vortex;
+import vortex.bbdd.BD_Vortex;
 
 public class Login extends JFrame {
 
@@ -141,9 +140,13 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como Admin");
+						Cargando frame2 = new Cargando();
+						frame2.setVisible(true);
+						dispose();
 						break;
 					case 0:
-						System.out.println("\nError al iniciar sesion, los campos usuario o contraseña incorrectos");
+						label.setText("ERROR. Datos incorrectos!");
+						label.setVisible(true);
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
@@ -159,7 +162,8 @@ public class Login extends JFrame {
 
 						break;
 					case 0:
-						System.out.println("\nError al iniciar sesion, los campos usuario o contraseña incorrectos");
+						label.setText("ERROR. Datos incorrectos!");
+						label.setVisible(true);
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
@@ -168,44 +172,43 @@ public class Login extends JFrame {
 					break;
 
 				case "Dependiente":
-					System.out.println("Dependiente");
+					System.out.println(new String(entradaPass.getPassword()));
+					filas = bd.loginDependiente(entradaUser.getText(), entradaPass.getText());
+					switch (filas) {
+					case 1:
+						System.out.println("\nConectado como dependiente");
+						break;
+					case 0:
+						label.setText("ERROR. Datos incorrectos!");
+						label.setVisible(true);
+						break;
+					case -1:
+						System.out.println("\nNo estas conectado");
+						break;
+					}
 					break;
+
 				}
 
-				String usuario = "duran";
-				char[] password = entradaPass.getPassword();
-				char[] correctPass = new char[] { 'e', 'n', 't', 'e', 'r' };
-				if (entradaUser.getText().equals(usuario) && Arrays.equals(password, correctPass)) {
-					label.setText("Login completado correctamente!");
-					Cargando frame2 = new Cargando();
-					frame2.setVisible(true);
-					dispose();
-				} else {
-					label.setText("ERROR. Datos incorrectos!");
-				}
-				label.setVisible(true);
 			}
 		});
 		botonLogin.addKeyListener(new KeyAdapter() {
 
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				String usuario = "duran";
-				char[] password = entradaPass.getPassword();
-				char[] correctPass = new char[] { 'e', 'n', 't', 'e', 'r' };
-				if (entradaUser.getText().equals(usuario) && Arrays.equals(password, correctPass)) {
-					if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-						label.setText("Login completado correctamente!");
-						Cargando frame2 = new Cargando();
-						frame2.setVisible(true);
-						dispose();
-					}
-				} else {
-					if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-						label.setText("ERROR. Datos incorrectos!");
-					}
-				}
-				label.setVisible(true);
+				/*
+				 * String usuario = "duran"; char[] password =
+				 * entradaPass.getPassword(); char[] correctPass = new char[] {
+				 * 'e', 'n', 't', 'e', 'r' }; if
+				 * (entradaUser.getText().equals(usuario) &&
+				 * Arrays.equals(password, correctPass)) { if (arg0.getKeyCode()
+				 * == KeyEvent.VK_ENTER) {
+				 * label.setText("Login completado correctamente!"); Cargando
+				 * frame2 = new Cargando(); frame2.setVisible(true); dispose();
+				 * } } else { if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				 * label.setText("ERROR. Datos incorrectos!"); } }
+				 * label.setVisible(true);
+				 */
 			}
 		});
 	}

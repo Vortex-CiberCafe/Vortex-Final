@@ -1,12 +1,12 @@
-package principal;
+package vortex.principal;
 
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Vector;
 
-import bbdd.BD_Vortex;
-import modelos.Socio;
+import vortex.bbdd.BD_Vortex;
+import vortex.modelos.Socio;
 
 public class Principal {
 
