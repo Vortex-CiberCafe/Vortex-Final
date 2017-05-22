@@ -18,6 +18,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 
 public class Login extends JFrame {
@@ -140,6 +141,7 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como Admin");
+						Constantes.user = entradaUser.getText();
 						PanelAdmin frame2 = new PanelAdmin();
 						frame2.setVisible(true);
 						dispose();
@@ -159,7 +161,11 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como socio");
-						
+						Constantes.user = entradaUser.getText();
+						/*
+						 * PanelSocio frame* = new PanelSocio();
+						 * frame*.setVisible(true); dispose();
+						 */
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
@@ -177,6 +183,7 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como dependiente");
+						Constantes.user = entradaUser.getText();
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");

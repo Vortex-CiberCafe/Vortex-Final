@@ -6,17 +6,20 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.Vector;
 
+import vortex.Constantes;
 import vortex.modelos.Socio;
 
 public class BD_Vortex extends BD_Conector {
 
 	private static Statement s;
 	private static ResultSet reg;
+	private static int res;
 
 	public BD_Vortex(String file) {
 		super(file);
 	}
 
+	// metodo que devuelve un vector con todos los socios del cibercafe
 	public Vector<Socio> ver_socios() {
 		String cadenaSQL = "Select * from socio";
 		Vector<Socio> socio = new Vector<Socio>();
@@ -44,6 +47,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	// metodo para Añadir Socios
 	public int anadir_Socio(Socio socio) {
 		// ID_Socio DNI Nombre Direccion Telefono Correo Nick
 		// Password Premium FH_Conexion Fecha_alta Bono Fecha_baja
@@ -53,11 +57,11 @@ public class BD_Vortex extends BD_Conector {
 				+ socio.getTelefono() + "','" + socio.getCorreo() + "','" + socio.getUsuario() + "','"
 				+ socio.getPassword() + "','" + socio.getPremium() + "','" + socio.getFH_Conexion() + "','"
 				+ socio.getFechaAlta() + "','" + socio.getBono() + "','" + socio.getFechaBaja() + "')";
-
+		System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
-			reg = s.executeQuery(cadenaSQL);
+			res = s.executeUpdate(cadenaSQL);
 			while (reg.next()) {
 			}
 			s.close();
@@ -68,6 +72,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	// metodo para iniciar sesion como Socio
 	public int loginSocio(String usu, String password) {
 
 		String cadenaSQL = "Select * from socio where nick='" + usu + "' and password='" + password + "'";
@@ -86,6 +91,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	// metodo para iniciar sesion como Administrador
 	public int loginAdmin(String usu, String password) {
 
 		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password
@@ -105,6 +111,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	// metodo para iniciar sesion como dependiente
 	public int loginDependiente(String usu, String password) {
 
 		String cadenaSQL = "Select * from dependiente where usuario='" + usu + "' and password='" + password + "'";
@@ -123,8 +130,34 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
-}
+	// metodo para cambiar la contraseña desde el panel de Socios
+	public int updatePassSocio(String password, String passwordNueva1, String passwordNueva2) {
+		String cadenaSQL = "Select * from socio where nick='" + Constantes.user + "' and password='" + password + "'";
+		System.out.println(cadenaSQL);
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			while (reg.next()) {
+				String SQL = "update socio set  password='" + passwordNueva1 + "' where nick='" + Constantes.user + "'";
+				System.out.println(SQL);
+				try {
+					this.abrir();
+					s = c.createStatement();
+					int filas = s.executeUpdate(SQL);
+					s.close();
+					this.cerrar();
+					return filas;
+				} catch (SQLException e) {
+					return -1;
+				}
+			}
+			s.close();
+			this.cerrar();
+			return 0;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
 
-// INSERT INTO socios (DNI, Nombre, Direccion, Telefono, Correo, Nick,Password
-// ,Premium ,FH_Conexion, Fecha_alta, Bono, Fecha_baja)
-// VALUES('a','a','a','null','a','a','a','0','0000-00-00','0000-00-00','0','0000-00-00')
+}
