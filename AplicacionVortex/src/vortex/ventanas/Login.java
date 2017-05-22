@@ -140,7 +140,7 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como Admin");
-						Cargando frame2 = new Cargando();
+						PanelAdmin frame2 = new PanelAdmin();
 						frame2.setVisible(true);
 						dispose();
 						break;
@@ -159,7 +159,7 @@ public class Login extends JFrame {
 					switch (filas) {
 					case 1:
 						System.out.println("\nConectado como socio");
-
+						
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
