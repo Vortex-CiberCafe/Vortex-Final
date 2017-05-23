@@ -73,37 +73,35 @@ public class PanelSocio extends JFrame {
 		label.setBounds(10, 43, 111, 29);
 		contentPane.add(label);
 
-		JButton btnDarAltaSocio = new JButton("Modificar Nick");
-		btnDarAltaSocio.setForeground(Color.BLACK);
-		btnDarAltaSocio.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnDarAltaSocio.setBounds(30, 117, 146, 23);
-		contentPane.add(btnDarAltaSocio);
+		JButton btnModNick = new JButton("Modificar Nick");
+		btnModNick.setForeground(Color.BLACK);
+		btnModNick.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnModNick.setBounds(30, 117, 146, 23);
+		contentPane.add(btnModNick);
 
-		btnDarAltaSocio.addActionListener(new ActionListener() {
+		btnModNick.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				/*
-				PanelAdmin_ModSocio frame9 = new PanelAdmin_ModSocio();
+				PanelSocio_Nick frame9 = new PanelSocio_Nick();
 				frame9.setVisible(true);
 				dispose();
-				*/
 			}
 
 		});
 
-		JButton btnDarBajaSocio = new JButton("Acceder a Internet");
-		btnDarBajaSocio.setForeground(Color.BLACK);
-		btnDarBajaSocio.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnDarBajaSocio.setBounds(30, 170, 146, 23);
-		contentPane.add(btnDarBajaSocio);
+		JButton btnInternet = new JButton("Acceder a Internet");
+		btnInternet.setForeground(Color.BLACK);
+		btnInternet.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnInternet.setBounds(30, 170, 146, 23);
+		contentPane.add(btnInternet);
 
-		btnDarBajaSocio.addActionListener(new ActionListener() {
+		btnInternet.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-		        String[] cmd = { "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" };
+		        String[] cmd = { "C:\\Program Files\\Mozilla Firefox\\firefox.exe" };
 		        Process p = null;
 				try {
 					p = Runtime.getRuntime().exec(cmd);
@@ -122,23 +120,92 @@ public class PanelSocio extends JFrame {
 
 		});
 
-		JButton btnComprobarConexiones = new JButton("Acceder a Steam");
-		btnComprobarConexiones.setForeground(Color.BLACK);
-		btnComprobarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnComprobarConexiones.setBounds(31, 223, 145, 23);
-		contentPane.add(btnComprobarConexiones);
+		JButton btnSteam = new JButton("Acceder a Steam");
+		btnSteam.setForeground(Color.BLACK);
+		btnSteam.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnSteam.setBounds(31, 223, 145, 23);
+		contentPane.add(btnSteam);
+		
+		btnSteam.addActionListener(new ActionListener() {
 
-		JButton btnVerTiempos = new JButton("Acceder a Origin");
-		btnVerTiempos.setForeground(Color.BLACK);
-		btnVerTiempos.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVerTiempos.setBounds(217, 223, 146, 23);
-		contentPane.add(btnVerTiempos);
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+		        String url = "http://store.steampowered.com";
+		        Process p1 = null;
+				try {
+					p1 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        try {
+					p1.waitFor();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
-		JButton btnVerConexiones = new JButton("Acceder a correo");
-		btnVerConexiones.setForeground(Color.BLACK);
-		btnVerConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVerConexiones.setBounds(217, 170, 146, 23);
-		contentPane.add(btnVerConexiones);
+			}
+
+		});
+
+		JButton btnOrigin = new JButton("Acceder a Origin");
+		btnOrigin.setForeground(Color.BLACK);
+		btnOrigin.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnOrigin.setBounds(217, 223, 146, 23);
+		contentPane.add(btnOrigin);
+		
+		btnOrigin.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+		        String url = "https://www.origin.com/esp/es-es/store";
+		        Process p2 = null;
+				try {
+					p2 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        try {
+					p2.waitFor();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+
+		});
+
+		JButton btnCorreo = new JButton("Acceder a correo");
+		btnCorreo.setForeground(Color.BLACK);
+		btnCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCorreo.setBounds(217, 170, 146, 23);
+		contentPane.add(btnCorreo);
+		
+		btnCorreo.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+		        String url = "https://accounts.google.com";
+		        Process p3 = null;
+				try {
+					p3 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        try {
+					p3.waitFor();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+
+		});
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
@@ -162,10 +229,22 @@ public class PanelSocio extends JFrame {
 		Timer.setBounds(0, 339, 105, 34);
 		contentPane.add(Timer);
 		
-		JButton btnModificarPassword = new JButton("Modificar Password");
-		btnModificarPassword.setForeground(Color.BLACK);
-		btnModificarPassword.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnModificarPassword.setBounds(216, 117, 146, 23);
-		contentPane.add(btnModificarPassword);
+		JButton btnModPass = new JButton("Modificar Password");
+		btnModPass.setForeground(Color.BLACK);
+		btnModPass.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnModPass.setBounds(216, 117, 146, 23);
+		contentPane.add(btnModPass);
+		
+		btnModPass.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				PanelSocio_Pass frame10 = new PanelSocio_Pass();
+				frame10.setVisible(true);
+				dispose();
+			}
+
+		});
 	}
 }

@@ -104,11 +104,11 @@ public class PanelAdmin extends JFrame {
 
 		});
 
-		JButton btnComprobarConexiones = new JButton("Dar Conexion");
-		btnComprobarConexiones.setForeground(Color.BLACK);
-		btnComprobarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnComprobarConexiones.setBounds(30, 170, 145, 23);
-		contentPane.add(btnComprobarConexiones);
+		JButton btnDarConexiones = new JButton("Dar Conexion");
+		btnDarConexiones.setForeground(Color.BLACK);
+		btnDarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnDarConexiones.setBounds(30, 170, 145, 23);
+		contentPane.add(btnDarConexiones);
 
 		JButton btnVerTiempos = new JButton("Ver Tiempos");
 		btnVerTiempos.setForeground(Color.BLACK);
