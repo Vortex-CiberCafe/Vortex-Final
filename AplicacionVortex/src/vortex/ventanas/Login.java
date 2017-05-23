@@ -3,6 +3,7 @@ package vortex.ventanas;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -43,6 +44,7 @@ public class Login extends JFrame {
 			public void run() {
 				try {
 					Login frame = new Login();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,11 +59,16 @@ public class Login extends JFrame {
 
 	public Login() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		ancho=ancho/4;
+		alto=alto/2;
+		
 		/* Titulo de la ventana Java */
 
 		setTitle("Login de Duran");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 400);
+		setBounds(100, 100, ancho, alto);
 
 		/* Panel Login Java (Principal) */
 

@@ -3,6 +3,7 @@ package vortex.ventanas;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -36,6 +37,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 			public void run() {
 				try {
 					PanelAdmin_AltaSocio frame3 = new PanelAdmin_AltaSocio();
+					frame3.setLocationRelativeTo(null);
 					frame3.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,9 +50,14 @@ public class PanelAdmin_AltaSocio extends JFrame {
 	public PanelAdmin_AltaSocio() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
+		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		ancho=ancho/4;
+		alto=alto/2;
+
 		setTitle("Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 400);
+		setBounds(100, 100, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
