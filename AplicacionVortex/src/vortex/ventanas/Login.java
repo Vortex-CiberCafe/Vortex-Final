@@ -59,11 +59,11 @@ public class Login extends JFrame {
 
 	public Login() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		ancho=ancho/4;
-		alto=alto/2;
-		
+		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		ancho = ancho / 4;
+		alto = alto / 2;
+
 		/* Titulo de la ventana Java */
 
 		setTitle("Login de Duran");
@@ -169,10 +169,11 @@ public class Login extends JFrame {
 					case 1:
 						System.out.println("\nConectado como socio");
 						Constantes.user = entradaUser.getText();
-						/*
-						 * PanelSocio frame* = new PanelSocio();
-						 * frame*.setVisible(true); dispose();
-						 */
+
+						PanelSocio frame8 = new PanelSocio();
+						frame8.setVisible(true);
+						dispose();
+
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
