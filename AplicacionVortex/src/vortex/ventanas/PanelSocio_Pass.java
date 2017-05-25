@@ -139,10 +139,22 @@ public class PanelSocio_Pass extends JFrame {
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
 		
-		JButton button_1 = new JButton("Volver");
-		button_1.setForeground(Color.BLACK);
-		button_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		button_1.setBounds(245, 272, 113, 23);
-		contentPane.add(button_1);
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(245, 272, 113, 23);
+		contentPane.add(btnVolver);
+		
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelSocio frame8 = new PanelSocio();
+				frame8.setVisible(true);
+				dispose();
+
+			}
+
+		});
 	}
 }
