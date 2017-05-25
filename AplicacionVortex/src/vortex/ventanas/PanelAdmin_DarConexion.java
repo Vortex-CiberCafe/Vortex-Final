@@ -13,13 +13,13 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
-import javax.swing.JTextField;
 
 public class PanelAdmin_DarConexion extends JFrame {
 
@@ -45,11 +45,11 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 	public PanelAdmin_DarConexion() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		
-		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		ancho=ancho/4;
-		alto=alto/2;
+
+		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		ancho = ancho / 4;
+		alto = alto / 2;
 
 		setTitle("Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -117,57 +117,60 @@ public class PanelAdmin_DarConexion extends JFrame {
 			}
 
 		});
-		
+
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(275, 337, 113, 23);
 		contentPane.add(btnVolver);
-		
+
 		JLabel lblTiempo = new JLabel("Tiempo:");
 		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTiempo.setForeground(Color.WHITE);
 		lblTiempo.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTiempo.setBounds(40, 122, 111, 29);
 		contentPane.add(lblTiempo);
-		
+
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(161, 128, 123, 20);
 		contentPane.add(textField);
-		
+
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrecio.setForeground(Color.WHITE);
 		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblPrecio.setBounds(40, 206, 111, 29);
 		contentPane.add(lblPrecio);
-		
+
 		JButton btnComprobarPrecio = new JButton("Comprobar Precio");
 		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarPrecio.setBounds(161, 172, 123, 23);
 		contentPane.add(btnComprobarPrecio);
-		
+
+		JLabel label_1 = new JLabel(" ");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(163, 206, 111, 29);
+		contentPane.add(label_1);
+
 		btnComprobarPrecio.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JLabel label_1 = new JLabel(Constantes.precio.toString());
-				label_1.setHorizontalAlignment(SwingConstants.CENTER);
-				label_1.setForeground(Color.WHITE);
-				label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-				label_1.setBounds(163, 206, 111, 29);
-				contentPane.add(label_1);
+				int tiempo = Integer.parseInt(textField.getText());
+				label_1.setText(" " + Constantes.precio(tiempo) + "€");
 			}
 
 		});
-		
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
