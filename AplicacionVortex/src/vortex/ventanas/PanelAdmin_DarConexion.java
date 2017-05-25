@@ -100,11 +100,16 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				int tiempo = Integer.parseInt(textField.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
-				System.out.println(seleccionCombo);
-				int filas = bd.bajaSocio(seleccionCombo);
+				// System.out.println(seleccionCombo);
+				int filas = bd.darConexion(seleccionCombo, tiempo);
 				switch (filas) {
 				case 1:
+					Constantes.caja += Constantes.precio(tiempo);
+					PanelAdmin frame2 = new PanelAdmin();
+					frame2.setLocationRelativeTo(null);
+					frame2.setVisible(true);
 					System.out.println("OK");
 					break;
 				case 0:
