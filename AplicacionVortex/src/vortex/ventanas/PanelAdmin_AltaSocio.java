@@ -67,7 +67,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(269, 11, 113, 23);
+		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
 		textField = new JTextField();
@@ -78,15 +78,8 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(315, 339, 67, 23);
+		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
-
-		JLabel label_1 = new JLabel("");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(120, 54, 111, 29);
-		contentPane.add(label_1);
 
 		JLabel label = new JLabel("DNI:");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -170,7 +163,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
 		btnDarAlta.setFont(new Font("Dialog", Font.BOLD, 12));
-		btnDarAlta.setBounds(269, 277, 113, 23);
+		btnDarAlta.setBounds(326, 277, 113, 23);
 		contentPane.add(btnDarAlta);
 
 		btnDarAlta.addActionListener(new ActionListener() {
@@ -206,7 +199,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(120, 273, 146, 23);
+		btnVolver.setBounds(326, 322, 113, 23);
 		contentPane.add(btnVolver);
 		btnVolver.addActionListener(new ActionListener() {
 

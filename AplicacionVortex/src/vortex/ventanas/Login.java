@@ -74,7 +74,7 @@ public class Login extends JFrame {
 
 		panelOrigen = new JPanel();
 		panelOrigen.setForeground(new Color(0, 0, 0));
-		panelOrigen.setBackground(new Color(70, 130, 180));
+		panelOrigen.setBackground(new Color(102, 153, 204));
 		panelOrigen.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panelOrigen);
 		panelOrigen.setLayout(null);
@@ -84,7 +84,7 @@ public class Login extends JFrame {
 		JLabel variableUser = new JLabel("User:");
 		variableUser.setFont(new Font("Dialog", Font.BOLD, 14));
 		variableUser.setForeground(new Color(0, 0, 139));
-		variableUser.setBounds(65, 39, 95, 26);
+		variableUser.setBounds(100, 70, 95, 26);
 		panelOrigen.add(variableUser);
 
 		/* Input User (panelOrigen) */
@@ -92,7 +92,7 @@ public class Login extends JFrame {
 		entradaUser = new JTextField();
 		entradaUser.setFont(new Font("Dialog", Font.PLAIN, 14));
 		entradaUser.setForeground(Color.BLACK);
-		entradaUser.setBounds(178, 42, 147, 20);
+		entradaUser.setBounds(213, 73, 147, 20);
 		panelOrigen.add(entradaUser);
 		entradaUser.setColumns(10);
 
@@ -101,20 +101,20 @@ public class Login extends JFrame {
 		JLabel variablePass = new JLabel("Password:");
 		variablePass.setFont(new Font("Dialog", Font.BOLD, 14));
 		variablePass.setForeground(new Color(0, 0, 128));
-		variablePass.setBounds(65, 76, 103, 26);
+		variablePass.setBounds(100, 107, 103, 26);
 		panelOrigen.add(variablePass);
 
 		/* Input Password (panelOrigen) */
 
 		entradaPass = new JPasswordField();
-		entradaPass.setBounds(178, 79, 147, 20);
+		entradaPass.setBounds(213, 110, 147, 20);
 		panelOrigen.add(entradaPass);
 		entradaPass.setFont(new Font("Dialog", Font.PLAIN, 14));
 
 		JLabel label = new JLabel();
 		label.setForeground(new Color(0, 0, 128));
 		label.setFont(new Font("Dialog", Font.BOLD, 13));
-		label.setBounds(65, 182, 260, 66);
+		label.setBounds(100, 213, 260, 66);
 		panelOrigen.add(label);
 		label.setVisible(false);
 
@@ -123,19 +123,19 @@ public class Login extends JFrame {
 		JButton botonLogin = new JButton("Login");
 		botonLogin.setBackground(Color.WHITE);
 		botonLogin.setFont(new Font("Dialog", Font.BOLD, 12));
-		botonLogin.setBounds(65, 133, 95, 26);
+		botonLogin.setBounds(100, 164, 95, 26);
 		panelOrigen.add(botonLogin);
 
 		JLabel lblNewLabel = new JLabel("Vortex\u2122");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setBounds(308, 331, 66, 20);
+		lblNewLabel.setBounds(391, 404, 66, 20);
 		panelOrigen.add(lblNewLabel);
 
 		TypeUser = new JComboBox();
 		TypeUser.setModel(new DefaultComboBoxModel(new String[] { "Admin", "Socio", "Dependiente" }));
 		TypeUser.setMaximumRowCount(3);
-		TypeUser.setBounds(239, 110, 86, 20);
+		TypeUser.setBounds(274, 141, 86, 20);
 		panelOrigen.add(TypeUser);
 
 		botonLogin.addActionListener(new ActionListener() {

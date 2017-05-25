@@ -25,7 +25,6 @@ public class PanelSocio_Nick extends JFrame {
 	private static final long serialVersionUID = 1L;
 	protected static PanelSocio_Nick frame2;
 	private JPanel contentPane;
-	private JTextField textField;
 	private JTextField textField_1;
 
 	public static void main(String[] args) {
@@ -60,7 +59,7 @@ public class PanelSocio_Nick extends JFrame {
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(269, 11, 113, 23);
+		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
 		button.addActionListener(new ActionListener() {
@@ -75,41 +74,36 @@ public class PanelSocio_Nick extends JFrame {
 
 		});
 
-		JLabel lblAntiguoNick = new JLabel("Antiguo Nick:");
+		JLabel lblAntiguoNick = new JLabel("Nick:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblAntiguoNick.setBounds(10, 56, 111, 29);
+		lblAntiguoNick.setBounds(40, 70, 111, 29);
 		contentPane.add(lblAntiguoNick);
 		
 		JLabel lblNuevoNick = new JLabel("Nuevo Nick:");
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNuevoNick.setForeground(Color.WHITE);
 		lblNuevoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNuevoNick.setBounds(10, 110, 111, 29);
+		lblNuevoNick.setBounds(40, 124, 111, 29);
 		contentPane.add(lblNuevoNick);
-		
-		textField = new JTextField();
-		textField.setBounds(131, 62, 113, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(131, 116, 113, 20);
+		textField_1.setBounds(161, 130, 113, 20);
 		contentPane.add(textField_1);
 		
 		JLabel lblEstaSeguroDe = new JLabel("Esta seguro de que desea cambiar su nick?");
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
 		lblEstaSeguroDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblEstaSeguroDe.setBounds(33, 168, 316, 29);
+		lblEstaSeguroDe.setBounds(63, 182, 316, 29);
 		contentPane.add(lblEstaSeguroDe);
 		
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.setForeground(Color.BLACK);
 		btnContinuar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnContinuar.setBounds(215, 213, 125, 23);
+		btnContinuar.setBounds(245, 227, 113, 23);
 		contentPane.add(btnContinuar);
 		
 		btnContinuar.addActionListener(new ActionListener() {
@@ -130,13 +124,38 @@ public class PanelSocio_Nick extends JFrame {
 		Timer.setOpaque(true);
 		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(0, 339, 105, 34);
+		Timer.setBounds(10, 390, 105, 34);
 		contentPane.add(Timer);
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(315, 339, 67, 23);
+		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(245, 272, 113, 23);
+		contentPane.add(btnVolver);
+		
+		JLabel label_1 = new JLabel(Constantes.user);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(161, 70, 111, 29);
+		contentPane.add(label_1);
+		
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelSocio frame8 = new PanelSocio();
+				frame8.setVisible(true);
+				dispose();
+
+			}
+
+		});
 	}
 }

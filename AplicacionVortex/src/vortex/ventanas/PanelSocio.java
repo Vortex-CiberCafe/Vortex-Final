@@ -57,7 +57,7 @@ public class PanelSocio extends JFrame {
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(269, 11, 113, 23);
+		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
 		button.addActionListener(new ActionListener() {
@@ -76,13 +76,13 @@ public class PanelSocio extends JFrame {
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Dialog", Font.BOLD, 14));
-		label.setBounds(10, 43, 111, 29);
+		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
 
 		JButton btnModNick = new JButton("Modificar Nick");
 		btnModNick.setForeground(Color.BLACK);
 		btnModNick.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnModNick.setBounds(30, 117, 146, 23);
+		btnModNick.setBounds(60, 144, 146, 23);
 		contentPane.add(btnModNick);
 
 		btnModNick.addActionListener(new ActionListener() {
@@ -100,7 +100,7 @@ public class PanelSocio extends JFrame {
 		JButton btnInternet = new JButton("Acceder a Internet");
 		btnInternet.setForeground(Color.BLACK);
 		btnInternet.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnInternet.setBounds(30, 170, 146, 23);
+		btnInternet.setBounds(60, 197, 146, 23);
 		contentPane.add(btnInternet);
 
 		btnInternet.addActionListener(new ActionListener() {
@@ -129,7 +129,7 @@ public class PanelSocio extends JFrame {
 		JButton btnSteam = new JButton("Acceder a Steam");
 		btnSteam.setForeground(Color.BLACK);
 		btnSteam.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnSteam.setBounds(31, 223, 145, 23);
+		btnSteam.setBounds(61, 250, 145, 23);
 		contentPane.add(btnSteam);
 		
 		btnSteam.addActionListener(new ActionListener() {
@@ -158,7 +158,7 @@ public class PanelSocio extends JFrame {
 		JButton btnOrigin = new JButton("Acceder a Origin");
 		btnOrigin.setForeground(Color.BLACK);
 		btnOrigin.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnOrigin.setBounds(217, 223, 146, 23);
+		btnOrigin.setBounds(247, 250, 146, 23);
 		contentPane.add(btnOrigin);
 		
 		btnOrigin.addActionListener(new ActionListener() {
@@ -187,7 +187,7 @@ public class PanelSocio extends JFrame {
 		JButton btnCorreo = new JButton("Acceder a correo");
 		btnCorreo.setForeground(Color.BLACK);
 		btnCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnCorreo.setBounds(217, 170, 146, 23);
+		btnCorreo.setBounds(247, 197, 146, 23);
 		contentPane.add(btnCorreo);
 		
 		btnCorreo.addActionListener(new ActionListener() {
@@ -216,14 +216,14 @@ public class PanelSocio extends JFrame {
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(315, 339, 67, 23);
+		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
 
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(120, 43, 111, 29);
+		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
 		
 		JLabel Timer = new JLabel("");
@@ -232,13 +232,13 @@ public class PanelSocio extends JFrame {
 		Timer.setOpaque(true);
 		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(0, 339, 105, 34);
+		Timer.setBounds(10, 390, 105, 34);
 		contentPane.add(Timer);
 		
 		JButton btnModPass = new JButton("Modificar Password");
 		btnModPass.setForeground(Color.BLACK);
 		btnModPass.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnModPass.setBounds(216, 117, 146, 23);
+		btnModPass.setBounds(246, 144, 146, 23);
 		contentPane.add(btnModPass);
 		
 		btnModPass.addActionListener(new ActionListener() {

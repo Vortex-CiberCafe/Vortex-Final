@@ -60,7 +60,7 @@ public class PanelSocio_Pass extends JFrame {
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(269, 11, 113, 23);
+		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
 		button.addActionListener(new ActionListener() {
@@ -79,37 +79,37 @@ public class PanelSocio_Pass extends JFrame {
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblAntiguoNick.setBounds(10, 56, 153, 29);
+		lblAntiguoNick.setBounds(40, 70, 153, 29);
 		contentPane.add(lblAntiguoNick);
 		
 		JLabel lblNuevoNick = new JLabel("Nueva Password:");
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNuevoNick.setForeground(Color.WHITE);
 		lblNuevoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNuevoNick.setBounds(10, 110, 153, 29);
+		lblNuevoNick.setBounds(40, 124, 153, 29);
 		contentPane.add(lblNuevoNick);
 		
 		textField = new JTextField();
-		textField.setBounds(173, 62, 113, 20);
+		textField.setBounds(203, 76, 113, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(173, 116, 113, 20);
+		textField_1.setBounds(203, 130, 113, 20);
 		contentPane.add(textField_1);
 		
 		JLabel lblEstaSeguroDe = new JLabel("Esta seguro de que desea cambiar su password?");
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
 		lblEstaSeguroDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblEstaSeguroDe.setBounds(33, 168, 316, 29);
+		lblEstaSeguroDe.setBounds(63, 182, 316, 29);
 		contentPane.add(lblEstaSeguroDe);
 		
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.setForeground(Color.BLACK);
 		btnContinuar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnContinuar.setBounds(215, 213, 125, 23);
+		btnContinuar.setBounds(245, 227, 113, 23);
 		contentPane.add(btnContinuar);
 		
 		btnContinuar.addActionListener(new ActionListener() {
@@ -130,13 +130,19 @@ public class PanelSocio_Pass extends JFrame {
 		Timer.setOpaque(true);
 		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(0, 339, 105, 34);
+		Timer.setBounds(10, 390, 105, 34);
 		contentPane.add(Timer);
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(315, 339, 67, 23);
+		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
+		
+		JButton button_1 = new JButton("Volver");
+		button_1.setForeground(Color.BLACK);
+		button_1.setFont(new Font("Dialog", Font.BOLD, 11));
+		button_1.setBounds(245, 272, 113, 23);
+		contentPane.add(button_1);
 	}
 }

@@ -59,18 +59,18 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(269, 11, 113, 23);
+		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUsuarios.setBounds(10, 54, 111, 29);
+		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(131, 60, 123, 20);
+		comboBox.setBounds(161, 76, 123, 20);
 
 		Vector<Socio> socios = bd.ver_socios();
 
@@ -84,11 +84,12 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
 		lblEstaSeguroDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblEstaSeguroDe.setBounds(10, 126, 357, 29);
+		lblEstaSeguroDe.setBounds(40, 142, 357, 29);
 		contentPane.add(lblEstaSeguroDe);
 
 		JButton btnEliminarSocio = new JButton("Eliminar Socio");
-		btnEliminarSocio.setBounds(215, 179, 113, 23);
+		btnEliminarSocio.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnEliminarSocio.setBounds(245, 195, 113, 23);
 		contentPane.add(btnEliminarSocio);
 
 		btnEliminarSocio.addActionListener(new ActionListener() {
@@ -112,12 +113,19 @@ public class PanelAdmin_BajaSocio extends JFrame {
 			}
 
 		});
-
+		
+		JLabel label = new JLabel("Vortex\u2122");
+		label.setForeground(Color.RED);
+		label.setFont(new Font("Dialog", Font.BOLD, 15));
+		label.setBounds(390, 401, 67, 23);
+		contentPane.add(label);
+		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(120, 273, 146, 23);
+		btnVolver.setBounds(245, 233, 113, 23);
 		contentPane.add(btnVolver);
+		
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
