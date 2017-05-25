@@ -88,12 +88,12 @@ public class PanelAdmin_DarConexion extends JFrame {
 		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
 		lblActualizarT.setForeground(Color.WHITE);
 		lblActualizarT.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblActualizarT.setBounds(84, 215, 273, 29);
+		lblActualizarT.setBounds(114, 246, 273, 29);
 		contentPane.add(lblActualizarT);
 
 		JButton btnActualizar = new JButton("Actualizar");
 		btnActualizar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnActualizar.setBounds(245, 268, 113, 23);
+		btnActualizar.setBounds(275, 299, 113, 23);
 		contentPane.add(btnActualizar);
 
 		btnActualizar.addActionListener(new ActionListener() {
@@ -127,7 +127,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(245, 306, 113, 23);
+		btnVolver.setBounds(275, 337, 113, 23);
 		contentPane.add(btnVolver);
 		
 		JLabel lblTiempo = new JLabel("Tiempo:");
@@ -139,22 +139,34 @@ public class PanelAdmin_DarConexion extends JFrame {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(161, 128, 113, 20);
+		textField.setBounds(161, 128, 123, 20);
 		contentPane.add(textField);
 		
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrecio.setForeground(Color.WHITE);
 		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblPrecio.setBounds(40, 175, 111, 29);
+		lblPrecio.setBounds(40, 206, 111, 29);
 		contentPane.add(lblPrecio);
 		
-		JLabel label_1 = new JLabel(Constantes.precio.toString());
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(163, 175, 111, 29);
-		contentPane.add(label_1);
+		JButton btnComprobarPrecio = new JButton("Comprobar Precio");
+		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
+		btnComprobarPrecio.setBounds(161, 172, 123, 23);
+		contentPane.add(btnComprobarPrecio);
+		
+		btnComprobarPrecio.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JLabel label_1 = new JLabel(Constantes.precio.toString());
+				label_1.setHorizontalAlignment(SwingConstants.CENTER);
+				label_1.setForeground(Color.WHITE);
+				label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+				label_1.setBounds(163, 206, 111, 29);
+				contentPane.add(label_1);
+			}
+
+		});
 		
 		btnVolver.addActionListener(new ActionListener() {
 

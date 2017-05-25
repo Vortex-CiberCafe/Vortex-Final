@@ -128,11 +128,11 @@ public class PanelAdmin extends JFrame {
 
 		});
 
-		JButton btnVerTiempos = new JButton("Ver Tiempos");
-		btnVerTiempos.setForeground(Color.BLACK);
-		btnVerTiempos.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVerTiempos.setBounds(60, 250, 146, 23);
-		contentPane.add(btnVerTiempos);
+		JButton btnLastConnects = new JButton("Ultimas Conexiones");
+		btnLastConnects.setForeground(Color.BLACK);
+		btnLastConnects.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnLastConnects.setBounds(60, 250, 146, 23);
+		contentPane.add(btnLastConnects);
 
 		JButton btnVerConexiones = new JButton("Ver Conexiones");
 		btnVerConexiones.setForeground(Color.BLACK);
