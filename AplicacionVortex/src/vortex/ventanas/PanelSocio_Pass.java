@@ -159,14 +159,14 @@ public class PanelSocio_Pass extends JFrame {
 
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(203, 176, 113, 20);
+		textField_2.setBounds(203, 184, 113, 20);
 		contentPane.add(textField_2);
 
 		JLabel lblRepitePassword = new JLabel("Repite Password:");
 		lblRepitePassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRepitePassword.setForeground(Color.WHITE);
 		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblRepitePassword.setBounds(40, 170, 153, 29);
+		lblRepitePassword.setBounds(40, 178, 153, 29);
 		contentPane.add(lblRepitePassword);
 
 		btnVolver.addActionListener(new ActionListener() {

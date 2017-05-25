@@ -116,6 +116,17 @@ public class PanelAdmin extends JFrame {
 		btnDarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnDarConexiones.setBounds(60, 197, 145, 23);
 		contentPane.add(btnDarConexiones);
+		
+		btnDarConexiones.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin_BajaSocio frame5 = new PanelAdmin_BajaSocio();
+				frame5.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JButton btnVerTiempos = new JButton("Ver Tiempos");
 		btnVerTiempos.setForeground(Color.BLACK);
