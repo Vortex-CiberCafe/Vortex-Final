@@ -8,6 +8,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -18,7 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-
+import static java.nio.file.StandardOpenOption.*;
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 
@@ -39,7 +50,7 @@ public class Login extends JFrame {
 	 * Launch the application.
 	 */
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -153,6 +164,22 @@ public class Login extends JFrame {
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
+						BufferedWriter salida;
+						try{
+						Path ruta=Paths.get("reg\\log.txt");
+						Charset charset = Charset.forName("UTF-8");
+						salida=Files.newBufferedWriter(ruta, charset, APPEND);
+						PrintWriter salidaLog = new PrintWriter(salida);
+						LocalDate actual = LocalDate.now();
+						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+								+ " de forma incorrecta en: [" + actual + "] ");
+						salidaLog.close();
+						salida.close();
+						}
+						catch (IOException e){
+							break;	
+						}
+						
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
@@ -175,6 +202,21 @@ public class Login extends JFrame {
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
+						BufferedWriter salida;
+						try{
+						Path ruta=Paths.get("reg\\log.txt");
+						Charset charset = Charset.forName("UTF-8");
+						salida=Files.newBufferedWriter(ruta, charset, APPEND);
+						PrintWriter salidaLog = new PrintWriter(salida);
+						LocalDate actual = LocalDate.now();
+						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+								+ " de forma incorrecta en: [" + actual + "] ");
+						salidaLog.close();
+						salida.close();
+						}
+						catch (IOException e){
+							break;	
+						}
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
@@ -193,6 +235,21 @@ public class Login extends JFrame {
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
+						BufferedWriter salida;
+						try{
+						Path ruta=Paths.get("reg\\log.txt");
+						Charset charset = Charset.forName("UTF-8");
+						salida=Files.newBufferedWriter(ruta, charset, APPEND);
+						PrintWriter salidaLog = new PrintWriter(salida);
+						LocalDate actual = LocalDate.now();
+						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+								+ " de forma incorrecta en: [" + actual + "] ");
+						salidaLog.close();
+						salida.close();
+						}
+						catch (IOException e){
+							break;	
+						}
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
