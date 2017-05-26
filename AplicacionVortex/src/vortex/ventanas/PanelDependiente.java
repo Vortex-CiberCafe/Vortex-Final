@@ -19,18 +19,18 @@ import vortex.Constantes;
 
 import javax.swing.border.LineBorder;
 
-public class PanelSocio extends JFrame {
+public class PanelDependiente extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelSocio frame2;
+	protected static PanelDependiente frame2;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelSocio frame9 = new PanelSocio();
-					frame9.setVisible(true);
+					PanelDependiente frame12 = new PanelDependiente();
+					frame12.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,14 +39,14 @@ public class PanelSocio extends JFrame {
 
 	}
 
-	public PanelSocio() {
+	public PanelDependiente() {
 		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto=alto/4;
 		int inicioancho=ancho/4;
 		ancho=ancho/4;
 		alto=alto/2;
-		setTitle("Vortex Socio");
+		setTitle("Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();

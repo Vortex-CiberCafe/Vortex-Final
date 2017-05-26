@@ -37,7 +37,6 @@ public class PanelAdmin_AltaSocio extends JFrame {
 			public void run() {
 				try {
 					PanelAdmin_AltaSocio frame3 = new PanelAdmin_AltaSocio();
-					frame3.setLocationRelativeTo(null);
 					frame3.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,12 +51,15 @@ public class PanelAdmin_AltaSocio extends JFrame {
 
 		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		
+		int inicioalto=alto/4;
+		int inicioancho=ancho/4;
 		ancho=ancho/4;
 		alto=alto/2;
 
 		setTitle("Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -70,28 +72,17 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
-		textField = new JTextField();
-		textField.setBounds(100, 59, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-
-		JLabel label_2 = new JLabel("Vortex\u2122");
-		label_2.setForeground(Color.RED);
-		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(390, 401, 67, 23);
-		contentPane.add(label_2);
-
 		JLabel label = new JLabel("DNI:");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(Color.BLACK);
 		label.setFont(new Font("Dialog", Font.BOLD, 11));
 		label.setBounds(20, 54, 75, 29);
 		contentPane.add(label);
-
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(100, 99, 86, 20);
-		contentPane.add(textField_1);
+		
+				textField = new JTextField();
+				textField.setBounds(100, 59, 86, 20);
+				contentPane.add(textField);
+				textField.setColumns(10);
 
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,11 +90,11 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblNombre.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNombre.setBounds(20, 94, 75, 29);
 		contentPane.add(lblNombre);
-
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(100, 139, 86, 20);
-		contentPane.add(textField_2);
+		
+				textField_1 = new JTextField();
+				textField_1.setColumns(10);
+				textField_1.setBounds(100, 99, 86, 20);
+				contentPane.add(textField_1);
 
 		JLabel lblDireccion = new JLabel("Direccion:");
 		lblDireccion.setHorizontalAlignment(SwingConstants.CENTER);
@@ -111,11 +102,11 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblDireccion.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblDireccion.setBounds(20, 134, 75, 29);
 		contentPane.add(lblDireccion);
-
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(100, 179, 86, 20);
-		contentPane.add(textField_3);
+		
+				textField_2 = new JTextField();
+				textField_2.setColumns(10);
+				textField_2.setBounds(100, 139, 86, 20);
+				contentPane.add(textField_2);
 
 		JLabel lblTelefono = new JLabel("Telefono:");
 		lblTelefono.setHorizontalAlignment(SwingConstants.CENTER);
@@ -123,11 +114,11 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblTelefono.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblTelefono.setBounds(20, 174, 75, 29);
 		contentPane.add(lblTelefono);
-
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(100, 219, 86, 20);
-		contentPane.add(textField_4);
+		
+				textField_3 = new JTextField();
+				textField_3.setColumns(10);
+				textField_3.setBounds(100, 179, 86, 20);
+				contentPane.add(textField_3);
 
 		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,11 +126,11 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblCorreo.setBounds(20, 214, 75, 29);
 		contentPane.add(lblCorreo);
-
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(282, 139, 86, 20);
-		contentPane.add(textField_5);
+		
+				textField_4 = new JTextField();
+				textField_4.setColumns(10);
+				textField_4.setBounds(100, 219, 86, 20);
+				contentPane.add(textField_4);
 
 		JLabel lblNick = new JLabel("Nick:");
 		lblNick.setHorizontalAlignment(SwingConstants.CENTER);
@@ -147,6 +138,11 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblNick.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNick.setBounds(205, 134, 67, 29);
 		contentPane.add(lblNick);
+		
+				textField_5 = new JTextField();
+				textField_5.setColumns(10);
+				textField_5.setBounds(282, 139, 86, 20);
+				contentPane.add(textField_5);
 
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
@@ -155,10 +151,10 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblPassword.setBounds(205, 174, 67, 29);
 		contentPane.add(lblPassword);
 
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(282, 179, 86, 20);
-		contentPane.add(textField_6);
+				textField_6 = new JTextField();
+				textField_6.setColumns(10);
+				textField_6.setBounds(282, 179, 86, 20);
+				contentPane.add(textField_6);
 
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
@@ -196,11 +192,13 @@ public class PanelAdmin_AltaSocio extends JFrame {
 			}
 
 		});
+		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(326, 322, 113, 23);
 		contentPane.add(btnVolver);
+		
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -212,6 +210,12 @@ public class PanelAdmin_AltaSocio extends JFrame {
 			}
 
 		});
+		
+		JLabel label_2 = new JLabel("Vortex\u2122");
+		label_2.setForeground(Color.RED);
+		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
+		label_2.setBounds(390, 401, 67, 23);
+		contentPane.add(label_2);
 
 	};
 }

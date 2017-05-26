@@ -31,9 +31,8 @@ public class PanelSocio_Pass extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelSocio_Pass frame10 = new PanelSocio_Pass();
-					frame10.setLocationRelativeTo(null);
-					frame10.setVisible(true);
+					PanelSocio_Pass frame11 = new PanelSocio_Pass();
+					frame11.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,11 +46,13 @@ public class PanelSocio_Pass extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		int inicioalto=alto/4;
+		int inicioancho=ancho/4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle("Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -82,6 +83,11 @@ public class PanelSocio_Pass extends JFrame {
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblAntiguoNick.setBounds(40, 70, 153, 29);
 		contentPane.add(lblAntiguoNick);
+		
+		textField = new JTextField();
+		textField.setBounds(203, 76, 113, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
 
 		JLabel lblNuevoNick = new JLabel("Nueva Password:");
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
@@ -90,15 +96,22 @@ public class PanelSocio_Pass extends JFrame {
 		lblNuevoNick.setBounds(40, 124, 153, 29);
 		contentPane.add(lblNuevoNick);
 
-		textField = new JTextField();
-		textField.setBounds(203, 76, 113, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(203, 130, 113, 20);
 		contentPane.add(textField_1);
+
+		JLabel lblRepitePassword = new JLabel("Repite Password:");
+		lblRepitePassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRepitePassword.setForeground(Color.WHITE);
+		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblRepitePassword.setBounds(40, 178, 153, 29);
+		contentPane.add(lblRepitePassword);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(203, 184, 113, 20);
+		contentPane.add(textField_2);
 
 		JLabel lblEstaSeguroDe = new JLabel("Esta seguro de que desea cambiar su password?");
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
@@ -126,8 +139,8 @@ public class PanelSocio_Pass extends JFrame {
 					System.out.println("Las contraseñas no coinciden");
 					break;
 				case 1:
-					PanelSocio frame8 = new PanelSocio();
-					frame8.setVisible(true);
+					PanelSocio frame9 = new PanelSocio();
+					frame9.setVisible(true);
 					dispose();
 					break;
 				}
@@ -136,6 +149,24 @@ public class PanelSocio_Pass extends JFrame {
 
 		});
 
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(245, 315, 113, 23);
+		contentPane.add(btnVolver);
+		
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelSocio frame9 = new PanelSocio();
+				frame9.setVisible(true);
+				dispose();
+
+			}
+
+		});
+		
 		JLabel Timer = new JLabel("");
 		Timer.setFont(new Font("Dialog", Font.BOLD, 11));
 		Timer.setForeground(Color.WHITE);
@@ -151,34 +182,5 @@ public class PanelSocio_Pass extends JFrame {
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
 
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setForeground(Color.BLACK);
-		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(245, 315, 113, 23);
-		contentPane.add(btnVolver);
-
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(203, 184, 113, 20);
-		contentPane.add(textField_2);
-
-		JLabel lblRepitePassword = new JLabel("Repite Password:");
-		lblRepitePassword.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRepitePassword.setForeground(Color.WHITE);
-		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblRepitePassword.setBounds(40, 178, 153, 29);
-		contentPane.add(lblRepitePassword);
-
-		btnVolver.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				PanelSocio frame8 = new PanelSocio();
-				frame8.setVisible(true);
-				dispose();
-
-			}
-
-		});
 	}
 }

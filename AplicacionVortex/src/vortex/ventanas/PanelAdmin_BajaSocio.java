@@ -30,7 +30,6 @@ public class PanelAdmin_BajaSocio extends JFrame {
 			public void run() {
 				try {
 					PanelAdmin_BajaSocio frame4 = new PanelAdmin_BajaSocio();
-					frame4.setLocationRelativeTo(null);
 					frame4.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,12 +43,15 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		
+		int inicioalto=alto/4;
+		int inicioancho=ancho/4;
 		ancho=ancho/4;
 		alto=alto/2;
 
 		setTitle("Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -114,12 +116,6 @@ public class PanelAdmin_BajaSocio extends JFrame {
 
 		});
 		
-		JLabel label = new JLabel("Vortex\u2122");
-		label.setForeground(Color.RED);
-		label.setFont(new Font("Dialog", Font.BOLD, 15));
-		label.setBounds(390, 401, 67, 23);
-		contentPane.add(label);
-		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -137,6 +133,12 @@ public class PanelAdmin_BajaSocio extends JFrame {
 			}
 
 		});
+		
+		JLabel label = new JLabel("Vortex\u2122");
+		label.setForeground(Color.RED);
+		label.setFont(new Font("Dialog", Font.BOLD, 15));
+		label.setBounds(390, 401, 67, 23);
+		contentPane.add(label);
 
 	}
 }

@@ -44,7 +44,6 @@ public class Login extends JFrame {
 			public void run() {
 				try {
 					Login frame = new Login();
-					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,8 +58,12 @@ public class Login extends JFrame {
 
 	public Login() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		
+		int inicioalto=alto/4;
+		int inicioancho=ancho/3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -68,9 +71,9 @@ public class Login extends JFrame {
 
 		setTitle("Login de Duran");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 
-		/* Panel Login Java (Principal) */
+		/* Panel Login Java */
 
 		panelOrigen = new JPanel();
 		panelOrigen.setForeground(new Color(0, 0, 0));
@@ -79,7 +82,7 @@ public class Login extends JFrame {
 		setContentPane(panelOrigen);
 		panelOrigen.setLayout(null);
 
-		/* Variable User (panelOrigen) */
+		/* Variable User */
 
 		JLabel variableUser = new JLabel("User:");
 		variableUser.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -87,7 +90,7 @@ public class Login extends JFrame {
 		variableUser.setBounds(100, 70, 95, 26);
 		panelOrigen.add(variableUser);
 
-		/* Input User (panelOrigen) */
+		/* Input User */
 
 		entradaUser = new JTextField();
 		entradaUser.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -96,7 +99,7 @@ public class Login extends JFrame {
 		panelOrigen.add(entradaUser);
 		entradaUser.setColumns(10);
 
-		/* Variable Password (panelOrigen) */
+		/* Variable Password */
 
 		JLabel variablePass = new JLabel("Password:");
 		variablePass.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -104,7 +107,7 @@ public class Login extends JFrame {
 		variablePass.setBounds(100, 107, 103, 26);
 		panelOrigen.add(variablePass);
 
-		/* Input Password (panelOrigen) */
+		/* Input Password */
 
 		entradaPass = new JPasswordField();
 		entradaPass.setBounds(213, 110, 147, 20);
@@ -118,25 +121,19 @@ public class Login extends JFrame {
 		panelOrigen.add(label);
 		label.setVisible(false);
 
-		/* Boton Login */
-
-		JButton botonLogin = new JButton("Login");
-		botonLogin.setBackground(Color.WHITE);
-		botonLogin.setFont(new Font("Dialog", Font.BOLD, 12));
-		botonLogin.setBounds(100, 164, 95, 26);
-		panelOrigen.add(botonLogin);
-
-		JLabel lblNewLabel = new JLabel("Vortex\u2122");
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setBounds(391, 404, 66, 20);
-		panelOrigen.add(lblNewLabel);
-
 		TypeUser = new JComboBox();
 		TypeUser.setModel(new DefaultComboBoxModel(new String[] { "Admin", "Socio", "Dependiente" }));
 		TypeUser.setMaximumRowCount(3);
 		TypeUser.setBounds(274, 141, 86, 20);
 		panelOrigen.add(TypeUser);
+		
+		/* Boton Login */
+		
+		JButton botonLogin = new JButton("Login");
+		botonLogin.setBackground(Color.WHITE);
+		botonLogin.setFont(new Font("Dialog", Font.BOLD, 12));
+		botonLogin.setBounds(100, 164, 95, 26);
+		panelOrigen.add(botonLogin);
 
 		botonLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -207,25 +204,13 @@ public class Login extends JFrame {
 
 			}
 		});
-		botonLogin.addKeyListener(new KeyAdapter() {
-
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-				/*
-				 * String usuario = "duran"; char[] password =
-				 * entradaPass.getPassword(); char[] correctPass = new char[] {
-				 * 'e', 'n', 't', 'e', 'r' }; if
-				 * (entradaUser.getText().equals(usuario) &&
-				 * Arrays.equals(password, correctPass)) { if (arg0.getKeyCode()
-				 * == KeyEvent.VK_ENTER) {
-				 * label.setText("Login completado correctamente!"); Cargando
-				 * frame2 = new Cargando(); frame2.setVisible(true); dispose();
-				 * } } else { if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				 * label.setText("ERROR. Datos incorrectos!"); } }
-				 * label.setVisible(true);
-				 */
-			}
-		});
+		
+		
+		JLabel lblNewLabel = new JLabel("Vortex\u2122");
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setBounds(391, 404, 66, 20);
+		panelOrigen.add(lblNewLabel);
 	}
 
 }

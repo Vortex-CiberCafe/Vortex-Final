@@ -30,9 +30,8 @@ public class PanelSocio_Nick extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelSocio_Nick frame9 = new PanelSocio_Nick();
-					frame9.setLocationRelativeTo(null);
-					frame9.setVisible(true);
+					PanelSocio_Nick frame10 = new PanelSocio_Nick();
+					frame10.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -45,11 +44,13 @@ public class PanelSocio_Nick extends JFrame {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		int inicioalto=alto/4;
+		int inicioancho=ancho/4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle("Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -80,6 +81,13 @@ public class PanelSocio_Nick extends JFrame {
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblAntiguoNick.setBounds(40, 70, 111, 29);
 		contentPane.add(lblAntiguoNick);
+		
+		JLabel label_1 = new JLabel(Constantes.user);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(161, 70, 111, 29);
+		contentPane.add(label_1);
 
 		JLabel lblNuevoNick = new JLabel("Nuevo Nick:");
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
@@ -114,8 +122,8 @@ public class PanelSocio_Nick extends JFrame {
 				switch (filas) {
 				case 1:
 					Constantes.user = textField_1.getText();
-					PanelSocio frame8 = new PanelSocio();
-					frame8.setVisible(true);
+					PanelSocio frame9 = new PanelSocio();
+					frame9.setVisible(true);
 					dispose();
 					System.out.println("OK");
 					break;
@@ -126,6 +134,24 @@ public class PanelSocio_Nick extends JFrame {
 					System.out.println("Problemas tecnicos");
 					break;
 				}
+
+			}
+
+		});
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVolver.setBounds(245, 272, 113, 23);
+		contentPane.add(btnVolver);
+
+		btnVolver.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelSocio frame9 = new PanelSocio();
+				frame9.setVisible(true);
+				dispose();
 
 			}
 
@@ -145,30 +171,6 @@ public class PanelSocio_Nick extends JFrame {
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
-
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setForeground(Color.BLACK);
-		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(245, 272, 113, 23);
-		contentPane.add(btnVolver);
-
-		JLabel label_1 = new JLabel(Constantes.user);
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(161, 70, 111, 29);
-		contentPane.add(label_1);
-
-		btnVolver.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				PanelSocio frame8 = new PanelSocio();
-				frame8.setVisible(true);
-				dispose();
-
-			}
-
-		});
+		
 	}
 }

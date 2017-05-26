@@ -21,19 +21,18 @@ import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
-public class PanelAdmin_DarConexion extends JFrame {
+public class PanelAdmin_VerTiempos extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_DarConexion frame2;
+	protected static PanelAdmin_VerTiempos frame2;
 	private JPanel contentPane;
-	private JTextField textField;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelAdmin_DarConexion frame5 = new PanelAdmin_DarConexion();
-					frame5.setVisible(true);
+					PanelAdmin_VerTiempos frame7 = new PanelAdmin_VerTiempos();
+					frame7.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,7 +41,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 	}
 
-	public PanelAdmin_DarConexion() {
+	public PanelAdmin_VerTiempos() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
@@ -86,92 +85,45 @@ public class PanelAdmin_DarConexion extends JFrame {
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
 		
-		JLabel lblTiempo = new JLabel("Tiempo:");
-		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTiempo.setForeground(Color.WHITE);
-		lblTiempo.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblTiempo.setBounds(40, 122, 111, 29);
-		contentPane.add(lblTiempo);
-
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(161, 128, 123, 20);
-		contentPane.add(textField);
+		JButton btnComprobarTiempo= new JButton("Comprobar Tiempo");
+		btnComprobarTiempo.setFont(new Font("Dialog", Font.BOLD, 10));
+		btnComprobarTiempo.setBounds(161, 118, 151, 23);
+		contentPane.add(btnComprobarTiempo);
 		
-		JLabel lblPrecio = new JLabel("Precio:");
-		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrecio.setForeground(Color.WHITE);
-		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblPrecio.setBounds(40, 206, 111, 29);
-		contentPane.add(lblPrecio);
+		btnComprobarTiempo.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				/*
+				 * Funcion que nos devuelve el tiempo restante del socio
+				 * 
+				 * */
+
+			}
+
+		});
+
+		JLabel lblTiempoRestante = new JLabel("Tiempo restante:");
+		lblTiempoRestante.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTiempoRestante.setForeground(Color.WHITE);
+		lblTiempoRestante.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblTiempoRestante.setBounds(40, 162, 137, 29);
+		contentPane.add(lblTiempoRestante);
+		
 		JLabel label_1 = new JLabel(" ");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(163, 206, 111, 29);
+		label_1.setBounds(201, 162, 186, 29);
 		contentPane.add(label_1);
-
-		JButton btnComprobarPrecio = new JButton("Comprobar Precio");
-		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
-		btnComprobarPrecio.setBounds(161, 172, 123, 23);
-		contentPane.add(btnComprobarPrecio);
-		
-		btnComprobarPrecio.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				int tiempo = Integer.parseInt(textField.getText());
-				label_1.setText(" " + Constantes.precio(tiempo) + "€");
-			}
-
-		});
-
-		JLabel lblActualizarT = new JLabel("Actualizar tiempo del socio?");
-		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
-		lblActualizarT.setForeground(Color.WHITE);
-		lblActualizarT.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblActualizarT.setBounds(114, 246, 273, 29);
-		contentPane.add(lblActualizarT);
-
-		JButton btnActualizar = new JButton("Actualizar");
-		btnActualizar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnActualizar.setBounds(275, 299, 113, 23);
-		contentPane.add(btnActualizar);
-
-		btnActualizar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				int tiempo = Integer.parseInt(textField.getText());
-				String seleccionCombo = (String) comboBox.getSelectedItem();
-				// System.out.println(seleccionCombo);
-				int filas = bd.darConexion(seleccionCombo, tiempo);
-				switch (filas) {
-				case 1:
-					Constantes.caja += Constantes.precio(tiempo);
-					PanelAdmin frame2 = new PanelAdmin();
-					frame2.setVisible(true);
-					dispose();
-					System.out.println("OK");
-					break;
-				case 0:
-					System.out.println("El usuario no existe");
-					break;
-				case -1:
-					System.out.println("Problemas tecnicos");
-					break;
-				}
-			}
-
-		});
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(275, 337, 113, 23);
+		btnVolver.setBounds(274, 215, 113, 23);
 		contentPane.add(btnVolver);
-				
+		
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -183,12 +135,12 @@ public class PanelAdmin_DarConexion extends JFrame {
 			}
 
 		});
-
+		
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-
+		
 	}
 }

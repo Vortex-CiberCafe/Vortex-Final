@@ -27,7 +27,6 @@ public class PanelAdmin extends JFrame {
 			public void run() {
 				try {
 					PanelAdmin frame2 = new PanelAdmin();
-					frame2.setLocationRelativeTo(null);
 					frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,11 +40,14 @@ public class PanelAdmin extends JFrame {
 
 		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		
+		int inicioalto=alto/4;
+		int inicioancho=ancho/3;
 		ancho=ancho/4;
 		alto=alto/2;
 		setTitle("Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, ancho, alto);
+		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,6 +78,13 @@ public class PanelAdmin extends JFrame {
 		label.setFont(new Font("Dialog", Font.BOLD, 14));
 		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel(Constantes.user);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(150, 70, 111, 29);
+		contentPane.add(label_1);
 
 		JButton btnDarAltaSocio = new JButton("Dar Alta Socio");
 		btnDarAltaSocio.setForeground(Color.BLACK);
@@ -121,7 +130,7 @@ public class PanelAdmin extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelAdmin_BajaSocio frame5 = new PanelAdmin_BajaSocio();
+				PanelAdmin_DarConexion frame5 = new PanelAdmin_DarConexion();
 				frame5.setVisible(true);
 				dispose();
 			}
@@ -131,33 +140,59 @@ public class PanelAdmin extends JFrame {
 		JButton btnLastConnects = new JButton("Ultimas Conexiones");
 		btnLastConnects.setForeground(Color.BLACK);
 		btnLastConnects.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnLastConnects.setBounds(60, 250, 146, 23);
+		btnLastConnects.setBounds(246, 197, 146, 23);
 		contentPane.add(btnLastConnects);
+		
+		btnLastConnects.addActionListener(new ActionListener() {
 
-		JButton btnVerConexiones = new JButton("Ver Conexiones");
-		btnVerConexiones.setForeground(Color.BLACK);
-		btnVerConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVerConexiones.setBounds(246, 197, 146, 23);
-		contentPane.add(btnVerConexiones);
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin_UltimasConexiones frame6 = new PanelAdmin_UltimasConexiones();
+				frame6.setVisible(true);
+				dispose();
+			}
+
+		});
+		
+		JButton btnComprobarTiempos = new JButton("Ver Tiempos");
+		btnComprobarTiempos.setForeground(Color.BLACK);
+		btnComprobarTiempos.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnComprobarTiempos.setBounds(60, 251, 146, 23);
+		contentPane.add(btnComprobarTiempos);
+		
+		btnComprobarTiempos.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin_VerTiempos frame7 = new PanelAdmin_VerTiempos();
+				frame7.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JButton btnCerrarCaja = new JButton("Cerrar Caja");
 		btnCerrarCaja.setForeground(Color.BLACK);
 		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCerrarCaja.setBounds(246, 250, 146, 23);
 		contentPane.add(btnCerrarCaja);
+		
+		btnCerrarCaja.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin_CerrarCaja frame8 = new PanelAdmin_CerrarCaja();
+				frame8.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
-
-		JLabel label_1 = new JLabel(Constantes.user);
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(150, 70, 111, 29);
-		contentPane.add(label_1);
 
 	}
 }
