@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
+import vortex.modelos.Socio;
 
 import javax.swing.border.LineBorder;
 
@@ -57,6 +59,8 @@ public class PanelSocio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -68,6 +72,7 @@ public class PanelSocio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				bd.updateMinutos(Constantes.user, Constantes.minutos);
 				Login frame = new Login();
 				frame.setVisible(true);
 				dispose();
@@ -275,15 +280,15 @@ public class PanelSocio extends JFrame {
 		horasR.setBounds(10, 316, 31, 34);
 		contentPane.add(horasR);
 		
-		BD_Vortex bd=new BD_Vortex("mysql-properties.xml");
-		int minutillos=bd.getMinutoSocio(Constantes.user);
+		Constantes.minutos=bd.getMinutoSocio(Constantes.user);
 		
-		Timer Tempo = new Timer (1000, new ActionListener ()
+		Timer Tempo = new Timer (10, new ActionListener ()
 		{
-			int horas=minutillos/60;
-        	int minutos=minutillos%60;
+			int horas=Constantes.minutos/60;
+        	int minutos=Constantes.minutos%60;
 			int segundos=60;
 			
+						
             public void actionPerformed(ActionEvent e)
             {
     			
@@ -296,12 +301,12 @@ public class PanelSocio extends JFrame {
 	            else{
 	            	if (minutos==0){
 	            		horas--;
-	            		minutos=60;
+	            		minutos=59;
 	            	}
 	            	
 	            	if (segundos==0){
 	            		minutos--;
-	            		segundos=60;
+	            		segundos=59;
 	            	}
 	            	else{
 	            		horasR.setText(String.valueOf(horas));
@@ -309,7 +314,7 @@ public class PanelSocio extends JFrame {
 		            	segundosR.setText(String.valueOf(segundos));
 			            segundos--;
 	            	}
-	            	
+	            	Constantes.minutos = horas*60 + minutos;
 	            }
             }
         });
