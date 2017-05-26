@@ -17,9 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
-import vortex.modelos.Socio;
+import vortex.modelos.Productos;
 
 public class PanelDependiente_Cobrar extends JFrame {
 
@@ -47,9 +46,9 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -78,19 +77,15 @@ public class PanelDependiente_Cobrar extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(161, 76, 123, 20);
 
-		/*
-		 *  
-		    Vector<Dependiente> productos = bd.ver_productos();
+		Vector<Productos> productos = bd.ver_Productos();
 
-			for (int i = 0; i < productos.size(); i++)
-				comboBox.addItem(productos.get(i).getNombre());
-		
-			// comboBox.addItem(bd.ver_productos().get(1));
-		 * 
-		 */
-		
+		for (int i = 0; i < productos.size(); i++)
+			comboBox.addItem(productos.get(i).getNombre());
+
+		// comboBox.addItem(bd.ver_productos().get(1));
+
 		contentPane.add(comboBox);
-		
+
 		JLabel lblCantidad = new JLabel("Tiempo:");
 		lblCantidad.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCantidad.setForeground(Color.WHITE);
@@ -102,7 +97,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		textField.setColumns(10);
 		textField.setBounds(161, 128, 123, 20);
 		contentPane.add(textField);
-		
+
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrecio.setForeground(Color.WHITE);
@@ -121,18 +116,16 @@ public class PanelDependiente_Cobrar extends JFrame {
 		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarPrecio.setBounds(161, 172, 123, 23);
 		contentPane.add(btnComprobarPrecio);
-		
+
 		/*
-			btnComprobarPrecio.addActionListener(new ActionListener() {
-	
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					int cantidad = Integer.parseInt(textField.getText());
-					label_1.setText(" " + Constantes.precioProducto(cantidad) + "€");
-				}
-	
-			});
-		*/
+		 * btnComprobarPrecio.addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent arg0) { int
+		 * cantidad = Integer.parseInt(textField.getText()); label_1.setText(" "
+		 * + Constantes.precioProducto(cantidad) + "€"); }
+		 * 
+		 * });
+		 */
 
 		JLabel lblDeseaCobrar = new JLabel("Desea cobrar?");
 		lblDeseaCobrar.setHorizontalAlignment(SwingConstants.CENTER);
@@ -153,36 +146,27 @@ public class PanelDependiente_Cobrar extends JFrame {
 				int cantidad = Integer.parseInt(textField.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
-				
+
 				/*
-					int filas = bd.cobrar(seleccionCombo, cantidad);
-					switch (filas) {
-					case 1:
-						Constantes.cajaDependiente += Constantes.precioProducto(cantidad);
-						PanelDependiente frame12 = new PanelDependiente();
-						frame12.setVisible(true);
-						dispose();
-						System.out.println("OK");
-						break;
-					case 0:
-						System.out.println("El usuario no existe");
-						break;
-					case -1:
-						System.out.println("Problemas tecnicos");
-						break;
-					}
-				*/
-				
+				 * int filas = bd.cobrar(seleccionCombo, cantidad); switch
+				 * (filas) { case 1: Constantes.cajaDependiente +=
+				 * Constantes.precioProducto(cantidad); PanelDependiente frame12
+				 * = new PanelDependiente(); frame12.setVisible(true);
+				 * dispose(); System.out.println("OK"); break; case 0:
+				 * System.out.println("El usuario no existe"); break; case -1:
+				 * System.out.println("Problemas tecnicos"); break; }
+				 */
+
 			}
 
 		});
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(275, 337, 113, 23);
 		contentPane.add(btnVolver);
-				
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override

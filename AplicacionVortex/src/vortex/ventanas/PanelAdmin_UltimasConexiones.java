@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -13,11 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
@@ -46,9 +45,9 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -74,6 +73,13 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
 
+		JLabel label_1 = new JLabel(" ");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(201, 162, 186, 29);
+		contentPane.add(label_1);
+
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(161, 76, 123, 20);
 
@@ -85,38 +91,40 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
 
-		JButton btnComprobarConexion= new JButton("Comprobar Conexion");
+		JButton btnComprobarConexion = new JButton("Comprobar Conexion");
 		btnComprobarConexion.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarConexion.setBounds(161, 118, 151, 23);
 		contentPane.add(btnComprobarConexion);
-		
+
 		btnComprobarConexion.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				/*
 				 * Funcion que nos devuelve la ultima conexion del socio
 				 * 
-				 * */
+				 */
+
+				String seleccionCombo = (String) comboBox.getSelectedItem();
+				// System.out.println(seleccionCombo);
+				LocalDate UltimaConexion = bd.ver_ultimaConexion(seleccionCombo);
+
+				if (UltimaConexion == null)
+					label_1.setText("Error");
+				else
+					label_1.setText(UltimaConexion.toString());
 
 			}
 
 		});
-		
+
 		JLabel lblUltima = new JLabel("Ultima Conexion:");
 		lblUltima.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUltima.setForeground(Color.WHITE);
 		lblUltima.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblUltima.setBounds(40, 162, 137, 29);
 		contentPane.add(lblUltima);
-
-		JLabel label_1 = new JLabel(" ");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(201, 162, 186, 29);
-		contentPane.add(label_1);
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
@@ -141,6 +149,6 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-		
+
 	}
 }

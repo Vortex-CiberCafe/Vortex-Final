@@ -13,11 +13,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
@@ -46,9 +44,9 @@ public class PanelAdmin_VerTiempos extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -79,26 +77,45 @@ public class PanelAdmin_VerTiempos extends JFrame {
 
 		Vector<Socio> socios = bd.ver_socios();
 
+		JLabel label_1 = new JLabel(" ");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_1.setBounds(201, 162, 186, 29);
+		contentPane.add(label_1);
+
 		for (int i = 0; i < socios.size(); i++)
 			comboBox.addItem(socios.get(i).getUsuario());
 
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
-		
-		JButton btnComprobarTiempo= new JButton("Comprobar Tiempo");
+
+		JButton btnComprobarTiempo = new JButton("Comprobar Tiempo");
 		btnComprobarTiempo.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarTiempo.setBounds(161, 118, 151, 23);
 		contentPane.add(btnComprobarTiempo);
-		
+
 		btnComprobarTiempo.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				/*
 				 * Funcion que nos devuelve el tiempo restante del socio
 				 * 
-				 * */
+				 */
+				String seleccionCombo = (String) comboBox.getSelectedItem();
+				int filas = bd.ver_Tiempos(seleccionCombo);
+
+				label_1.setText(filas + " minuitos disponibles");
+				switch (filas) {
+				case -1:
+					label_1.setText("Error");
+					break;
+				case -2:
+					System.out.println("Problemas tecnicos");
+					break;
+				}
 
 			}
 
@@ -110,20 +127,13 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		lblTiempoRestante.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTiempoRestante.setBounds(40, 162, 137, 29);
 		contentPane.add(lblTiempoRestante);
-		
-		JLabel label_1 = new JLabel(" ");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(201, 162, 186, 29);
-		contentPane.add(label_1);
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(274, 215, 113, 23);
 		contentPane.add(btnVolver);
-		
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -135,12 +145,12 @@ public class PanelAdmin_VerTiempos extends JFrame {
 			}
 
 		});
-		
+
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-		
+
 	}
 }
