@@ -13,9 +13,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
 import vortex.Constantes;
+import vortex.bbdd.BD_Vortex;
 
 import javax.swing.border.LineBorder;
 
@@ -239,20 +241,85 @@ public class PanelSocio extends JFrame {
 
 		});
 		
-		JLabel Timer = new JLabel("");
-		Timer.setFont(new Font("Dialog", Font.BOLD, 11));
-		Timer.setForeground(Color.WHITE);
-		Timer.setOpaque(true);
-		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(10, 390, 105, 34);
-		contentPane.add(Timer);
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
+		
+		JLabel segundosR = new JLabel("");
+		segundosR.setFont(new Font("Dialog", Font.BOLD, 11));
+		segundosR.setForeground(Color.WHITE);
+		segundosR.setOpaque(true);
+		segundosR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		segundosR.setBackground(Color.BLACK);
+		segundosR.setBounds(94, 316, 31, 34);
+		contentPane.add(segundosR);
+		
+		JLabel minutosR = new JLabel("");
+		minutosR.setOpaque(true);
+		minutosR.setForeground(Color.WHITE);
+		minutosR.setFont(new Font("Dialog", Font.BOLD, 11));
+		minutosR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		minutosR.setBackground(Color.BLACK);
+		minutosR.setBounds(53, 316, 31, 34);
+		contentPane.add(minutosR);
+		
+		JLabel horasR = new JLabel("");
+		horasR.setOpaque(true);
+		horasR.setForeground(Color.WHITE);
+		horasR.setFont(new Font("Dialog", Font.BOLD, 11));
+		horasR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		horasR.setBackground(Color.BLACK);
+		horasR.setBounds(10, 316, 31, 34);
+		contentPane.add(horasR);
+		
+		BD_Vortex bd=new BD_Vortex("mysql-properties.xml");
+		int minutillos=bd.getMinutoSocio(Constantes.user);
+		
+		Timer Tempo = new Timer (1000, new ActionListener ()
+		{
+			int horas=minutillos/60;
+        	int minutos=minutillos%60;
+			int segundos=60;
+			
+            public void actionPerformed(ActionEvent e)
+            {
+    			
+	            if (horas==0 && minutos==1 && segundos==1){
+	            	horasR.setText(String.valueOf(horas));
+            		minutosR.setText(String.valueOf(0));
+	            	segundosR.setText(String.valueOf(0));
+	            	return;
+	            }
+	            else{
+	            	if (minutos==0){
+	            		horas--;
+	            		minutos=60;
+	            	}
+	            	
+	            	if (segundos==0){
+	            		minutos--;
+	            		segundos=60;
+	            	}
+	            	else{
+	            		horasR.setText(String.valueOf(horas));
+	            		minutosR.setText(String.valueOf(minutos));
+		            	segundosR.setText(String.valueOf(segundos));
+			            segundos--;
+	            	}
+	            	
+	            }
+            }
+        });
+        	Tempo.start();
+        
+        try
+        {
+          //Thread.currentThread().sleep (10000);            
+          // timerR.stop();
+        } catch (Exception e){}
 		
 	}
 }

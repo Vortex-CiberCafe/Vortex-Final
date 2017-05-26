@@ -207,6 +207,26 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 	
+	// metodo para pasar los minutos
+			public int getMinutoSocio(String nick) {
+	            int minutos=0;
+				String cadenaSQL = "Select minutos from socio where nick='" + nick +"'";
+				try {
+					this.abrir();
+					s = c.createStatement();
+					reg = s.executeQuery(cadenaSQL);
+					if (reg.next()) {
+						minutos=reg.getInt("minutos");
+					}
+					
+					s.close();
+					this.cerrar();
+					return minutos;
+				} catch (SQLException e) {
+					return -1;
+				}
+			}
+	
 	/*
 	 * Continua con el acceso a: productos (bbdd) --> Vector<Dependiente> productos = bd.ver_productos(); || Y ademas se necesita la funcion --> bd.cobrar.
 	 * 
