@@ -4,7 +4,9 @@ public class Constantes {
 
 	public static String user;
 
-	public static double caja = 0;
+	public static double cajaAdmin = 0;
+	
+	public static double cajaDependiente = 0;
 
 	public static double precio(int tiempo) {
 		double precio = 0;
@@ -13,6 +15,14 @@ public class Constantes {
 
 		return precio;
 	}
+	
+	/*
+		public static double precioProducto(int cantidad) {
+			
+			// Sacar el precio de la BBDD y multiplicarlo por -> int cantidad
+			
+		}
+	*/
 	
 	
 }

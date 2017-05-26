@@ -50,7 +50,7 @@ public class PanelSocio_Pass extends JFrame {
 		int inicioancho=ancho/4;
 		ancho = ancho / 4;
 		alto = alto / 2;
-		setTitle("Vortex Socio");
+		setTitle(" Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
@@ -167,14 +167,6 @@ public class PanelSocio_Pass extends JFrame {
 
 		});
 		
-		JLabel Timer = new JLabel("");
-		Timer.setFont(new Font("Dialog", Font.BOLD, 11));
-		Timer.setForeground(Color.WHITE);
-		Timer.setOpaque(true);
-		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(10, 390, 105, 34);
-		contentPane.add(Timer);
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);

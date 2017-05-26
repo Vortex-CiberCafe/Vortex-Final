@@ -69,7 +69,7 @@ public class Login extends JFrame {
 
 		/* Titulo de la ventana Java */
 
-		setTitle("Login de Duran");
+		setTitle(" Vortex");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 

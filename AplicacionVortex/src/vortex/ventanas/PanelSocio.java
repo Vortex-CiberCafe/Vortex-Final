@@ -46,7 +46,7 @@ public class PanelSocio extends JFrame {
 		int inicioancho=ancho/4;
 		ancho=ancho/4;
 		alto=alto/2;
-		setTitle("Vortex Socio");
+		setTitle(" Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();

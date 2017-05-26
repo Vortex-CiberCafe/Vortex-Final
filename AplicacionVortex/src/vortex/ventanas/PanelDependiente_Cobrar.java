@@ -21,10 +21,10 @@ import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
-public class PanelAdmin_DarConexion extends JFrame {
+public class PanelDependiente_Cobrar extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_DarConexion frame2;
+	protected static PanelDependiente_Cobrar frame2;
 	private JPanel contentPane;
 	private JTextField textField;
 
@@ -32,8 +32,8 @@ public class PanelAdmin_DarConexion extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelAdmin_DarConexion frame5 = new PanelAdmin_DarConexion();
-					frame5.setVisible(true);
+					PanelDependiente_Cobrar frame13 = new PanelDependiente_Cobrar();
+					frame13.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,7 +42,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 	}
 
-	public PanelAdmin_DarConexion() {
+	public PanelDependiente_Cobrar() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
@@ -68,30 +68,35 @@ public class PanelAdmin_DarConexion extends JFrame {
 		button.setBounds(344, 11, 113, 23);
 		contentPane.add(button);
 
-		JLabel lblUsuarios = new JLabel("Usuarios:");
-		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsuarios.setForeground(Color.WHITE);
-		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUsuarios.setBounds(40, 70, 111, 29);
-		contentPane.add(lblUsuarios);
+		JLabel lblProductos = new JLabel("Productos:");
+		lblProductos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblProductos.setForeground(Color.WHITE);
+		lblProductos.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblProductos.setBounds(40, 70, 111, 29);
+		contentPane.add(lblProductos);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(161, 76, 123, 20);
 
-		Vector<Socio> socios = bd.ver_socios();
+		/*
+		 *  
+		    Vector<Dependiente> productos = bd.ver_productos();
 
-		for (int i = 0; i < socios.size(); i++)
-			comboBox.addItem(socios.get(i).getUsuario());
-
-		// comboBox.addItem(bd.ver_socios().get(1));
+			for (int i = 0; i < productos.size(); i++)
+				comboBox.addItem(productos.get(i).getNombre());
+		
+			// comboBox.addItem(bd.ver_productos().get(1));
+		 * 
+		 */
+		
 		contentPane.add(comboBox);
 		
-		JLabel lblTiempo = new JLabel("Tiempo:");
-		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTiempo.setForeground(Color.WHITE);
-		lblTiempo.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblTiempo.setBounds(40, 122, 111, 29);
-		contentPane.add(lblTiempo);
+		JLabel lblCantidad = new JLabel("Tiempo:");
+		lblCantidad.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCantidad.setForeground(Color.WHITE);
+		lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblCantidad.setBounds(40, 122, 111, 29);
+		contentPane.add(lblCantidad);
 
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -117,51 +122,57 @@ public class PanelAdmin_DarConexion extends JFrame {
 		btnComprobarPrecio.setBounds(161, 172, 123, 23);
 		contentPane.add(btnComprobarPrecio);
 		
-		btnComprobarPrecio.addActionListener(new ActionListener() {
+		/*
+			btnComprobarPrecio.addActionListener(new ActionListener() {
+	
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					int cantidad = Integer.parseInt(textField.getText());
+					label_1.setText(" " + Constantes.precioProducto(cantidad) + "€");
+				}
+	
+			});
+		*/
+
+		JLabel lblDeseaCobrar = new JLabel("Desea cobrar?");
+		lblDeseaCobrar.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDeseaCobrar.setForeground(Color.WHITE);
+		lblDeseaCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
+		lblDeseaCobrar.setBounds(114, 246, 273, 29);
+		contentPane.add(lblDeseaCobrar);
+
+		JButton btnCobrar = new JButton("Cobrar");
+		btnCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCobrar.setBounds(275, 299, 113, 23);
+		contentPane.add(btnCobrar);
+
+		btnCobrar.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int tiempo = Integer.parseInt(textField.getText());
-				label_1.setText(" " + Constantes.precio(tiempo) + "€");
-			}
-
-		});
-
-		JLabel lblActualizarT = new JLabel("Actualizar tiempo del socio?");
-		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
-		lblActualizarT.setForeground(Color.WHITE);
-		lblActualizarT.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblActualizarT.setBounds(114, 246, 273, 29);
-		contentPane.add(lblActualizarT);
-
-		JButton btnActualizar = new JButton("Actualizar");
-		btnActualizar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnActualizar.setBounds(275, 299, 113, 23);
-		contentPane.add(btnActualizar);
-
-		btnActualizar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				int tiempo = Integer.parseInt(textField.getText());
+				int cantidad = Integer.parseInt(textField.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
-				int filas = bd.darConexion(seleccionCombo, tiempo);
-				switch (filas) {
-				case 1:
-					Constantes.cajaAdmin += Constantes.precio(tiempo);
-					PanelAdmin frame2 = new PanelAdmin();
-					frame2.setVisible(true);
-					dispose();
-					System.out.println("OK");
-					break;
-				case 0:
-					System.out.println("El usuario no existe");
-					break;
-				case -1:
-					System.out.println("Problemas tecnicos");
-					break;
-				}
+				
+				/*
+					int filas = bd.cobrar(seleccionCombo, cantidad);
+					switch (filas) {
+					case 1:
+						Constantes.cajaDependiente += Constantes.precioProducto(cantidad);
+						PanelDependiente frame12 = new PanelDependiente();
+						frame12.setVisible(true);
+						dispose();
+						System.out.println("OK");
+						break;
+					case 0:
+						System.out.println("El usuario no existe");
+						break;
+					case -1:
+						System.out.println("Problemas tecnicos");
+						break;
+					}
+				*/
+				
 			}
 
 		});
@@ -176,10 +187,9 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelAdmin frame2 = new PanelAdmin();
-				frame2.setVisible(true);
+				PanelDependiente frame12 = new PanelDependiente();
+				frame12.setVisible(true);
 				dispose();
-
 			}
 
 		});

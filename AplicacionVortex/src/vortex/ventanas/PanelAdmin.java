@@ -45,7 +45,7 @@ public class PanelAdmin extends JFrame {
 		int inicioancho=ancho/3;
 		ancho=ancho/4;
 		alto=alto/2;
-		setTitle("Vortex Admin");
+		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();

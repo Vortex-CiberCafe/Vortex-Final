@@ -206,5 +206,11 @@ public class BD_Vortex extends BD_Conector {
 			return -1;
 		}
 	}
+	
+	/*
+	 * Continua con el acceso a: productos (bbdd) --> Vector<Dependiente> productos = bd.ver_productos(); || Y ademas se necesita la funcion --> bd.cobrar.
+	 * 
+	 */
+	
 
 }

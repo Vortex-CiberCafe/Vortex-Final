@@ -46,7 +46,7 @@ public class PanelDependiente extends JFrame {
 		int inicioancho=ancho/4;
 		ancho=ancho/4;
 		alto=alto/2;
-		setTitle("Vortex Dependiente");
+		setTitle(" Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
@@ -87,166 +87,81 @@ public class PanelDependiente extends JFrame {
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
 
-		JButton btnModNick = new JButton("Modificar Nick");
-		btnModNick.setForeground(Color.BLACK);
-		btnModNick.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnModNick.setBounds(60, 144, 146, 23);
-		contentPane.add(btnModNick);
+		JButton btnCobrar = new JButton("Cobrar");
+		btnCobrar.setForeground(Color.BLACK);
+		btnCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCobrar.setBounds(60, 144, 146, 23);
+		contentPane.add(btnCobrar);
 
-		btnModNick.addActionListener(new ActionListener() {
+		btnCobrar.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				PanelSocio_Nick frame10 = new PanelSocio_Nick();
-				frame10.setVisible(true);
+				PanelDependiente_Cobrar frame13 = new PanelDependiente_Cobrar();
+				frame13.setVisible(true);
 				dispose();
 			}
 
 		});
 		
-		JButton btnModPass = new JButton("Modificar Password");
-		btnModPass.setForeground(Color.BLACK);
-		btnModPass.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnModPass.setBounds(246, 144, 146, 23);
-		contentPane.add(btnModPass);
+		JButton btnStock = new JButton("Comprobar Stock");
+		btnStock.setForeground(Color.BLACK);
+		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnStock.setBounds(246, 144, 146, 23);
+		contentPane.add(btnStock);
 		
-		btnModPass.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				PanelSocio_Pass frame11 = new PanelSocio_Pass();
-				frame11.setVisible(true);
-				dispose();
-			}
-
-		});
-
-		JButton btnInternet = new JButton("Acceder a Internet");
-		btnInternet.setForeground(Color.BLACK);
-		btnInternet.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnInternet.setBounds(60, 197, 146, 23);
-		contentPane.add(btnInternet);
-
-		btnInternet.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-		        String[] cmd = { "C:\\Program Files\\Mozilla Firefox\\firefox.exe" };
-		        Process p = null;
-				try {
-					p = Runtime.getRuntime().exec(cmd);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+		/*
+			btnStock.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					PanelDependiente_Stock frame14 = new PanelSocio_Stock();
+					frame14.setVisible(true);
+					dispose();
 				}
-		        try {
-					p.waitFor();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			});
+		*/
 
-			}
-
-		});
+		JButton btnPedirProductos = new JButton("Pedir Productos");
+		btnPedirProductos.setForeground(Color.BLACK);
+		btnPedirProductos.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnPedirProductos.setBounds(60, 197, 146, 23);
+		contentPane.add(btnPedirProductos);
 		
-		JButton btnCorreo = new JButton("Acceder a correo");
-		btnCorreo.setForeground(Color.BLACK);
-		btnCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnCorreo.setBounds(247, 197, 146, 23);
-		contentPane.add(btnCorreo);
+		/*
+			btnPedirProductos.addActionListener(new ActionListener() {
 		
-		btnCorreo.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-		        String url = "https://accounts.google.com";
-		        Process p3 = null;
-				try {
-					p3 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					PanelDependiente_PedirProductos frame15 = new PanelSocio_PedirProductos();
+					frame15.setVisible(true);
+					dispose();
 				}
-		        try {
-					p3.waitFor();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-
-		});
-
-		JButton btnSteam = new JButton("Acceder a Steam");
-		btnSteam.setForeground(Color.BLACK);
-		btnSteam.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnSteam.setBounds(61, 250, 145, 23);
-		contentPane.add(btnSteam);
 		
-		btnSteam.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-		        String url = "http://store.steampowered.com";
-		        Process p1 = null;
-				try {
-					p1 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		        try {
-					p1.waitFor();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-
-		});
-
-		JButton btnOrigin = new JButton("Acceder a Origin");
-		btnOrigin.setForeground(Color.BLACK);
-		btnOrigin.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnOrigin.setBounds(247, 250, 146, 23);
-		contentPane.add(btnOrigin);
+			});
+		*/
 		
-		btnOrigin.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-		        String url = "https://www.origin.com/esp/es-es/store";
-		        Process p2 = null;
-				try {
-					p2 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		        try {
-					p2.waitFor();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-
-		});
+		JButton btnCaja = new JButton("Cerrar Caja");
+		btnCaja.setForeground(Color.BLACK);
+		btnCaja.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCaja.setBounds(247, 197, 146, 23);
+		contentPane.add(btnCaja);
 		
-		JLabel Timer = new JLabel("");
-		Timer.setFont(new Font("Dialog", Font.BOLD, 11));
-		Timer.setForeground(Color.WHITE);
-		Timer.setOpaque(true);
-		Timer.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Timer.setBackground(Color.BLACK);
-		Timer.setBounds(10, 390, 105, 34);
-		contentPane.add(Timer);
+		/*
+			btnCaja.addActionListener(new ActionListener() {
+	
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					PanelDependiente_CerrarCaja frame16 = new PanelSocio_CerrarCaja();
+					frame16.setVisible(true);
+					dispose();
+				}
+	
+			});
+		*/
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);

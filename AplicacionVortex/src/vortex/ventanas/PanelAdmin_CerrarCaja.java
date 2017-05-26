@@ -51,7 +51,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle("Vortex Admin");
+		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
@@ -73,7 +73,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
 		
-		JLabel label_1 = new JLabel(" " + Constantes.caja + "€");
+		JLabel label_1 = new JLabel(" " + Constantes.cajaAdmin + "€");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -96,7 +96,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Constantes.caja = 0;
+				Constantes.cajaAdmin = 0;
 				PanelAdmin frame2 = new PanelAdmin();
 				frame2.setVisible(true);
 				dispose();
