@@ -1,19 +1,16 @@
 package vortex.ventanas;
 
+import static java.nio.file.StandardOpenOption.APPEND;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.io.Writer;
-
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -29,7 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import static java.nio.file.StandardOpenOption.*;
+
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 
@@ -50,7 +47,7 @@ public class Login extends JFrame {
 	 * Launch the application.
 	 */
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -69,12 +66,12 @@ public class Login extends JFrame {
 
 	public Login() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		
+
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -137,9 +134,9 @@ public class Login extends JFrame {
 		TypeUser.setMaximumRowCount(3);
 		TypeUser.setBounds(274, 141, 86, 20);
 		panelOrigen.add(TypeUser);
-		
+
 		/* Boton Login */
-		
+
 		JButton botonLogin = new JButton("Login");
 		botonLogin.setBackground(Color.WHITE);
 		botonLogin.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -165,21 +162,20 @@ public class Login extends JFrame {
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
 						BufferedWriter salida;
-						try{
-						Path ruta=Paths.get("reg\\log.txt");
-						Charset charset = Charset.forName("UTF-8");
-						salida=Files.newBufferedWriter(ruta, charset, APPEND);
-						PrintWriter salidaLog = new PrintWriter(salida);
-						LocalDate actual = LocalDate.now();
-						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-								+ " de forma incorrecta en: [" + actual + "] ");
-						salidaLog.close();
-						salida.close();
+						try {
+							Path ruta = Paths.get("reg\\log.txt");
+							Charset charset = Charset.forName("UTF-8");
+							salida = Files.newBufferedWriter(ruta, charset, APPEND);
+							PrintWriter salidaLog = new PrintWriter(salida);
+							LocalDate actual = LocalDate.now();
+							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.close();
+							salida.close();
+						} catch (IOException e) {
+							break;
 						}
-						catch (IOException e){
-							break;	
-						}
-						
+
 						break;
 					case -1:
 						System.out.println("\nNo estas conectado");
@@ -203,19 +199,18 @@ public class Login extends JFrame {
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
 						BufferedWriter salida;
-						try{
-						Path ruta=Paths.get("reg\\log.txt");
-						Charset charset = Charset.forName("UTF-8");
-						salida=Files.newBufferedWriter(ruta, charset, APPEND);
-						PrintWriter salidaLog = new PrintWriter(salida);
-						LocalDate actual = LocalDate.now();
-						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-								+ " de forma incorrecta en: [" + actual + "] ");
-						salidaLog.close();
-						salida.close();
-						}
-						catch (IOException e){
-							break;	
+						try {
+							Path ruta = Paths.get("reg\\log.txt");
+							Charset charset = Charset.forName("UTF-8");
+							salida = Files.newBufferedWriter(ruta, charset, APPEND);
+							PrintWriter salidaLog = new PrintWriter(salida);
+							LocalDate actual = LocalDate.now();
+							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.close();
+							salida.close();
+						} catch (IOException e) {
+							break;
 						}
 						break;
 					case -1:
@@ -231,24 +226,27 @@ public class Login extends JFrame {
 					case 1:
 						System.out.println("\nConectado como dependiente");
 						Constantes.user = entradaUser.getText();
+
+						PanelDependiente frame12 = new PanelDependiente();
+						frame12.setVisible(true);
+						dispose();
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
 						label.setVisible(true);
 						BufferedWriter salida;
-						try{
-						Path ruta=Paths.get("reg\\log.txt");
-						Charset charset = Charset.forName("UTF-8");
-						salida=Files.newBufferedWriter(ruta, charset, APPEND);
-						PrintWriter salidaLog = new PrintWriter(salida);
-						LocalDate actual = LocalDate.now();
-						salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-								+ " de forma incorrecta en: [" + actual + "] ");
-						salidaLog.close();
-						salida.close();
-						}
-						catch (IOException e){
-							break;	
+						try {
+							Path ruta = Paths.get("reg\\log.txt");
+							Charset charset = Charset.forName("UTF-8");
+							salida = Files.newBufferedWriter(ruta, charset, APPEND);
+							PrintWriter salidaLog = new PrintWriter(salida);
+							LocalDate actual = LocalDate.now();
+							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
+									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.close();
+							salida.close();
+						} catch (IOException e) {
+							break;
 						}
 						break;
 					case -1:
@@ -261,8 +259,7 @@ public class Login extends JFrame {
 
 			}
 		});
-		
-		
+
 		JLabel lblNewLabel = new JLabel("Vortex\u2122");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel.setForeground(Color.RED);
