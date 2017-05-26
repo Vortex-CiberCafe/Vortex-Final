@@ -286,4 +286,23 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	public double cobrar(String producto, int cantidad) {
+		String cadenaSQL = "Select precio from productos where nombre='" + producto + "'";
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			double precio = 0;
+			while (reg.next()) {
+				precio = reg.getInt("precio");
+				precio = precio * cantidad;
+			}
+			s.close();
+			this.cerrar();
+			return precio;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+
 }

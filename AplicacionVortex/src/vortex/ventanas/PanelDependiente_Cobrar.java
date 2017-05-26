@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Productos;
 
@@ -43,6 +44,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 	public PanelDependiente_Cobrar() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		double precio = 0.0;
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
@@ -105,7 +107,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		lblPrecio.setBounds(40, 206, 111, 29);
 		contentPane.add(lblPrecio);
 
-		JLabel label_1 = new JLabel(" ");
+		JLabel label_1 = new JLabel(precio + "€");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -117,15 +119,24 @@ public class PanelDependiente_Cobrar extends JFrame {
 		btnComprobarPrecio.setBounds(161, 172, 123, 23);
 		contentPane.add(btnComprobarPrecio);
 
-		/*
-		 * btnComprobarPrecio.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent arg0) { int
-		 * cantidad = Integer.parseInt(textField.getText()); label_1.setText(" "
-		 * + Constantes.precioProducto(cantidad) + "€"); }
-		 * 
-		 * });
-		 */
+		btnComprobarPrecio.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				int cantidad = 1;
+				String seleccionCombo = (String) comboBox.getSelectedItem();
+				// System.out.println(seleccionCombo);
+
+				double precio = bd.cobrar(seleccionCombo, cantidad);
+				if (precio == -1) {
+					System.out.println("Problemas tecnicos");
+				} else {
+					label_1.setText(precio + "€");
+				}
+			}
+
+		});
 
 		JLabel lblDeseaCobrar = new JLabel("Desea cobrar?");
 		lblDeseaCobrar.setHorizontalAlignment(SwingConstants.CENTER);
@@ -143,19 +154,19 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int cantidad = Integer.parseInt(textField.getText());
+				int cantidad = 1;
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
 
-				/*
-				 * int filas = bd.cobrar(seleccionCombo, cantidad); switch
-				 * (filas) { case 1: Constantes.cajaDependiente +=
-				 * Constantes.precioProducto(cantidad); PanelDependiente frame12
-				 * = new PanelDependiente(); frame12.setVisible(true);
-				 * dispose(); System.out.println("OK"); break; case 0:
-				 * System.out.println("El usuario no existe"); break; case -1:
-				 * System.out.println("Problemas tecnicos"); break; }
-				 */
+				double precio = bd.cobrar(seleccionCombo, cantidad);
+				if (precio == -1) {
+					System.out.println("Problemas tecnicos");
+				} else {
+					Constantes.cajaDependiente += precio;
+					PanelDependiente frame12 = new PanelDependiente();
+					frame12.setVisible(true);
+					dispose();
+				}
 
 			}
 
