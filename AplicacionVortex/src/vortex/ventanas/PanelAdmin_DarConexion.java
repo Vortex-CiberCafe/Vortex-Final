@@ -47,9 +47,9 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 4;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -85,7 +85,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
-		
+
 		JLabel lblTiempo = new JLabel("Tiempo:");
 		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTiempo.setForeground(Color.WHITE);
@@ -97,7 +97,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		textField.setColumns(10);
 		textField.setBounds(161, 128, 123, 20);
 		contentPane.add(textField);
-		
+
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrecio.setForeground(Color.WHITE);
@@ -116,7 +116,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarPrecio.setBounds(161, 172, 123, 23);
 		contentPane.add(btnComprobarPrecio);
-		
+
 		btnComprobarPrecio.addActionListener(new ActionListener() {
 
 			@Override
@@ -150,6 +150,9 @@ public class PanelAdmin_DarConexion extends JFrame {
 				switch (filas) {
 				case 1:
 					Constantes.cajaAdmin += Constantes.precio(tiempo);
+					// Añadir a compras
+					int fila = bd.anadirCompra(bd.verCodSocio(seleccionCombo), bd.verCodProducto("Minutos"), tiempo);
+					// Sin hacer
 					PanelAdmin frame2 = new PanelAdmin();
 					frame2.setVisible(true);
 					dispose();
@@ -165,13 +168,13 @@ public class PanelAdmin_DarConexion extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(275, 337, 113, 23);
 		contentPane.add(btnVolver);
-				
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override

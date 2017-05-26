@@ -305,4 +305,88 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	public int verCodSocio(String usu) {
+		String cadenaSQL = "Select ID_Socio from socio where nick='" + usu + "'";
+
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			int id = -1;
+			while (reg.next()) {
+				id = reg.getInt("ID_Socio");
+			}
+			s.close();
+			this.cerrar();
+			return id;
+		} catch (SQLException e) {
+			return -2;
+		}
+	}
+
+	public int verCodProducto(String nombre) {
+		String cadenaSQL = "Select ID_Producto from productos where nombre='" + nombre + "'";
+
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			int id = -1;
+			while (reg.next()) {
+				id = reg.getInt("ID_Producto");
+			}
+			s.close();
+			this.cerrar();
+			return id;
+		} catch (SQLException e) {
+			return -2;
+		}
+	}
+
+	public int anadirCompra(int idSocio, int idProducto, int cantidad) {
+		String cadenaSQL = "insert into compras values(null," + idSocio + "," + idProducto + "," + cantidad + ")";
+
+		try {
+			this.abrir();
+			s = c.createStatement();
+			int filas = s.executeUpdate(cadenaSQL);
+			s.close();
+			this.cerrar();
+			return filas;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+
+	public int restarProductos(int idProducto, int cantidad) {
+		String cadenaSQL = "select cantidad from productos where id_Producto=" + idProducto;
+
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			int numProductos = -1;
+			while (reg.next()) {
+				numProductos = reg.getInt("Cantidad");
+			}
+			int numDisponibles = numProductos - cantidad;
+			String SQL = "update productos set cantidad=" + numDisponibles + " where id_Producto=" + idProducto;
+
+			try {
+				this.abrir();
+				s = c.createStatement();
+				int filas = s.executeUpdate(SQL);
+
+			} catch (SQLException e) {
+				return -1;
+			}
+
+			s.close();
+			this.cerrar();
+			return 1;
+		} catch (SQLException e) {
+			return -2;
+		}
+	}
+
 }

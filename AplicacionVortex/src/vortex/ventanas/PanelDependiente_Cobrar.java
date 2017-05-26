@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Productos;
+import vortex.modelos.Socio;
 
 public class PanelDependiente_Cobrar extends JFrame {
 
@@ -27,6 +28,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 	protected static PanelDependiente_Cobrar frame2;
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextField textField_1;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -56,7 +58,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 517, 522);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -84,6 +86,11 @@ public class PanelDependiente_Cobrar extends JFrame {
 		for (int i = 0; i < productos.size(); i++)
 			comboBox.addItem(productos.get(i).getNombre());
 
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(307, 76, 123, 20);
+		contentPane.add(textField_1);
+
 		// comboBox.addItem(bd.ver_productos().get(1));
 
 		contentPane.add(comboBox);
@@ -94,6 +101,16 @@ public class PanelDependiente_Cobrar extends JFrame {
 		lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblCantidad.setBounds(40, 122, 111, 29);
 		contentPane.add(lblCantidad);
+
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(161, 28, 123, 20);
+
+		Vector<Socio> socios = bd.ver_socios();
+
+		for (int i = 0; i < socios.size(); i++)
+			comboBox_1.addItem(socios.get(i).getUsuario());
+
+		contentPane.add(comboBox_1);
 
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -123,8 +140,8 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
-				int cantidad = 1;
+				int cantidad = Integer.parseInt(textField_1.getText());
+				// int cantidad = 1;
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
 
@@ -154,7 +171,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int cantidad = 1;
+				int cantidad = Integer.parseInt(textField_1.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
 
@@ -162,7 +179,11 @@ public class PanelDependiente_Cobrar extends JFrame {
 				if (precio == -1) {
 					System.out.println("Problemas tecnicos");
 				} else {
+					String seleccionSocio = (String) comboBox_1.getSelectedItem();
+					int fila = bd.anadirCompra(bd.verCodSocio(seleccionSocio), bd.verCodProducto(seleccionCombo), cantidad);
+					int numProductos = bd.restarProductos(bd.verCodProducto(seleccionCombo), cantidad);
 					Constantes.cajaDependiente += precio;
+
 					PanelDependiente frame12 = new PanelDependiente();
 					frame12.setVisible(true);
 					dispose();
@@ -194,6 +215,20 @@ public class PanelDependiente_Cobrar extends JFrame {
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
+
+		JLabel lblSocio = new JLabel("Socio");
+		lblSocio.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSocio.setForeground(Color.WHITE);
+		lblSocio.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblSocio.setBounds(40, 22, 111, 29);
+		contentPane.add(lblSocio);
+
+		JLabel lblCantidad_1 = new JLabel("Cantidad:");
+		lblCantidad_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCantidad_1.setForeground(Color.WHITE);
+		lblCantidad_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblCantidad_1.setBounds(310, 45, 111, 29);
+		contentPane.add(lblCantidad_1);
 
 	}
 }
