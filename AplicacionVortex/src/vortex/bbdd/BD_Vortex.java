@@ -156,6 +156,7 @@ public class BD_Vortex extends BD_Conector {
 			this.cerrar();
 			return 0;
 		} catch (SQLException e) {
+			
 			return -1;
 		}
 	}
