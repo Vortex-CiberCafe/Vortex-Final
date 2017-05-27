@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -14,24 +13,26 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
-public class PanelAdmin_UltimasConexiones extends JFrame {
+public class PanelDependiente_CerrarCaja extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_UltimasConexiones frame2;
+	protected static PanelDependiente_CerrarCaja frame2;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelAdmin_UltimasConexiones frame6 = new PanelAdmin_UltimasConexiones();
-					frame6.setVisible(true);
+					PanelDependiente_CerrarCaja frame17 = new PanelDependiente_CerrarCaja();
+					frame17.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,18 +41,17 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 	}
 
-	public PanelAdmin_UltimasConexiones() {
+	public PanelDependiente_CerrarCaja() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-
-		int inicioalto = alto / 4;
-		int inicioancho = ancho / 3;
+		int inicioalto=alto/4;
+		int inicioancho=ancho/3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
@@ -60,89 +60,68 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblUsuarios = new JLabel("Usuarios:");
+		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
-
-		JLabel label_1 = new JLabel(" ");
+		
+		JLabel label_1 = new JLabel(" " + Constantes.cajaDependiente + "€");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(201, 162, 186, 29);
+		label_1.setBounds(161, 70, 131, 29);
 		contentPane.add(label_1);
+		
+		JLabel lblActualizarT = new JLabel("Esta seguro de que desea cerrar la caja?");
+		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
+		lblActualizarT.setForeground(Color.WHITE);
+		lblActualizarT.setFont(new Font("Dialog", Font.BOLD, 11));
+		lblActualizarT.setBounds(110, 125, 273, 29);
+		contentPane.add(lblActualizarT);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(161, 76, 123, 20);
+		JButton btnCerrarCaja= new JButton("Cerrar Caja");
+		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCerrarCaja.setBounds(271, 178, 113, 23);
+		contentPane.add(btnCerrarCaja);
 
-		Vector<Socio> socios = bd.ver_socios();
-
-		for (int i = 0; i < socios.size(); i++)
-			comboBox.addItem(socios.get(i).getUsuario());
-
-		// comboBox.addItem(bd.ver_socios().get(1));
-		contentPane.add(comboBox);
-
-		JButton btnComprobarConexion = new JButton("Comprobar Conexion");
-		btnComprobarConexion.setFont(new Font("Dialog", Font.BOLD, 10));
-		btnComprobarConexion.setBounds(161, 118, 151, 23);
-		contentPane.add(btnComprobarConexion);
-
-		btnComprobarConexion.addActionListener(new ActionListener() {
+		btnCerrarCaja.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
-				/*
-				 * Funcion que nos devuelve la ultima conexion del socio
-				 * 
-				 */
-
-				String seleccionCombo = (String) comboBox.getSelectedItem();
-				// System.out.println(seleccionCombo);
-				LocalDate UltimaConexion = bd.ver_ultimaConexion(seleccionCombo);
-
-				if (UltimaConexion == null)
-					label_1.setText("Error");
-				else
-					label_1.setText(UltimaConexion.toString());
-
+				Constantes.cajaTotal = Constantes.cajaTotal + Constantes.cajaDependiente;
+				Constantes.cajaDependiente = 0;
+				PanelDependiente frame13 = new PanelDependiente();
+				frame13.setVisible(true);
+				dispose();
 			}
 
 		});
-
-		JLabel lblUltima = new JLabel("Ultima Conexion:");
-		lblUltima.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUltima.setForeground(Color.WHITE);
-		lblUltima.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUltima.setBounds(40, 162, 137, 29);
-		contentPane.add(lblUltima);
-
+		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(274, 215, 113, 23);
+		btnVolver.setBounds(271, 220, 113, 23);
 		contentPane.add(btnVolver);
-
+		
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelAdmin frame2 = new PanelAdmin();
-				frame2.setVisible(true);
+				PanelDependiente frame13 = new PanelDependiente();
+				frame13.setVisible(true);
 				dispose();
 
 			}
 
 		});
-
+		
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-
+		
 	}
 }

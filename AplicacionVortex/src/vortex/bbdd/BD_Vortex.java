@@ -175,8 +175,28 @@ public class BD_Vortex extends BD_Conector {
 	}
 
 	public int darConexion(String usu, int minutos) {
-
-		String cadenaSQL = "update socio set minutos=" + minutos + " where nick='" + usu + "'";
+		Constantes.user=usu;
+		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		
+		String cadenaSQL = "update socio set minutos="+ bd.getMinutoSocio(Constantes.user) + " + " + minutos + " where nick='" + usu + "'";
+		System.out.println(cadenaSQL);
+		try {
+			this.abrir();
+			s = c.createStatement();
+			int filas = s.executeUpdate(cadenaSQL);
+			s.close();
+			this.cerrar();
+			return filas;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+	
+	public int guardarConexion(String usu, int minutos) {
+		Constantes.user=usu;
+		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		
+		String cadenaSQL = "update socio set minutos=" + Constantes.minutos + " where nick='" + usu + "'";
 		System.out.println(cadenaSQL);
 		try {
 			this.abrir();
@@ -262,12 +282,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
-	/*
-	 * Continua con el acceso a: productos (bbdd) --> Vector<Dependiente>
-	 * productos = bd.ver_productos(); || Y ademas se necesita la funcion -->
-	 * bd.cobrar.
-	 * 
-	 */
+	
 	public Vector<Productos> ver_Productos() {
 		String cadenaSQL = "Select * from productos";
 		Vector<Productos> productos = new Vector<Productos>();
@@ -286,7 +301,7 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
-	public double cobrar(String producto, int cantidad) {
+	public double cobrar(String producto, double cantidad1) {
 		String cadenaSQL = "Select precio from productos where nombre='" + producto + "'";
 		try {
 			this.abrir();
@@ -294,8 +309,8 @@ public class BD_Vortex extends BD_Conector {
 			reg = s.executeQuery(cadenaSQL);
 			double precio = 0;
 			while (reg.next()) {
-				precio = reg.getInt("precio");
-				precio = precio * cantidad;
+				precio = reg.getDouble("precio");
+				precio = precio * cantidad1;
 			}
 			s.close();
 			this.cerrar();
@@ -338,6 +353,25 @@ public class BD_Vortex extends BD_Conector {
 			s.close();
 			this.cerrar();
 			return id;
+		} catch (SQLException e) {
+			return -2;
+		}
+	}
+	
+	public int verStock(String nombre) {
+		String cadenaSQL = "Select cantidad from productos where nombre='" + nombre + "'";
+
+		try {
+			this.abrir();
+			s = c.createStatement();
+			reg = s.executeQuery(cadenaSQL);
+			int cantidad = -1;
+			while (reg.next()) {
+				cantidad = reg.getInt("Cantidad");
+			}
+			s.close();
+			this.cerrar();
+			return cantidad;
 		} catch (SQLException e) {
 			return -2;
 		}

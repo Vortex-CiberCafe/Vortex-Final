@@ -187,6 +187,23 @@ public class PanelAdmin extends JFrame {
 			}
 
 		});
+		
+		JButton btnCajaTotal = new JButton("Caja Total");
+		btnCajaTotal.setForeground(Color.BLACK);
+		btnCajaTotal.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnCajaTotal.setBounds(246, 303, 146, 23);
+		contentPane.add(btnCajaTotal);
+		
+		btnCajaTotal.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PanelAdmin_CajaTotal frame9 = new PanelAdmin_CajaTotal();
+				frame9.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);

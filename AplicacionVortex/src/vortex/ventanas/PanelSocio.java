@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
+import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,7 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
-
+import vortex.modelos.Socio;
 import javax.swing.border.LineBorder;
 
 public class PanelSocio extends JFrame {
@@ -31,8 +31,8 @@ public class PanelSocio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelSocio frame9 = new PanelSocio();
-					frame9.setVisible(true);
+					PanelSocio frame10 = new PanelSocio();
+					frame10.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,10 +42,12 @@ public class PanelSocio extends JFrame {
 	}
 
 	public PanelSocio() {
+		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
+		
 		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+		int inicioancho=ancho/3;
 		ancho=ancho/4;
 		alto=alto/2;
 		setTitle(" Vortex Socio");
@@ -68,6 +70,7 @@ public class PanelSocio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				bd.guardarConexion(Constantes.user, Constantes.minutos);
 				Login frame = new Login();
 				frame.setVisible(true);
 				dispose();
@@ -100,8 +103,8 @@ public class PanelSocio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				PanelSocio_Nick frame10 = new PanelSocio_Nick();
-				frame10.setVisible(true);
+				PanelSocio_Nick frame11 = new PanelSocio_Nick();
+				frame11.setVisible(true);
 				dispose();
 			}
 
@@ -118,8 +121,8 @@ public class PanelSocio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				PanelSocio_Pass frame11 = new PanelSocio_Pass();
-				frame11.setVisible(true);
+				PanelSocio_Pass frame12 = new PanelSocio_Pass();
+				frame12.setVisible(true);
 				dispose();
 			}
 
@@ -241,48 +244,68 @@ public class PanelSocio extends JFrame {
 
 		});
 		
-
-		JLabel label_2 = new JLabel("Vortex\u2122");
-		label_2.setForeground(Color.RED);
-		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		label_2.setBounds(390, 401, 67, 23);
-		contentPane.add(label_2);
 		
 		JLabel segundosR = new JLabel("");
+		segundosR.setHorizontalAlignment(SwingConstants.CENTER);
 		segundosR.setFont(new Font("Dialog", Font.BOLD, 11));
 		segundosR.setForeground(Color.WHITE);
 		segundosR.setOpaque(true);
-		segundosR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		segundosR.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 		segundosR.setBackground(Color.BLACK);
-		segundosR.setBounds(94, 316, 31, 34);
+		segundosR.setBounds(120, 379, 31, 34);
 		contentPane.add(segundosR);
 		
 		JLabel minutosR = new JLabel("");
+		minutosR.setHorizontalAlignment(SwingConstants.CENTER);
 		minutosR.setOpaque(true);
 		minutosR.setForeground(Color.WHITE);
 		minutosR.setFont(new Font("Dialog", Font.BOLD, 11));
-		minutosR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		minutosR.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 		minutosR.setBackground(Color.BLACK);
-		minutosR.setBounds(53, 316, 31, 34);
+		minutosR.setBounds(70, 379, 31, 34);
 		contentPane.add(minutosR);
 		
 		JLabel horasR = new JLabel("");
+		horasR.setHorizontalAlignment(SwingConstants.CENTER);
 		horasR.setOpaque(true);
 		horasR.setForeground(Color.WHITE);
 		horasR.setFont(new Font("Dialog", Font.BOLD, 11));
-		horasR.setBorder(new LineBorder(new Color(0, 0, 0)));
+		horasR.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 		horasR.setBackground(Color.BLACK);
-		horasR.setBounds(10, 316, 31, 34);
+		horasR.setBounds(20, 379, 31, 34);
 		contentPane.add(horasR);
 		
-		BD_Vortex bd=new BD_Vortex("mysql-properties.xml");
-		int minutillos=bd.getMinutoSocio(Constantes.user);
+		JLabel label_3 = new JLabel(":");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setForeground(Color.WHITE);
+		label_3.setFont(new Font("Dialog", Font.BOLD, 15));
+		label_3.setBounds(51, 379, 19, 32);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel(":");
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setForeground(Color.WHITE);
+		label_4.setFont(new Font("Dialog", Font.BOLD, 15));
+		label_4.setBounds(101, 379, 19, 32);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel((String) null);
+		label_5.setBackground(new Color(0, 102, 153));
+		label_5.setOpaque(true);
+		label_5.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setForeground(Color.WHITE);
+		label_5.setFont(new Font("Dialog", Font.BOLD, 14));
+		label_5.setBounds(10, 370, 151, 54);
+		contentPane.add(label_5);
+		
+		Constantes.minutos=bd.getMinutoSocio(Constantes.user);
 		
 		Timer Tempo = new Timer (1000, new ActionListener ()
 		{
-			int horas=minutillos/60;
-        	int minutos=minutillos%60;
-			int segundos=60;
+			int horas=Constantes.minutos/60;
+        	int minutos=Constantes.minutos%60;
+			int segundos=59;
 			
             public void actionPerformed(ActionEvent e)
             {
@@ -296,12 +319,12 @@ public class PanelSocio extends JFrame {
 	            else{
 	            	if (minutos==0){
 	            		horas--;
-	            		minutos=60;
+	            		minutos=59;
 	            	}
 	            	
 	            	if (segundos==0){
 	            		minutos--;
-	            		segundos=60;
+	            		segundos=59;
 	            	}
 	            	else{
 	            		horasR.setText(String.valueOf(horas));
@@ -309,7 +332,7 @@ public class PanelSocio extends JFrame {
 		            	segundosR.setText(String.valueOf(segundos));
 			            segundos--;
 	            	}
-	            	
+	            	Constantes.minutos = horas*60 + minutos;
 	            }
             }
         });
@@ -320,6 +343,12 @@ public class PanelSocio extends JFrame {
           //Thread.currentThread().sleep (10000);            
           // timerR.stop();
         } catch (Exception e){}
+		
+        JLabel label_2 = new JLabel("Vortex\u2122");
+		label_2.setForeground(Color.RED);
+		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
+		label_2.setBounds(390, 401, 67, 23);
+		contentPane.add(label_2);
 		
 	}
 }

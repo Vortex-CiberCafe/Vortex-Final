@@ -53,7 +53,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		
 		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+		int inicioancho=ancho/3;
 		ancho=ancho/4;
 		alto=alto/2;
 
@@ -66,21 +66,15 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton button = new JButton("Cerrar Sesion");
-		button.setForeground(Color.RED);
-		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(344, 11, 113, 23);
-		contentPane.add(button);
-
 		JLabel label = new JLabel("DNI:");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(Color.BLACK);
 		label.setFont(new Font("Dialog", Font.BOLD, 11));
-		label.setBounds(20, 54, 75, 29);
+		label.setBounds(53, 54, 75, 29);
 		contentPane.add(label);
 		
 				textField = new JTextField();
-				textField.setBounds(100, 59, 86, 20);
+				textField.setBounds(133, 59, 86, 20);
 				contentPane.add(textField);
 				textField.setColumns(10);
 
@@ -88,72 +82,72 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombre.setForeground(Color.BLACK);
 		lblNombre.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNombre.setBounds(20, 94, 75, 29);
+		lblNombre.setBounds(53, 94, 75, 29);
 		contentPane.add(lblNombre);
 		
 				textField_1 = new JTextField();
 				textField_1.setColumns(10);
-				textField_1.setBounds(100, 99, 86, 20);
+				textField_1.setBounds(133, 99, 86, 20);
 				contentPane.add(textField_1);
 
 		JLabel lblDireccion = new JLabel("Direccion:");
 		lblDireccion.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDireccion.setForeground(Color.BLACK);
 		lblDireccion.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblDireccion.setBounds(20, 134, 75, 29);
+		lblDireccion.setBounds(53, 134, 75, 29);
 		contentPane.add(lblDireccion);
 		
 				textField_2 = new JTextField();
 				textField_2.setColumns(10);
-				textField_2.setBounds(100, 139, 86, 20);
+				textField_2.setBounds(133, 139, 86, 20);
 				contentPane.add(textField_2);
 
 		JLabel lblTelefono = new JLabel("Telefono:");
 		lblTelefono.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTelefono.setForeground(Color.BLACK);
 		lblTelefono.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblTelefono.setBounds(20, 174, 75, 29);
+		lblTelefono.setBounds(53, 174, 75, 29);
 		contentPane.add(lblTelefono);
 		
 				textField_3 = new JTextField();
 				textField_3.setColumns(10);
-				textField_3.setBounds(100, 179, 86, 20);
+				textField_3.setBounds(133, 179, 86, 20);
 				contentPane.add(textField_3);
 
 		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCorreo.setForeground(Color.BLACK);
 		lblCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblCorreo.setBounds(20, 214, 75, 29);
+		lblCorreo.setBounds(53, 214, 75, 29);
 		contentPane.add(lblCorreo);
 		
 				textField_4 = new JTextField();
 				textField_4.setColumns(10);
-				textField_4.setBounds(100, 219, 86, 20);
+				textField_4.setBounds(133, 219, 86, 20);
 				contentPane.add(textField_4);
 
 		JLabel lblNick = new JLabel("Nick:");
 		lblNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNick.setForeground(Color.BLACK);
 		lblNick.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNick.setBounds(205, 134, 67, 29);
+		lblNick.setBounds(238, 134, 67, 29);
 		contentPane.add(lblNick);
 		
 				textField_5 = new JTextField();
 				textField_5.setColumns(10);
-				textField_5.setBounds(282, 139, 86, 20);
+				textField_5.setBounds(315, 139, 86, 20);
 				contentPane.add(textField_5);
 
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword.setForeground(Color.BLACK);
 		lblPassword.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblPassword.setBounds(205, 174, 67, 29);
+		lblPassword.setBounds(238, 174, 67, 29);
 		contentPane.add(lblPassword);
 
 				textField_6 = new JTextField();
 				textField_6.setColumns(10);
-				textField_6.setBounds(282, 179, 86, 20);
+				textField_6.setBounds(315, 179, 86, 20);
 				contentPane.add(textField_6);
 
 		JButton btnDarAlta = new JButton("Dar Alta");

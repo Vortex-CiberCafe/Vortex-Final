@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -18,20 +17,21 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import vortex.bbdd.BD_Vortex;
+import vortex.modelos.Productos;
 import vortex.modelos.Socio;
 
-public class PanelAdmin_UltimasConexiones extends JFrame {
+public class PanelDependiente_ComprobarStock extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_UltimasConexiones frame2;
+	protected static PanelDependiente_ComprobarStock frame2;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelAdmin_UltimasConexiones frame6 = new PanelAdmin_UltimasConexiones();
-					frame6.setVisible(true);
+					PanelDependiente_ComprobarStock frame16 = new PanelDependiente_ComprobarStock();
+					frame16.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,7 +40,7 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 	}
 
-	public PanelAdmin_UltimasConexiones() {
+	public PanelDependiente_ComprobarStock() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
@@ -51,7 +51,7 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, ancho, alto);
 		contentPane = new JPanel();
@@ -60,12 +60,23 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblUsuarios = new JLabel("Usuarios:");
+		JLabel lblUsuarios = new JLabel("Productos:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
+
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(161, 76, 123, 20);
+
+		Vector<Productos> productos = bd.ver_Productos();
+
+		for (int i = 0; i < productos.size(); i++)
+			comboBox.addItem(productos.get(i).getNombre());
+		
+		// comboBox.addItem(bd.ver_productos().get(1));
+		contentPane.add(comboBox);
 
 		JLabel label_1 = new JLabel(" ");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -73,52 +84,41 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(201, 162, 186, 29);
 		contentPane.add(label_1);
+		
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(161, 76, 123, 20);
+		JButton btnComprobarStock = new JButton("Comprobar Stock");
+		btnComprobarStock.setFont(new Font("Dialog", Font.BOLD, 10));
+		btnComprobarStock.setBounds(161, 118, 151, 23);
+		contentPane.add(btnComprobarStock);
 
-		Vector<Socio> socios = bd.ver_socios();
-
-		for (int i = 0; i < socios.size(); i++)
-			comboBox.addItem(socios.get(i).getUsuario());
-
-		// comboBox.addItem(bd.ver_socios().get(1));
-		contentPane.add(comboBox);
-
-		JButton btnComprobarConexion = new JButton("Comprobar Conexion");
-		btnComprobarConexion.setFont(new Font("Dialog", Font.BOLD, 10));
-		btnComprobarConexion.setBounds(161, 118, 151, 23);
-		contentPane.add(btnComprobarConexion);
-
-		btnComprobarConexion.addActionListener(new ActionListener() {
+		btnComprobarStock.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				/*
-				 * Funcion que nos devuelve la ultima conexion del socio
-				 * 
-				 */
-
 				String seleccionCombo = (String) comboBox.getSelectedItem();
-				// System.out.println(seleccionCombo);
-				LocalDate UltimaConexion = bd.ver_ultimaConexion(seleccionCombo);
+				int filas = bd.verStock(seleccionCombo);
 
-				if (UltimaConexion == null)
+				label_1.setText(filas + " unidades disponibles");
+				switch (filas) {
+				case -1:
 					label_1.setText("Error");
-				else
-					label_1.setText(UltimaConexion.toString());
+					break;
+				case -2:
+					System.out.println("Problemas tecnicos");
+					break;
+				}
 
 			}
 
 		});
 
-		JLabel lblUltima = new JLabel("Ultima Conexion:");
-		lblUltima.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUltima.setForeground(Color.WHITE);
-		lblUltima.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUltima.setBounds(40, 162, 137, 29);
-		contentPane.add(lblUltima);
+		JLabel lblTiempoRestante = new JLabel("Cantidad Restante:");
+		lblTiempoRestante.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTiempoRestante.setForeground(Color.WHITE);
+		lblTiempoRestante.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblTiempoRestante.setBounds(40, 162, 137, 29);
+		contentPane.add(lblTiempoRestante);
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
@@ -130,8 +130,8 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelAdmin frame2 = new PanelAdmin();
-				frame2.setVisible(true);
+				PanelDependiente frame13 = new PanelDependiente();
+				frame13.setVisible(true);
 				dispose();
 
 			}

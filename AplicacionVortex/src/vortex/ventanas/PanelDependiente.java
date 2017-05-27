@@ -26,8 +26,8 @@ public class PanelDependiente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelDependiente frame12 = new PanelDependiente();
-					frame12.setVisible(true);
+					PanelDependiente frame13 = new PanelDependiente();
+					frame13.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,12 +40,12 @@ public class PanelDependiente extends JFrame {
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto = alto / 4;
-		int inicioancho = ancho / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle(" Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, 520, 397);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -95,43 +95,48 @@ public class PanelDependiente extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				PanelDependiente_Cobrar frame13 = new PanelDependiente_Cobrar();
-				frame13.setVisible(true);
+				PanelDependiente_Cobrar frame14 = new PanelDependiente_Cobrar();
+				frame14.setVisible(true);
 				dispose();
 			}
 
 		});
 
-		JButton btnStock = new JButton("Comprobar Stock");
-		btnStock.setForeground(Color.BLACK);
-		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnStock.setBounds(246, 144, 146, 23);
-		contentPane.add(btnStock);
-
-		/*
-		 * btnStock.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent arg0) { // TODO
-		 * Auto-generated method stub PanelDependiente_Stock frame14 = new
-		 * PanelSocio_Stock(); frame14.setVisible(true); dispose(); } });
-		 */
-
 		JButton btnPedirProductos = new JButton("Pedir Productos");
 		btnPedirProductos.setForeground(Color.BLACK);
 		btnPedirProductos.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnPedirProductos.setBounds(60, 197, 146, 23);
+		btnPedirProductos.setBounds(247, 144, 146, 23);
 		contentPane.add(btnPedirProductos);
 
-		/*
-		 * btnPedirProductos.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent arg0) { // TODO
-		 * Auto-generated method stub PanelDependiente_PedirProductos frame15 =
-		 * new PanelSocio_PedirProductos(); frame15.setVisible(true); dispose();
-		 * }
-		 * 
-		 * });
-		 */
+		btnPedirProductos.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				PanelDependiente_PedirProductos frame15 = new PanelDependiente_PedirProductos();
+				frame15.setVisible(true);
+				dispose();
+			}
+
+		});
+		
+		JButton btnStock = new JButton("Comprobar Stock");
+		btnStock.setForeground(Color.BLACK);
+		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnStock.setBounds(60, 197, 146, 23);
+		contentPane.add(btnStock);
+
+		btnStock.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				PanelDependiente_ComprobarStock frame16 = new PanelDependiente_ComprobarStock();
+				frame16.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JButton btnCaja = new JButton("Cerrar Caja");
 		btnCaja.setForeground(Color.BLACK);
@@ -139,15 +144,17 @@ public class PanelDependiente extends JFrame {
 		btnCaja.setBounds(247, 197, 146, 23);
 		contentPane.add(btnCaja);
 
-		/*
-		 * btnCaja.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent arg0) { // TODO
-		 * Auto-generated method stub PanelDependiente_CerrarCaja frame16 = new
-		 * PanelSocio_CerrarCaja(); frame16.setVisible(true); dispose(); }
-		 * 
-		 * });
-		 */
+		btnCaja.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				PanelDependiente_CerrarCaja frame17 = new PanelDependiente_CerrarCaja();
+				frame17.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);

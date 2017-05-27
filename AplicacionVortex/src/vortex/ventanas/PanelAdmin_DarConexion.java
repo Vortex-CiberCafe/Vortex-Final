@@ -49,7 +49,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 
 		int inicioalto = alto / 4;
-		int inicioancho = ancho / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -61,12 +61,6 @@ public class PanelAdmin_DarConexion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JButton button = new JButton("Cerrar Sesion");
-		button.setForeground(Color.RED);
-		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(344, 11, 113, 23);
-		contentPane.add(button);
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
@@ -90,26 +84,26 @@ public class PanelAdmin_DarConexion extends JFrame {
 		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTiempo.setForeground(Color.WHITE);
 		lblTiempo.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblTiempo.setBounds(40, 122, 111, 29);
+		lblTiempo.setBounds(40, 118, 111, 29);
 		contentPane.add(lblTiempo);
 
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(161, 128, 123, 20);
+		textField.setBounds(161, 124, 123, 20);
 		contentPane.add(textField);
 
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrecio.setForeground(Color.WHITE);
 		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblPrecio.setBounds(40, 206, 111, 29);
+		lblPrecio.setBounds(40, 220, 111, 29);
 		contentPane.add(lblPrecio);
 
 		JLabel label_1 = new JLabel(" ");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(163, 206, 111, 29);
+		label_1.setBounds(163, 220, 111, 29);
 		contentPane.add(label_1);
 
 		JButton btnComprobarPrecio = new JButton("Comprobar Precio");
@@ -131,12 +125,12 @@ public class PanelAdmin_DarConexion extends JFrame {
 		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
 		lblActualizarT.setForeground(Color.WHITE);
 		lblActualizarT.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblActualizarT.setBounds(114, 246, 273, 29);
+		lblActualizarT.setBounds(161, 260, 250, 29);
 		contentPane.add(lblActualizarT);
 
 		JButton btnActualizar = new JButton("Actualizar");
 		btnActualizar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnActualizar.setBounds(275, 299, 113, 23);
+		btnActualizar.setBounds(298, 300, 113, 23);
 		contentPane.add(btnActualizar);
 
 		btnActualizar.addActionListener(new ActionListener() {
@@ -146,7 +140,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 				int tiempo = Integer.parseInt(textField.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
-				int filas = bd.darConexion(seleccionCombo, tiempo);
+				int filas = bd.darConexion(seleccionCombo, tiempo+Constantes.minutos);
 				switch (filas) {
 				case 1:
 					Constantes.cajaAdmin += Constantes.precio(tiempo);
@@ -172,7 +166,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(275, 337, 113, 23);
+		btnVolver.setBounds(298, 338, 113, 23);
 		contentPane.add(btnVolver);
 
 		btnVolver.addActionListener(new ActionListener() {

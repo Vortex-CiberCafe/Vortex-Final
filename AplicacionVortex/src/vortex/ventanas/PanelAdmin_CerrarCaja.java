@@ -47,7 +47,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+		int inicioancho=ancho/3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -59,12 +59,6 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JButton button = new JButton("Cerrar Sesion");
-		button.setForeground(Color.RED);
-		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(344, 11, 113, 23);
-		contentPane.add(button);
 
 		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
@@ -96,6 +90,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				Constantes.cajaTotal = Constantes.cajaTotal + Constantes.cajaAdmin;
 				Constantes.cajaAdmin = 0;
 				PanelAdmin frame2 = new PanelAdmin();
 				frame2.setVisible(true);

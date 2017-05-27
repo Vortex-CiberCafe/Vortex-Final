@@ -45,7 +45,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		
 		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+		int inicioancho=ancho/3;
 		ancho=ancho/4;
 		alto=alto/2;
 
@@ -57,12 +57,6 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JButton button = new JButton("Cerrar Sesion");
-		button.setForeground(Color.RED);
-		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(344, 11, 113, 23);
-		contentPane.add(button);
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,12 +80,12 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
 		lblEstaSeguroDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblEstaSeguroDe.setBounds(40, 142, 357, 29);
+		lblEstaSeguroDe.setBounds(71, 141, 357, 29);
 		contentPane.add(lblEstaSeguroDe);
 
 		JButton btnEliminarSocio = new JButton("Eliminar Socio");
 		btnEliminarSocio.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnEliminarSocio.setBounds(245, 195, 113, 23);
+		btnEliminarSocio.setBounds(276, 194, 113, 23);
 		contentPane.add(btnEliminarSocio);
 
 		btnEliminarSocio.addActionListener(new ActionListener() {
@@ -119,7 +113,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(245, 233, 113, 23);
+		btnVolver.setBounds(276, 232, 113, 23);
 		contentPane.add(btnVolver);
 		
 		btnVolver.addActionListener(new ActionListener() {

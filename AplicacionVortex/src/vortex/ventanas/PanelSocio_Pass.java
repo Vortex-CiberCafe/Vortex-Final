@@ -31,8 +31,8 @@ public class PanelSocio_Pass extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelSocio_Pass frame11 = new PanelSocio_Pass();
-					frame11.setVisible(true);
+					PanelSocio_Pass frame12 = new PanelSocio_Pass();
+					frame12.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,7 +47,7 @@ public class PanelSocio_Pass extends JFrame {
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto=alto/4;
-		int inicioancho=ancho/4;
+		int inicioancho=ancho/3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle(" Vortex Socio");
@@ -59,33 +59,15 @@ public class PanelSocio_Pass extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton button = new JButton("Cerrar Sesion");
-		button.setForeground(Color.RED);
-		button.setFont(new Font("Dialog", Font.BOLD, 12));
-		button.setBounds(344, 11, 113, 23);
-		contentPane.add(button);
-
-		button.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				Login frame = new Login();
-				frame.setVisible(true);
-				dispose();
-			}
-
-		});
-
 		JLabel lblAntiguoNick = new JLabel("Antigua Password:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblAntiguoNick.setBounds(40, 70, 153, 29);
+		lblAntiguoNick.setBounds(69, 57, 153, 29);
 		contentPane.add(lblAntiguoNick);
 		
 		textField = new JTextField();
-		textField.setBounds(203, 76, 113, 20);
+		textField.setBounds(232, 63, 113, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
@@ -93,37 +75,37 @@ public class PanelSocio_Pass extends JFrame {
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNuevoNick.setForeground(Color.WHITE);
 		lblNuevoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNuevoNick.setBounds(40, 124, 153, 29);
+		lblNuevoNick.setBounds(69, 111, 153, 29);
 		contentPane.add(lblNuevoNick);
 
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(203, 130, 113, 20);
+		textField_1.setBounds(232, 117, 113, 20);
 		contentPane.add(textField_1);
 
 		JLabel lblRepitePassword = new JLabel("Repite Password:");
 		lblRepitePassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRepitePassword.setForeground(Color.WHITE);
 		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblRepitePassword.setBounds(40, 178, 153, 29);
+		lblRepitePassword.setBounds(69, 165, 153, 29);
 		contentPane.add(lblRepitePassword);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(203, 184, 113, 20);
+		textField_2.setBounds(232, 171, 113, 20);
 		contentPane.add(textField_2);
 
 		JLabel lblEstaSeguroDe = new JLabel("Esta seguro de que desea cambiar su password?");
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
 		lblEstaSeguroDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblEstaSeguroDe.setBounds(63, 225, 316, 29);
+		lblEstaSeguroDe.setBounds(92, 212, 316, 29);
 		contentPane.add(lblEstaSeguroDe);
 
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.setForeground(Color.BLACK);
 		btnContinuar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnContinuar.setBounds(245, 270, 113, 23);
+		btnContinuar.setBounds(274, 257, 113, 23);
 		contentPane.add(btnContinuar);
 
 		btnContinuar.addActionListener(new ActionListener() {
@@ -139,8 +121,8 @@ public class PanelSocio_Pass extends JFrame {
 					System.out.println("Las contraseñas no coinciden");
 					break;
 				case 1:
-					PanelSocio frame9 = new PanelSocio();
-					frame9.setVisible(true);
+					PanelSocio frame10 = new PanelSocio();
+					frame10.setVisible(true);
 					dispose();
 					break;
 				}
@@ -152,15 +134,15 @@ public class PanelSocio_Pass extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(245, 315, 113, 23);
+		btnVolver.setBounds(274, 302, 113, 23);
 		contentPane.add(btnVolver);
 		
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelSocio frame9 = new PanelSocio();
-				frame9.setVisible(true);
+				PanelSocio frame10 = new PanelSocio();
+				frame10.setVisible(true);
 				dispose();
 
 			}
