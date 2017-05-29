@@ -15,8 +15,8 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-
+import java.time.*;
+import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -167,9 +167,10 @@ public class Login extends JFrame {
 							Charset charset = Charset.forName("UTF-8");
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
-							LocalDate actual = LocalDate.now();
+							LocalDate actual1 = LocalDate.now();
+							LocalTime actual2 = LocalTime.now();
 							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+									+ " de forma incorrecta en: [ " + actual1 + " a las " + actual2.getHour() + ":" + actual2.getMinute() + ":" + actual2.getSecond() + " ] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
@@ -204,9 +205,10 @@ public class Login extends JFrame {
 							Charset charset = Charset.forName("UTF-8");
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
-							LocalDate actual = LocalDate.now();
+							LocalDate actual1 = LocalDate.now();
+							LocalTime actual2 = LocalTime.now();
 							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+									+ " de forma incorrecta en: [ " + actual1 + " a las " + actual2.getHour() + ":" + actual2.getMinute() + ":" + actual2.getSecond() + " ] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
@@ -240,9 +242,10 @@ public class Login extends JFrame {
 							Charset charset = Charset.forName("UTF-8");
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
-							LocalDate actual = LocalDate.now();
+							LocalDate actual1 = LocalDate.now();
+							LocalTime actual2 = LocalTime.now();
 							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+									+ " de forma incorrecta en: [ " + actual1 + " a las " + actual2.getHour() + ":" + actual2.getMinute() + ":" + actual2.getSecond() + " ] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
