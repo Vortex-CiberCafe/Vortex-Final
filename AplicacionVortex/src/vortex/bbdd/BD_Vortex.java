@@ -180,7 +180,7 @@ public class BD_Vortex extends BD_Conector {
 	public int darConexion(String usu, int minutos) {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
-		String cadenaSQL = "update socio set minutos=" + bd.getMinutoSocio(Constantes.user) + " + " + minutos
+		String cadenaSQL = "update socio set minutos=" + bd.getMinutoSocio(usu) + " + " + minutos
 				+ " where nick='" + usu + "'";
 		// System.out.println(cadenaSQL);
 		try {
@@ -196,9 +196,6 @@ public class BD_Vortex extends BD_Conector {
 	}
 
 	public int guardarConexion(String usu, int minutos) {
-		Constantes.user = usu;
-		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-
 		String cadenaSQL = "update socio set minutos=" + Constantes.minutos + " where nick='" + usu + "'";
 		// System.out.println(cadenaSQL);
 		try {
