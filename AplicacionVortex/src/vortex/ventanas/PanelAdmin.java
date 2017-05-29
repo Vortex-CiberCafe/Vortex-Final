@@ -38,13 +38,13 @@ public class PanelAdmin extends JFrame {
 
 	public PanelAdmin() {
 
-		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
-		ancho=ancho/4;
-		alto=alto/2;
+		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
+		ancho = ancho / 4;
+		alto = alto / 2;
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
@@ -53,6 +53,9 @@ public class PanelAdmin extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
 
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
@@ -78,7 +81,7 @@ public class PanelAdmin extends JFrame {
 		label.setFont(new Font("Dialog", Font.BOLD, 14));
 		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
-		
+
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
@@ -125,7 +128,7 @@ public class PanelAdmin extends JFrame {
 		btnDarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnDarConexiones.setBounds(60, 197, 145, 23);
 		contentPane.add(btnDarConexiones);
-		
+
 		btnDarConexiones.addActionListener(new ActionListener() {
 
 			@Override
@@ -142,7 +145,7 @@ public class PanelAdmin extends JFrame {
 		btnLastConnects.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnLastConnects.setBounds(246, 197, 146, 23);
 		contentPane.add(btnLastConnects);
-		
+
 		btnLastConnects.addActionListener(new ActionListener() {
 
 			@Override
@@ -153,13 +156,13 @@ public class PanelAdmin extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnComprobarTiempos = new JButton("Ver Tiempos");
 		btnComprobarTiempos.setForeground(Color.BLACK);
 		btnComprobarTiempos.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnComprobarTiempos.setBounds(60, 251, 146, 23);
 		contentPane.add(btnComprobarTiempos);
-		
+
 		btnComprobarTiempos.addActionListener(new ActionListener() {
 
 			@Override
@@ -176,7 +179,7 @@ public class PanelAdmin extends JFrame {
 		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCerrarCaja.setBounds(246, 250, 146, 23);
 		contentPane.add(btnCerrarCaja);
-		
+
 		btnCerrarCaja.addActionListener(new ActionListener() {
 
 			@Override
@@ -187,13 +190,13 @@ public class PanelAdmin extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnCajaTotal = new JButton("Caja Total");
 		btnCajaTotal.setForeground(Color.BLACK);
 		btnCajaTotal.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCajaTotal.setBounds(246, 303, 146, 23);
 		contentPane.add(btnCajaTotal);
-		
+
 		btnCajaTotal.addActionListener(new ActionListener() {
 
 			@Override

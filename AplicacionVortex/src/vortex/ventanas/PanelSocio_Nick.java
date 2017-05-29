@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
@@ -44,8 +43,8 @@ public class PanelSocio_Nick extends JFrame {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle(" Vortex Socio");
@@ -57,13 +56,16 @@ public class PanelSocio_Nick extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblAntiguoNick = new JLabel("Nick:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblAntiguoNick.setBounds(78, 59, 103, 29);
 		contentPane.add(lblAntiguoNick);
-		
+
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
@@ -120,7 +122,7 @@ public class PanelSocio_Nick extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -144,6 +146,6 @@ public class PanelSocio_Nick extends JFrame {
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
-		
+
 	}
 }

@@ -59,6 +59,9 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);

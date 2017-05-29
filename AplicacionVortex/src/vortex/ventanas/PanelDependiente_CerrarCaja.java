@@ -6,20 +6,16 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
-import vortex.modelos.Socio;
 
 public class PanelDependiente_CerrarCaja extends JFrame {
 
@@ -46,8 +42,8 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 
@@ -60,20 +56,23 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblUsuarios.setBounds(40, 70, 111, 29);
 		contentPane.add(lblUsuarios);
-		
+
 		JLabel label_1 = new JLabel(" " + Constantes.cajaDependiente + "€");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(161, 70, 131, 29);
 		contentPane.add(label_1);
-		
+
 		JLabel lblActualizarT = new JLabel("Esta seguro de que desea cerrar la caja?");
 		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
 		lblActualizarT.setForeground(Color.WHITE);
@@ -81,7 +80,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		lblActualizarT.setBounds(110, 125, 273, 29);
 		contentPane.add(lblActualizarT);
 
-		JButton btnCerrarCaja= new JButton("Cerrar Caja");
+		JButton btnCerrarCaja = new JButton("Cerrar Caja");
 		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCerrarCaja.setBounds(271, 178, 113, 23);
 		contentPane.add(btnCerrarCaja);
@@ -98,13 +97,13 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(271, 220, 113, 23);
 		contentPane.add(btnVolver);
-		
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -116,12 +115,12 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 			}
 
 		});
-		
+
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		label.setBounds(390, 401, 67, 23);
 		contentPane.add(label);
-		
+
 	}
 }

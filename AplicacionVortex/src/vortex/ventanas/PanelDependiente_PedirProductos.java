@@ -61,6 +61,9 @@ public class PanelDependiente_PedirProductos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblProductos = new JLabel("Productos:");
 		lblProductos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblProductos.setForeground(Color.WHITE);
@@ -86,12 +89,12 @@ public class PanelDependiente_PedirProductos extends JFrame {
 		lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblCantidad.setBounds(40, 118, 111, 29);
 		contentPane.add(lblCantidad);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(161, 124, 123, 20);
 		contentPane.add(textField_1);
-		
+
 		JLabel lblDeseaPedirEsta = new JLabel("Desea pedir esta cantidad?");
 		lblDeseaPedirEsta.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDeseaPedirEsta.setForeground(Color.WHITE);

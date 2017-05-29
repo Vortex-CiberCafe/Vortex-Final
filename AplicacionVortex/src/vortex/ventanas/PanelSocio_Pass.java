@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 import vortex.bbdd.BD_Vortex;
 
@@ -46,8 +45,8 @@ public class PanelSocio_Pass extends JFrame {
 
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
 		setTitle(" Vortex Socio");
@@ -59,13 +58,16 @@ public class PanelSocio_Pass extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblAntiguoNick = new JLabel("Antigua Password:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblAntiguoNick.setBounds(69, 57, 142, 29);
 		contentPane.add(lblAntiguoNick);
-		
+
 		textField = new JTextField();
 		textField.setBounds(232, 63, 113, 20);
 		contentPane.add(textField);
@@ -89,7 +91,7 @@ public class PanelSocio_Pass extends JFrame {
 		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblRepitePassword.setBounds(69, 165, 142, 29);
 		contentPane.add(lblRepitePassword);
-		
+
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(232, 171, 113, 20);
@@ -136,7 +138,7 @@ public class PanelSocio_Pass extends JFrame {
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(274, 302, 113, 23);
 		contentPane.add(btnVolver);
-		
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -148,7 +150,6 @@ public class PanelSocio_Pass extends JFrame {
 			}
 
 		});
-		
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);

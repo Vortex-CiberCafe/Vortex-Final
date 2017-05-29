@@ -62,6 +62,9 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblNombre_1 = new JLabel("Nombre: ");
 		lblNombre_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre_1.setForeground(Color.BLACK);

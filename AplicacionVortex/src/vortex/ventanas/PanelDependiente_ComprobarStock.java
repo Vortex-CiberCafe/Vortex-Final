@@ -18,7 +18,6 @@ import javax.swing.border.EmptyBorder;
 
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Productos;
-import vortex.modelos.Socio;
 
 public class PanelDependiente_ComprobarStock extends JFrame {
 
@@ -60,6 +59,9 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblUsuarios = new JLabel("Productos:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -74,7 +76,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 
 		for (int i = 0; i < productos.size(); i++)
 			comboBox.addItem(productos.get(i).getNombre());
-		
+
 		// comboBox.addItem(bd.ver_productos().get(1));
 		contentPane.add(comboBox);
 
@@ -84,7 +86,6 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(201, 162, 186, 29);
 		contentPane.add(label_1);
-		
 
 		JButton btnComprobarStock = new JButton("Comprobar Stock");
 		btnComprobarStock.setFont(new Font("Dialog", Font.BOLD, 10));

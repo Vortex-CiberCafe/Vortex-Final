@@ -63,22 +63,25 @@ public class PanelDependiente_Cobrar extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-				
+
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblSocio = new JLabel("Socio:");
 		lblSocio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSocio.setForeground(Color.WHITE);
 		lblSocio.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblSocio.setBounds(68, 42, 90, 29);
 		contentPane.add(lblSocio);
-		
+
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(189, 48, 123, 20);
-		
+
 		Vector<Socio> socios = bd.ver_socios();
 
 		for (int i = 0; i < socios.size(); i++)
 			comboBox_1.addItem(socios.get(i).getUsuario());
-		
+
 		contentPane.add(comboBox_1);
 
 		JLabel lblProductos = new JLabel("Productos:");
@@ -125,12 +128,12 @@ public class PanelDependiente_Cobrar extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(191, 234, 111, 29);
 		contentPane.add(label_1);
-		
+
 		JButton btnComprobarPrecio = new JButton("Comprobar Precio");
 		btnComprobarPrecio.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarPrecio.setBounds(189, 192, 123, 23);
 		contentPane.add(btnComprobarPrecio);
-				
+
 		btnComprobarPrecio.addActionListener(new ActionListener() {
 
 			@Override
@@ -174,7 +177,8 @@ public class PanelDependiente_Cobrar extends JFrame {
 					System.out.println("Problemas tecnicos");
 				} else {
 					String seleccionSocio = (String) comboBox_1.getSelectedItem();
-					int fila = bd.anadirCompra(bd.verCodSocio(seleccionSocio), bd.verCodProducto(seleccionCombo), cantidad);
+					int fila = bd.anadirCompra(bd.verCodSocio(seleccionSocio), bd.verCodProducto(seleccionCombo),
+							cantidad);
 					int numProductos = bd.restarProductos(bd.verCodProducto(seleccionCombo), cantidad);
 					Constantes.cajaDependiente += precio;
 

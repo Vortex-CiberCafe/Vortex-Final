@@ -62,6 +62,9 @@ public class PanelAdmin_DarConexion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -140,7 +143,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 				int tiempo = Integer.parseInt(textField.getText());
 				String seleccionCombo = (String) comboBox.getSelectedItem();
 				// System.out.println(seleccionCombo);
-				int filas = bd.darConexion(seleccionCombo, tiempo+Constantes.minutos);
+				int filas = bd.darConexion(seleccionCombo, tiempo + Constantes.minutos);
 				switch (filas) {
 				case 1:
 					Constantes.cajaAdmin += Constantes.precio(tiempo);

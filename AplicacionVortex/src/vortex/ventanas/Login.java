@@ -81,6 +81,9 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 414, 360);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		/* Panel Login Java */
 
 		panelOrigen = new JPanel();
@@ -168,8 +171,9 @@ public class Login extends JFrame {
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
 							LocalDate actual = LocalDate.now();
-							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.println(
+									"\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText()
+											+ " intento hacer login" + " de forma incorrecta en: [" + actual + "] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
@@ -205,8 +209,9 @@ public class Login extends JFrame {
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
 							LocalDate actual = LocalDate.now();
-							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.println(
+									"\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText()
+											+ " intento hacer login" + " de forma incorrecta en: [" + actual + "] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
@@ -241,8 +246,9 @@ public class Login extends JFrame {
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
 							LocalDate actual = LocalDate.now();
-							salidaLog.println("\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText() + " intento hacer login"
-									+ " de forma incorrecta en: [" + actual + "] ");
+							salidaLog.println(
+									"\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText()
+											+ " intento hacer login" + " de forma incorrecta en: [" + actual + "] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
@@ -265,7 +271,7 @@ public class Login extends JFrame {
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setBounds(333, 304, 66, 20);
 		panelOrigen.add(lblNewLabel);
-		
+
 		JLabel lblTypeConnection = new JLabel("Type Connection:");
 		lblTypeConnection.setForeground(new Color(0, 0, 139));
 		lblTypeConnection.setFont(new Font("Dialog", Font.BOLD, 14));

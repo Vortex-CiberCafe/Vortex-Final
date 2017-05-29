@@ -52,6 +52,9 @@ public class PanelDependiente extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -83,7 +86,7 @@ public class PanelDependiente extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
-		
+
 		JButton btnNuevoProducto = new JButton("Nuevo Producto");
 		btnNuevoProducto.setForeground(Color.BLACK);
 		btnNuevoProducto.setFont(new Font("Dialog", Font.BOLD, 11));

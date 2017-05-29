@@ -41,13 +41,13 @@ public class PanelAdmin_BajaSocio extends JFrame {
 
 	public PanelAdmin_BajaSocio() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
-		ancho=ancho/4;
-		alto=alto/2;
+		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
+		ancho = ancho / 4;
+		alto = alto / 2;
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +57,9 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
@@ -109,13 +112,13 @@ public class PanelAdmin_BajaSocio extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnVolver.setBounds(276, 232, 113, 23);
 		contentPane.add(btnVolver);
-		
+
 		btnVolver.addActionListener(new ActionListener() {
 
 			@Override
@@ -127,7 +130,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 			}
 
 		});
-		
+
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

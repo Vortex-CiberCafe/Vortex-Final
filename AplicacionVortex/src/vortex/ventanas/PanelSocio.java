@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.Vector;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,11 +15,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
-import vortex.modelos.Socio;
-import javax.swing.border.LineBorder;
 
 public class PanelSocio extends JFrame {
 
@@ -43,13 +42,13 @@ public class PanelSocio extends JFrame {
 
 	public PanelSocio() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		
-		int alto= (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		int ancho= (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-		int inicioalto=alto/4;
-		int inicioancho=ancho/3;
-		ancho=ancho/4;
-		alto=alto/2;
+
+		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		int inicioalto = alto / 4;
+		int inicioancho = ancho / 3;
+		ancho = ancho / 4;
+		alto = alto / 2;
 		setTitle(" Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
@@ -58,6 +57,9 @@ public class PanelSocio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		/* Icono Ventana */
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
 
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
@@ -84,7 +86,7 @@ public class PanelSocio extends JFrame {
 		label.setFont(new Font("Dialog", Font.BOLD, 14));
 		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
-		
+
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
@@ -109,13 +111,13 @@ public class PanelSocio extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnModPass = new JButton("Modificar Password");
 		btnModPass.setForeground(Color.BLACK);
 		btnModPass.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnModPass.setBounds(246, 144, 146, 23);
 		contentPane.add(btnModPass);
-		
+
 		btnModPass.addActionListener(new ActionListener() {
 
 			@Override
@@ -138,15 +140,15 @@ public class PanelSocio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-		        String[] cmd = { "C:\\Program Files\\Mozilla Firefox\\firefox.exe" };
-		        Process p = null;
+				String[] cmd = { "C:\\Program Files\\Mozilla Firefox\\firefox.exe" };
+				Process p = null;
 				try {
 					p = Runtime.getRuntime().exec(cmd);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		        try {
+				try {
 					p.waitFor();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -156,26 +158,26 @@ public class PanelSocio extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnCorreo = new JButton("Acceder a correo");
 		btnCorreo.setForeground(Color.BLACK);
 		btnCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCorreo.setBounds(247, 197, 146, 23);
 		contentPane.add(btnCorreo);
-		
+
 		btnCorreo.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-		        String url = "https://accounts.google.com";
-		        Process p3 = null;
+				String url = "https://accounts.google.com";
+				Process p3 = null;
 				try {
 					p3 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		        try {
+				try {
 					p3.waitFor();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -191,20 +193,20 @@ public class PanelSocio extends JFrame {
 		btnSteam.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnSteam.setBounds(61, 250, 145, 23);
 		contentPane.add(btnSteam);
-		
+
 		btnSteam.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-		        String url = "http://store.steampowered.com";
-		        Process p1 = null;
+				String url = "http://store.steampowered.com";
+				Process p1 = null;
 				try {
 					p1 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		        try {
+				try {
 					p1.waitFor();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -220,20 +222,20 @@ public class PanelSocio extends JFrame {
 		btnOrigin.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnOrigin.setBounds(247, 250, 146, 23);
 		contentPane.add(btnOrigin);
-		
+
 		btnOrigin.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-		        String url = "https://www.origin.com/esp/es-es/store";
-		        Process p2 = null;
+				String url = "https://www.origin.com/esp/es-es/store";
+				Process p2 = null;
 				try {
 					p2 = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		        try {
+				try {
 					p2.waitFor();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -243,8 +245,7 @@ public class PanelSocio extends JFrame {
 			}
 
 		});
-		
-		
+
 		JLabel segundosR = new JLabel("");
 		segundosR.setHorizontalAlignment(SwingConstants.CENTER);
 		segundosR.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -254,7 +255,7 @@ public class PanelSocio extends JFrame {
 		segundosR.setBackground(Color.BLACK);
 		segundosR.setBounds(120, 379, 31, 34);
 		contentPane.add(segundosR);
-		
+
 		JLabel minutosR = new JLabel("");
 		minutosR.setHorizontalAlignment(SwingConstants.CENTER);
 		minutosR.setOpaque(true);
@@ -264,7 +265,7 @@ public class PanelSocio extends JFrame {
 		minutosR.setBackground(Color.BLACK);
 		minutosR.setBounds(70, 379, 31, 34);
 		contentPane.add(minutosR);
-		
+
 		JLabel horasR = new JLabel("");
 		horasR.setHorizontalAlignment(SwingConstants.CENTER);
 		horasR.setOpaque(true);
@@ -274,21 +275,21 @@ public class PanelSocio extends JFrame {
 		horasR.setBackground(Color.BLACK);
 		horasR.setBounds(20, 379, 31, 34);
 		contentPane.add(horasR);
-		
+
 		JLabel label_3 = new JLabel(":");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setForeground(Color.WHITE);
 		label_3.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_3.setBounds(51, 379, 19, 32);
 		contentPane.add(label_3);
-		
+
 		JLabel label_4 = new JLabel(":");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setForeground(Color.WHITE);
 		label_4.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_4.setBounds(101, 379, 19, 32);
 		contentPane.add(label_4);
-		
+
 		JLabel label_5 = new JLabel((String) null);
 		label_5.setBackground(new Color(0, 102, 153));
 		label_5.setOpaque(true);
@@ -298,57 +299,53 @@ public class PanelSocio extends JFrame {
 		label_5.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_5.setBounds(10, 370, 151, 54);
 		contentPane.add(label_5);
-		
-		Constantes.minutos=bd.getMinutoSocio(Constantes.user);
-		
-		Timer Tempo = new Timer (1000, new ActionListener ()
-		{
-			int horas=Constantes.minutos/60;
-        	int minutos=Constantes.minutos%60;
-			int segundos=59;
-			
-            public void actionPerformed(ActionEvent e)
-            {
-    			
-	            if (horas==0 && minutos==1 && segundos==1){
-	            	horasR.setText(String.valueOf(horas));
-            		minutosR.setText(String.valueOf(0));
-	            	segundosR.setText(String.valueOf(0));
-	            	return;
-	            }
-	            else{
-	            	if (minutos==0){
-	            		horas--;
-	            		minutos=59;
-	            	}
-	            	
-	            	if (segundos==0){
-	            		minutos--;
-	            		segundos=59;
-	            	}
-	            	else{
-	            		horasR.setText(String.valueOf(horas));
-	            		minutosR.setText(String.valueOf(minutos));
-		            	segundosR.setText(String.valueOf(segundos));
-			            segundos--;
-	            	}
-	            	Constantes.minutos = horas*60 + minutos;
-	            }
-            }
-        });
-        	Tempo.start();
-        
-        try
-        {
-          //Thread.currentThread().sleep (10000);            
-          // timerR.stop();
-        } catch (Exception e){}
-		
-        JLabel label_2 = new JLabel("Vortex\u2122");
+
+		Constantes.minutos = bd.getMinutoSocio(Constantes.user);
+
+		Timer Tempo = new Timer(1000, new ActionListener() {
+			int horas = Constantes.minutos / 60;
+			int minutos = Constantes.minutos % 60;
+			int segundos = 59;
+
+			public void actionPerformed(ActionEvent e) {
+
+				if (horas == 0 && minutos == 1 && segundos == 1) {
+					horasR.setText(String.valueOf(horas));
+					minutosR.setText(String.valueOf(0));
+					segundosR.setText(String.valueOf(0));
+					return;
+				} else {
+					if (minutos == 0) {
+						horas--;
+						minutos = 59;
+					}
+
+					if (segundos == 0) {
+						minutos--;
+						segundos = 59;
+					} else {
+						horasR.setText(String.valueOf(horas));
+						minutosR.setText(String.valueOf(minutos));
+						segundosR.setText(String.valueOf(segundos));
+						segundos--;
+					}
+					Constantes.minutos = horas * 60 + minutos;
+				}
+			}
+		});
+		Tempo.start();
+
+		try {
+			// Thread.currentThread().sleep (10000);
+			// timerR.stop();
+		} catch (Exception e) {
+		}
+
+		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
-		
+
 	}
 }
