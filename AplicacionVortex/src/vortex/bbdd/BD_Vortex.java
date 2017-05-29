@@ -35,9 +35,10 @@ public class BD_Vortex extends BD_Conector {
 				LocalDate Fecha_alta = f1.toLocalDate();
 				java.sql.Date f2 = reg.getDate("Fecha_baja");
 				LocalDate Fecha_baja = f2.toLocalDate();
-				socio.add(new Socio(reg.getString("dni"), reg.getString("correo"), reg.getString("nick"), reg.getString("password"),
-						reg.getString("nombre"), reg.getString("direccion"), reg.getString("telefono"), reg.getInt("premium"), FH_Conexion,
-						reg.getInt("bono"), Fecha_alta, Fecha_baja));
+				socio.add(new Socio(reg.getString("dni"), reg.getString("correo"), reg.getString("nick"),
+						reg.getString("password"), reg.getString("nombre"), reg.getString("direccion"),
+						reg.getString("telefono"), reg.getInt("premium"), FH_Conexion, reg.getInt("bono"), Fecha_alta,
+						Fecha_baja));
 			}
 			s.close();
 			this.cerrar();
@@ -53,8 +54,9 @@ public class BD_Vortex extends BD_Conector {
 		// Password Premium FH_Conexion Fecha_alta Bono Fecha_baja
 
 		String cadenaSQL = "INSERT INTO socio (DNI, Nombre, Direccion, Telefono, Correo, Nick,Password ,Premium ,FH_Conexion, Fecha_alta, Bono, Fecha_baja) VALUES('"
-				+ socio.getDni() + "','" + socio.getNombre() + "','" + socio.getDireccion() + "','" + socio.getTelefono() + "','" + socio.getCorreo()
-				+ "','" + socio.getUsuario() + "','" + socio.getPassword() + "','" + socio.getPremium() + "','" + socio.getFH_Conexion() + "','"
+				+ socio.getDni() + "','" + socio.getNombre() + "','" + socio.getDireccion() + "','"
+				+ socio.getTelefono() + "','" + socio.getCorreo() + "','" + socio.getUsuario() + "','"
+				+ socio.getPassword() + "','" + socio.getPremium() + "','" + socio.getFH_Conexion() + "','"
 				+ socio.getFechaAlta() + "','" + socio.getBono() + "','" + socio.getFechaBaja() + "')";
 		// System.out.println(cadenaSQL);
 		try {
@@ -93,7 +95,8 @@ public class BD_Vortex extends BD_Conector {
 	// metodo para iniciar sesion como Administrador
 	public int loginAdmin(String usu, String password) {
 
-		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password + "'";
+		String cadenaSQL = "Select * from administrador where Admin_user='" + usu + "' and Admin_password='" + password
+				+ "'";
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -131,14 +134,14 @@ public class BD_Vortex extends BD_Conector {
 	// metodo para cambiar la contraseña desde el panel de Socios
 	public int updatePassSocio(String password, String passwordNueva1, String passwordNueva2) {
 		String cadenaSQL = "Select * from socio where nick='" + Constantes.user + "' and password='" + password + "'";
-		System.out.println(cadenaSQL);
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
 			reg = s.executeQuery(cadenaSQL);
 			while (reg.next()) {
 				String SQL = "update socio set  password='" + passwordNueva1 + "' where nick='" + Constantes.user + "'";
-				System.out.println(SQL);
+				// System.out.println(SQL);
 				try {
 					this.abrir();
 					s = c.createStatement();
@@ -161,7 +164,7 @@ public class BD_Vortex extends BD_Conector {
 	public int bajaSocio(String usu) {
 
 		String cadenaSQL = "delete from socio where nick='" + usu + "'";
-		System.out.println(cadenaSQL);
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -175,11 +178,11 @@ public class BD_Vortex extends BD_Conector {
 	}
 
 	public int darConexion(String usu, int minutos) {
-		Constantes.user=usu;
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		
-		String cadenaSQL = "update socio set minutos="+ bd.getMinutoSocio(Constantes.user) + " + " + minutos + " where nick='" + usu + "'";
-		System.out.println(cadenaSQL);
+
+		String cadenaSQL = "update socio set minutos=" + bd.getMinutoSocio(Constantes.user) + " + " + minutos
+				+ " where nick='" + usu + "'";
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -191,13 +194,13 @@ public class BD_Vortex extends BD_Conector {
 			return -1;
 		}
 	}
-	
+
 	public int guardarConexion(String usu, int minutos) {
-		Constantes.user=usu;
+		Constantes.user = usu;
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-		
+
 		String cadenaSQL = "update socio set minutos=" + Constantes.minutos + " where nick='" + usu + "'";
-		System.out.println(cadenaSQL);
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -212,7 +215,7 @@ public class BD_Vortex extends BD_Conector {
 
 	public int updateNick(String usu) {
 		String cadenaSQL = "update socio set nick='" + usu + "' where nick='" + Constantes.user + "'";
-		System.out.println(cadenaSQL);
+		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
 			s = c.createStatement();
@@ -282,7 +285,6 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
-	
 	public Vector<Productos> ver_Productos() {
 		String cadenaSQL = "Select * from productos";
 		Vector<Productos> productos = new Vector<Productos>();
@@ -291,7 +293,8 @@ public class BD_Vortex extends BD_Conector {
 			s = c.createStatement();
 			reg = s.executeQuery(cadenaSQL);
 			while (reg.next()) {
-				productos.add(new Productos(reg.getString("nombre"), reg.getString("tipo"), reg.getInt("precio"), reg.getInt("cantidad")));
+				productos.add(new Productos(reg.getString("nombre"), reg.getString("tipo"), reg.getInt("precio"),
+						reg.getInt("cantidad")));
 			}
 			s.close();
 			this.cerrar();
@@ -357,7 +360,7 @@ public class BD_Vortex extends BD_Conector {
 			return -2;
 		}
 	}
-	
+
 	public int verStock(String nombre) {
 		String cadenaSQL = "Select cantidad from productos where nombre='" + nombre + "'";
 
