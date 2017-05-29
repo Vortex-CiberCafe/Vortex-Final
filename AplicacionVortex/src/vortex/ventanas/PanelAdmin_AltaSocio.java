@@ -59,7 +59,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,7 +67,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel label = new JLabel("DNI:");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setForeground(Color.BLACK);
 		label.setFont(new Font("Dialog", Font.BOLD, 11));
 		label.setBounds(53, 54, 75, 29);
@@ -79,7 +79,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				textField.setColumns(10);
 
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre.setForeground(Color.BLACK);
 		lblNombre.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNombre.setBounds(53, 94, 75, 29);
@@ -91,7 +91,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				contentPane.add(textField_1);
 
 		JLabel lblDireccion = new JLabel("Direccion:");
-		lblDireccion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDireccion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDireccion.setForeground(Color.BLACK);
 		lblDireccion.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblDireccion.setBounds(53, 134, 75, 29);
@@ -103,7 +103,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				contentPane.add(textField_2);
 
 		JLabel lblTelefono = new JLabel("Telefono:");
-		lblTelefono.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTelefono.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTelefono.setForeground(Color.BLACK);
 		lblTelefono.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblTelefono.setBounds(53, 174, 75, 29);
@@ -115,7 +115,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				contentPane.add(textField_3);
 
 		JLabel lblCorreo = new JLabel("Correo:");
-		lblCorreo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCorreo.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCorreo.setForeground(Color.BLACK);
 		lblCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblCorreo.setBounds(53, 214, 75, 29);
@@ -127,27 +127,27 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				contentPane.add(textField_4);
 
 		JLabel lblNick = new JLabel("Nick:");
-		lblNick.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNick.setForeground(Color.BLACK);
 		lblNick.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNick.setBounds(238, 134, 67, 29);
+		lblNick.setBounds(248, 134, 67, 29);
 		contentPane.add(lblNick);
 		
 				textField_5 = new JTextField();
 				textField_5.setColumns(10);
-				textField_5.setBounds(315, 139, 86, 20);
+				textField_5.setBounds(320, 139, 86, 20);
 				contentPane.add(textField_5);
 
 		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPassword.setForeground(Color.BLACK);
 		lblPassword.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblPassword.setBounds(238, 174, 67, 29);
+		lblPassword.setBounds(248, 174, 67, 29);
 		contentPane.add(lblPassword);
 
 				textField_6 = new JTextField();
 				textField_6.setColumns(10);
-				textField_6.setBounds(315, 179, 86, 20);
+				textField_6.setBounds(320, 179, 86, 20);
 				contentPane.add(textField_6);
 
 		JButton btnDarAlta = new JButton("Dar Alta");

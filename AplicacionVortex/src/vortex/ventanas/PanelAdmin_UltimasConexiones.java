@@ -53,7 +53,7 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,21 +61,21 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
-		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUsuarios.setBounds(40, 70, 111, 29);
+		lblUsuarios.setBounds(60, 70, 111, 29);
 		contentPane.add(lblUsuarios);
 
 		JLabel label_1 = new JLabel(" ");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		label_1.setBounds(201, 162, 186, 29);
+		label_1.setBounds(221, 162, 186, 29);
 		contentPane.add(label_1);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(161, 76, 123, 20);
+		comboBox.setBounds(181, 76, 123, 20);
 
 		Vector<Socio> socios = bd.ver_socios();
 
@@ -87,7 +87,7 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 
 		JButton btnComprobarConexion = new JButton("Comprobar Conexion");
 		btnComprobarConexion.setFont(new Font("Dialog", Font.BOLD, 10));
-		btnComprobarConexion.setBounds(161, 118, 151, 23);
+		btnComprobarConexion.setBounds(181, 118, 151, 23);
 		contentPane.add(btnComprobarConexion);
 
 		btnComprobarConexion.addActionListener(new ActionListener() {
@@ -114,16 +114,16 @@ public class PanelAdmin_UltimasConexiones extends JFrame {
 		});
 
 		JLabel lblUltima = new JLabel("Ultima Conexion:");
-		lblUltima.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUltima.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUltima.setForeground(Color.WHITE);
 		lblUltima.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUltima.setBounds(40, 162, 137, 29);
+		lblUltima.setBounds(60, 162, 137, 29);
 		contentPane.add(lblUltima);
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(274, 215, 113, 23);
+		btnVolver.setBounds(275, 220, 113, 23);
 		contentPane.add(btnVolver);
 
 		btnVolver.addActionListener(new ActionListener() {

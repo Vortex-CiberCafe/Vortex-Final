@@ -53,7 +53,7 @@ public class PanelAdmin_CajaTotal extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,10 +61,10 @@ public class PanelAdmin_CajaTotal extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblUsuarios = new JLabel("Caja Admin:");
-		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUsuarios.setBounds(40, 70, 142, 29);
+		lblUsuarios.setBounds(66, 70, 142, 29);
 		contentPane.add(lblUsuarios);
 		
 		JLabel label_1 = new JLabel(" " + Constantes.cajaAdmin + "€");
@@ -75,10 +75,10 @@ public class PanelAdmin_CajaTotal extends JFrame {
 		contentPane.add(label_1);
 		
 		JLabel lblCajaDependiente = new JLabel("Caja Dependiente:");
-		lblCajaDependiente.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCajaDependiente.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCajaDependiente.setForeground(Color.WHITE);
 		lblCajaDependiente.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblCajaDependiente.setBounds(40, 118, 142, 29);
+		lblCajaDependiente.setBounds(66, 118, 142, 29);
 		contentPane.add(lblCajaDependiente);
 		
 		JLabel label_3 = new JLabel(" " + Constantes.cajaDependiente + "€");
@@ -89,10 +89,10 @@ public class PanelAdmin_CajaTotal extends JFrame {
 		contentPane.add(label_3);
 		
 		JLabel lblCajaTotal = new JLabel("Caja Total:");
-		lblCajaTotal.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCajaTotal.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCajaTotal.setForeground(Color.WHITE);
 		lblCajaTotal.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblCajaTotal.setBounds(40, 166, 142, 29);
+		lblCajaTotal.setBounds(66, 166, 142, 29);
 		contentPane.add(lblCajaTotal);
 		
 		JLabel label_4 = new JLabel(" " + Constantes.cajaTotal + "€");

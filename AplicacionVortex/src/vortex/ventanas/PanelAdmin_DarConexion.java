@@ -55,7 +55,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,10 +63,10 @@ public class PanelAdmin_DarConexion extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
-		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblUsuarios.setBounds(40, 70, 111, 29);
+		lblUsuarios.setBounds(63, 70, 88, 29);
 		contentPane.add(lblUsuarios);
 
 		JComboBox comboBox = new JComboBox();
@@ -81,10 +81,10 @@ public class PanelAdmin_DarConexion extends JFrame {
 		contentPane.add(comboBox);
 
 		JLabel lblTiempo = new JLabel("Tiempo:");
-		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTiempo.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTiempo.setForeground(Color.WHITE);
 		lblTiempo.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblTiempo.setBounds(40, 118, 111, 29);
+		lblTiempo.setBounds(63, 118, 88, 29);
 		contentPane.add(lblTiempo);
 
 		textField = new JTextField();
@@ -93,10 +93,10 @@ public class PanelAdmin_DarConexion extends JFrame {
 		contentPane.add(textField);
 
 		JLabel lblPrecio = new JLabel("Precio:");
-		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPrecio.setForeground(Color.WHITE);
 		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblPrecio.setBounds(40, 220, 111, 29);
+		lblPrecio.setBounds(63, 220, 88, 29);
 		contentPane.add(lblPrecio);
 
 		JLabel label_1 = new JLabel(" ");

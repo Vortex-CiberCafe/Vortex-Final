@@ -53,7 +53,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 
 		setTitle(" Vortex Dependiente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,7 +61,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblUsuarios = new JLabel("Productos:");
-		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
 		lblUsuarios.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblUsuarios.setBounds(40, 70, 111, 29);
@@ -114,7 +114,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		});
 
 		JLabel lblTiempoRestante = new JLabel("Cantidad Restante:");
-		lblTiempoRestante.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTiempoRestante.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTiempoRestante.setForeground(Color.WHITE);
 		lblTiempoRestante.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTiempoRestante.setBounds(40, 162, 137, 29);
@@ -123,7 +123,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(274, 215, 113, 23);
+		btnVolver.setBounds(275, 220, 113, 23);
 		contentPane.add(btnVolver);
 
 		btnVolver.addActionListener(new ActionListener() {

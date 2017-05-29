@@ -83,11 +83,29 @@ public class PanelDependiente extends JFrame {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
+		
+		JButton btnNuevoProducto = new JButton("Nuevo Producto");
+		btnNuevoProducto.setForeground(Color.BLACK);
+		btnNuevoProducto.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnNuevoProducto.setBounds(60, 144, 146, 23);
+		contentPane.add(btnNuevoProducto);
+
+		btnNuevoProducto.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stubsda
+				PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
+				frame20.setVisible(true);
+				dispose();
+			}
+
+		});
 
 		JButton btnCobrar = new JButton("Cobrar");
 		btnCobrar.setForeground(Color.BLACK);
 		btnCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnCobrar.setBounds(60, 144, 146, 23);
+		btnCobrar.setBounds(247, 144, 146, 23);
 		contentPane.add(btnCobrar);
 
 		btnCobrar.addActionListener(new ActionListener() {
@@ -105,7 +123,7 @@ public class PanelDependiente extends JFrame {
 		JButton btnPedirProductos = new JButton("Pedir Productos");
 		btnPedirProductos.setForeground(Color.BLACK);
 		btnPedirProductos.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnPedirProductos.setBounds(247, 144, 146, 23);
+		btnPedirProductos.setBounds(60, 198, 146, 23);
 		contentPane.add(btnPedirProductos);
 
 		btnPedirProductos.addActionListener(new ActionListener() {
@@ -123,7 +141,7 @@ public class PanelDependiente extends JFrame {
 		JButton btnStock = new JButton("Comprobar Stock");
 		btnStock.setForeground(Color.BLACK);
 		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnStock.setBounds(60, 197, 146, 23);
+		btnStock.setBounds(247, 198, 146, 23);
 		contentPane.add(btnStock);
 
 		btnStock.addActionListener(new ActionListener() {
@@ -141,7 +159,7 @@ public class PanelDependiente extends JFrame {
 		JButton btnCaja = new JButton("Cerrar Caja");
 		btnCaja.setForeground(Color.BLACK);
 		btnCaja.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnCaja.setBounds(247, 197, 146, 23);
+		btnCaja.setBounds(247, 251, 146, 23);
 		contentPane.add(btnCaja);
 
 		btnCaja.addActionListener(new ActionListener() {
@@ -151,24 +169,6 @@ public class PanelDependiente extends JFrame {
 				// TODO Auto-generated method stub
 				PanelDependiente_CerrarCaja frame17 = new PanelDependiente_CerrarCaja();
 				frame17.setVisible(true);
-				dispose();
-			}
-
-		});
-
-		JButton btnNuevoProducto = new JButton("Nuevo Producto");
-		btnNuevoProducto.setForeground(Color.BLACK);
-		btnNuevoProducto.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnNuevoProducto.setBounds(60, 246, 146, 23);
-		contentPane.add(btnNuevoProducto);
-
-		btnNuevoProducto.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stubsda
-				PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
-				frame20.setVisible(true);
 				dispose();
 			}
 

@@ -50,7 +50,7 @@ public class PanelSocio_Nick extends JFrame {
 		alto = alto / 2;
 		setTitle(" Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,10 +58,10 @@ public class PanelSocio_Nick extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblAntiguoNick = new JLabel("Nick:");
-		lblAntiguoNick.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblAntiguoNick.setBounds(70, 59, 111, 29);
+		lblAntiguoNick.setBounds(78, 59, 103, 29);
 		contentPane.add(lblAntiguoNick);
 		
 		JLabel label_1 = new JLabel(Constantes.user);
@@ -72,10 +72,10 @@ public class PanelSocio_Nick extends JFrame {
 		contentPane.add(label_1);
 
 		JLabel lblNuevoNick = new JLabel("Nuevo Nick:");
-		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNuevoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNuevoNick.setForeground(Color.WHITE);
 		lblNuevoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNuevoNick.setBounds(70, 113, 111, 29);
+		lblNuevoNick.setBounds(78, 113, 103, 29);
 		contentPane.add(lblNuevoNick);
 
 		textField_1 = new JTextField();

@@ -52,7 +52,7 @@ public class PanelSocio_Pass extends JFrame {
 		alto = alto / 2;
 		setTitle(" Vortex Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,10 +60,10 @@ public class PanelSocio_Pass extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblAntiguoNick = new JLabel("Antigua Password:");
-		lblAntiguoNick.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAntiguoNick.setForeground(Color.WHITE);
 		lblAntiguoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblAntiguoNick.setBounds(69, 57, 153, 29);
+		lblAntiguoNick.setBounds(69, 57, 142, 29);
 		contentPane.add(lblAntiguoNick);
 		
 		textField = new JTextField();
@@ -72,10 +72,10 @@ public class PanelSocio_Pass extends JFrame {
 		textField.setColumns(10);
 
 		JLabel lblNuevoNick = new JLabel("Nueva Password:");
-		lblNuevoNick.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNuevoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNuevoNick.setForeground(Color.WHITE);
 		lblNuevoNick.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNuevoNick.setBounds(69, 111, 153, 29);
+		lblNuevoNick.setBounds(69, 111, 142, 29);
 		contentPane.add(lblNuevoNick);
 
 		textField_1 = new JTextField();
@@ -84,10 +84,10 @@ public class PanelSocio_Pass extends JFrame {
 		contentPane.add(textField_1);
 
 		JLabel lblRepitePassword = new JLabel("Repite Password:");
-		lblRepitePassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRepitePassword.setHorizontalAlignment(SwingConstants.LEFT);
 		lblRepitePassword.setForeground(Color.WHITE);
 		lblRepitePassword.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblRepitePassword.setBounds(69, 165, 153, 29);
+		lblRepitePassword.setBounds(69, 165, 142, 29);
 		contentPane.add(lblRepitePassword);
 		
 		textField_2 = new JTextField();

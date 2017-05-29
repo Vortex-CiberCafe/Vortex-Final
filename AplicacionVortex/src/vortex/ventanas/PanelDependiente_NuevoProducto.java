@@ -55,7 +55,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 
 		setTitle(" Vortex Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(inicioancho, inicioalto, ancho, alto);
+		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 153, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,7 +63,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblNombre_1 = new JLabel("Nombre: ");
-		lblNombre_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNombre_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre_1.setForeground(Color.BLACK);
 		lblNombre_1.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNombre_1.setBounds(53, 54, 75, 29);
@@ -75,7 +75,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		textField.setColumns(10);
 
 		JLabel lblNombre = new JLabel("Tipo:");
-		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre.setForeground(Color.BLACK);
 		lblNombre.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNombre.setBounds(53, 94, 75, 29);
@@ -87,7 +87,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		contentPane.add(textField_1);
 
 		JLabel lblDireccion = new JLabel("Precio:");
-		lblDireccion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDireccion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDireccion.setForeground(Color.BLACK);
 		lblDireccion.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblDireccion.setBounds(53, 134, 75, 29);
@@ -99,7 +99,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		contentPane.add(textField_2);
 
 		JLabel lblTelefono = new JLabel("Cantidad:");
-		lblTelefono.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTelefono.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTelefono.setForeground(Color.BLACK);
 		lblTelefono.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblTelefono.setBounds(53, 174, 75, 29);
@@ -113,7 +113,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
 		btnDarAlta.setFont(new Font("Dialog", Font.BOLD, 12));
-		btnDarAlta.setBounds(326, 277, 113, 23);
+		btnDarAlta.setBounds(293, 243, 113, 23);
 		contentPane.add(btnDarAlta);
 
 		btnDarAlta.addActionListener(new ActionListener() {
@@ -154,7 +154,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
-		btnVolver.setBounds(326, 322, 113, 23);
+		btnVolver.setBounds(293, 288, 113, 23);
 		contentPane.add(btnVolver);
 
 		btnVolver.addActionListener(new ActionListener() {

@@ -64,11 +64,11 @@ public class PanelDependiente_Cobrar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 				
-		JLabel lblSocio = new JLabel("Socio");
-		lblSocio.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabel lblSocio = new JLabel("Socio:");
+		lblSocio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSocio.setForeground(Color.WHITE);
 		lblSocio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblSocio.setBounds(68, 42, 111, 29);
+		lblSocio.setBounds(68, 42, 90, 29);
 		contentPane.add(lblSocio);
 		
 		JComboBox comboBox_1 = new JComboBox();
@@ -82,10 +82,10 @@ public class PanelDependiente_Cobrar extends JFrame {
 		contentPane.add(comboBox_1);
 
 		JLabel lblProductos = new JLabel("Productos:");
-		lblProductos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblProductos.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProductos.setForeground(Color.WHITE);
 		lblProductos.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblProductos.setBounds(68, 90, 111, 29);
+		lblProductos.setBounds(68, 90, 90, 29);
 		contentPane.add(lblProductos);
 
 		JComboBox comboBox = new JComboBox();
@@ -101,10 +101,10 @@ public class PanelDependiente_Cobrar extends JFrame {
 		contentPane.add(comboBox);
 
 		JLabel lblCantidad = new JLabel("Cantidad:");
-		lblCantidad.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCantidad.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCantidad.setForeground(Color.WHITE);
 		lblCantidad.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblCantidad.setBounds(68, 138, 111, 29);
+		lblCantidad.setBounds(68, 138, 90, 29);
 		contentPane.add(lblCantidad);
 
 		textField = new JTextField();
@@ -113,10 +113,10 @@ public class PanelDependiente_Cobrar extends JFrame {
 		contentPane.add(textField);
 
 		JLabel lblPrecio = new JLabel("Precio:");
-		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPrecio.setForeground(Color.WHITE);
 		lblPrecio.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblPrecio.setBounds(68, 234, 111, 29);
+		lblPrecio.setBounds(68, 234, 90, 29);
 		contentPane.add(lblPrecio);
 
 		JLabel label_1 = new JLabel("");
