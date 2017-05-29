@@ -22,7 +22,7 @@ import vortex.modelos.Socio;
 public class PanelAdmin_BajaSocio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_BajaSocio frame2;
+	protected static PanelAdmin_BajaSocio frame4;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
@@ -59,7 +59,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);

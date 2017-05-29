@@ -24,7 +24,7 @@ import vortex.modelos.Socio;
 public class PanelAdmin_DarConexion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelAdmin_DarConexion frame2;
+	protected static PanelAdmin_DarConexion frame5;
 	private JPanel contentPane;
 	private JTextField textField;
 
@@ -63,7 +63,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);

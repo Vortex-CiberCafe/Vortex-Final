@@ -20,7 +20,7 @@ import vortex.bbdd.BD_Vortex;
 public class PanelDependiente_CerrarCaja extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelDependiente_CerrarCaja frame2;
+	protected static PanelDependiente_CerrarCaja frame17;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
@@ -57,7 +57,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);

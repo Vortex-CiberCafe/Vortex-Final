@@ -67,7 +67,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel label = new JLabel("DNI:");
 		label.setHorizontalAlignment(SwingConstants.LEFT);

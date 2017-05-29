@@ -21,7 +21,7 @@ import vortex.modelos.Productos;
 public class PanelDependiente_NuevoProducto extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelDependiente_NuevoProducto frame20;
+	protected static PanelDependiente_NuevoProducto frame18;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -32,8 +32,8 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
-					frame20.setVisible(true);
+					PanelDependiente_NuevoProducto frame18 = new PanelDependiente_NuevoProducto();
+					frame18.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -63,7 +63,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblNombre_1 = new JLabel("Nombre: ");
 		lblNombre_1.setHorizontalAlignment(SwingConstants.LEFT);

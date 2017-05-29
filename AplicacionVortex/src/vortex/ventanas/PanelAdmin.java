@@ -55,7 +55,7 @@ public class PanelAdmin extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);

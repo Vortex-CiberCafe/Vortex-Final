@@ -82,7 +82,7 @@ public class Login extends JFrame {
 		setBounds(inicioancho, inicioalto, 414, 360);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		/* Panel Login Java */
 
@@ -191,13 +191,20 @@ public class Login extends JFrame {
 					filas = bd.loginSocio(entradaUser.getText(), entradaPass.getText());
 					switch (filas) {
 					case 1:
-						System.out.println("\nConectado como socio");
 						Constantes.user = entradaUser.getText();
-
-						PanelSocio frame8 = new PanelSocio();
-						frame8.setVisible(true);
-						dispose();
-
+						//System.out.println(bd.getMinutoSocio(Constantes.user));
+						if (bd.getMinutoSocio(Constantes.user) <= 0){
+							PanelSocio_NoTime frame19 = new PanelSocio_NoTime();
+							frame19.setVisible(true);
+							dispose();
+						}
+						else{
+							System.out.println("\nConectado como socio");
+		
+							PanelSocio frame8 = new PanelSocio();
+							frame8.setVisible(true);
+							dispose();
+						}
 						break;
 					case 0:
 						label.setText("ERROR. Datos incorrectos!");
@@ -269,7 +276,7 @@ public class Login extends JFrame {
 		JLabel lblNewLabel = new JLabel("Vortex\u2122");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setBounds(333, 304, 66, 20);
+		lblNewLabel.setBounds(330, 302, 66, 20);
 		panelOrigen.add(lblNewLabel);
 
 		JLabel lblTypeConnection = new JLabel("Type Connection:");

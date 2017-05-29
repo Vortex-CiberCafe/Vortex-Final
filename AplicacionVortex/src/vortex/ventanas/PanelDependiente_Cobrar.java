@@ -25,7 +25,7 @@ import vortex.modelos.Socio;
 public class PanelDependiente_Cobrar extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelDependiente_Cobrar frame2;
+	protected static PanelDependiente_Cobrar frame14;
 	private JPanel contentPane;
 	private JTextField textField;
 
@@ -65,7 +65,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblSocio = new JLabel("Socio:");
 		lblSocio.setHorizontalAlignment(SwingConstants.LEFT);

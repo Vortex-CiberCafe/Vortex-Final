@@ -21,7 +21,7 @@ import vortex.bbdd.BD_Vortex;
 public class PanelSocio_Nick extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelSocio_Nick frame2;
+	protected static PanelSocio_Nick frame11;
 	private JPanel contentPane;
 	private JTextField textField_1;
 
@@ -57,7 +57,7 @@ public class PanelSocio_Nick extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblAntiguoNick = new JLabel("Nick:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);

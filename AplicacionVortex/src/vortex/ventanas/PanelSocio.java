@@ -23,7 +23,7 @@ import vortex.bbdd.BD_Vortex;
 public class PanelSocio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelSocio frame2;
+	protected static PanelSocio frame10;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
@@ -59,7 +59,7 @@ public class PanelSocio extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
@@ -302,18 +302,27 @@ public class PanelSocio extends JFrame {
 
 		Constantes.minutos = bd.getMinutoSocio(Constantes.user);
 
-		Timer Tempo = new Timer(1000, new ActionListener() {
+		Timer Tempo = new Timer(100, new ActionListener() {
 			int horas = Constantes.minutos / 60;
 			int minutos = Constantes.minutos % 60;
 			int segundos = 59;
 
 			public void actionPerformed(ActionEvent e) {
 
-				if (horas == 0 && minutos == 1 && segundos == 1) {
+				if (horas == 0 && minutos == 0 && segundos == 1) {
 					horasR.setText(String.valueOf(horas));
 					minutosR.setText(String.valueOf(0));
 					segundosR.setText(String.valueOf(0));
+					
+					/*
+					bd.guardarConexion(Constantes.user, Constantes.minutos);
+					PanelSocio_NoTime frame19 = new PanelSocio_NoTime();
+					frame19.setVisible(true);
+					dispose();^
+					*/
+					
 					return;
+					
 				} else {
 					if (minutos == 0) {
 						horas--;

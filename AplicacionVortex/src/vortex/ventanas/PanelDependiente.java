@@ -19,7 +19,7 @@ import vortex.Constantes;
 public class PanelDependiente extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelDependiente frame2;
+	protected static PanelDependiente frame13;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
@@ -53,7 +53,7 @@ public class PanelDependiente extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
@@ -98,8 +98,8 @@ public class PanelDependiente extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stubsda
-				PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
-				frame20.setVisible(true);
+				PanelDependiente_NuevoProducto frame18 = new PanelDependiente_NuevoProducto();
+				frame18.setVisible(true);
 				dispose();
 			}
 

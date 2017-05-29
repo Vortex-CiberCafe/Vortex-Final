@@ -22,7 +22,7 @@ import vortex.modelos.Productos;
 public class PanelDependiente_ComprobarStock extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	protected static PanelDependiente_ComprobarStock frame2;
+	protected static PanelDependiente_ComprobarStock frame16;
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
@@ -60,7 +60,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		contentPane.setLayout(null);
 
 		/* Icono Ventana */
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
 		JLabel lblUsuarios = new JLabel("Productos:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
