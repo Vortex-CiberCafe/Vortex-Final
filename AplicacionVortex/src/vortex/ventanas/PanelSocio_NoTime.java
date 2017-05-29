@@ -82,16 +82,12 @@ public class PanelSocio_NoTime extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
-		/* Panel Login Java */
-
 		panelOrigen = new JPanel();
 		panelOrigen.setForeground(new Color(0, 0, 0));
 		panelOrigen.setBackground(new Color(102, 153, 204));
 		panelOrigen.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panelOrigen);
 		panelOrigen.setLayout(null);
-
-		/* Variable User */
 
 		JLabel variableUser = new JLabel("User:");
 		variableUser.setFont(new Font("Dialog", Font.BOLD, 14));

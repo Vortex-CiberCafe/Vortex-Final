@@ -108,7 +108,6 @@ public class PanelSocio extends JFrame {
 				// TODO Auto-generated method stub
 				PanelSocio_Nick frame11 = new PanelSocio_Nick();
 				frame11.setVisible(true);
-				dispose();
 			}
 
 		});
@@ -126,7 +125,6 @@ public class PanelSocio extends JFrame {
 				// TODO Auto-generated method stub
 				PanelSocio_Pass frame12 = new PanelSocio_Pass();
 				frame12.setVisible(true);
-				dispose();
 			}
 
 		});
@@ -305,7 +303,7 @@ public class PanelSocio extends JFrame {
 		
 		Timer Tempo = new Timer(1000, new ActionListener() {
 			int horas = Constantes.minutos / 60;
-			int minutos = Constantes.minutos % 60;
+			int minutos = Constantes.minutos % 60 + 1;
 			int segundos = 0;
 
 			public void actionPerformed(ActionEvent e) {

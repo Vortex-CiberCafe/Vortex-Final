@@ -143,8 +143,6 @@ public class PanelSocio_Pass extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PanelSocio frame10 = new PanelSocio();
-				frame10.setVisible(true);
 				dispose();
 
 			}
