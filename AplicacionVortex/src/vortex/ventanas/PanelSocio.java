@@ -25,6 +25,7 @@ public class PanelSocio extends JFrame {
 	private static final long serialVersionUID = 1L;
 	protected static PanelSocio frame10;
 	private JPanel contentPane;
+	private static Timer Tempo = null;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -42,7 +43,7 @@ public class PanelSocio extends JFrame {
 
 	public PanelSocio() {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
-
+		int salidaTimer = 0;
 		int alto = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int ancho = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int inicioalto = alto / 4;
@@ -301,11 +302,11 @@ public class PanelSocio extends JFrame {
 		contentPane.add(label_5);
 
 		Constantes.minutos = bd.getMinutoSocio(Constantes.user);
-
-		Timer Tempo = new Timer(100, new ActionListener() {
+		
+		Timer Tempo = new Timer(1000, new ActionListener() {
 			int horas = Constantes.minutos / 60;
 			int minutos = Constantes.minutos % 60;
-			int segundos = 59;
+			int segundos = 0;
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -314,22 +315,23 @@ public class PanelSocio extends JFrame {
 					minutosR.setText(String.valueOf(0));
 					segundosR.setText(String.valueOf(0));
 					
-					/*
-					bd.guardarConexion(Constantes.user, Constantes.minutos);
+					((Timer)e.getSource()).stop();
+					
+					bd.guardarConexion(Constantes.user, 0);
+					
 					PanelSocio_NoTime frame19 = new PanelSocio_NoTime();
 					frame19.setVisible(true);
-					dispose();^
-					*/
+					dispose();
 					
 					return;
 					
 				} else {
-					if (minutos == 0) {
+					if (minutos == 0 && horas > 0) {
 						horas--;
 						minutos = 59;
 					}
 
-					if (segundos == 0) {
+					if (segundos == 0 && minutos > 0) {
 						minutos--;
 						segundos = 59;
 					} else {
@@ -341,14 +343,9 @@ public class PanelSocio extends JFrame {
 					Constantes.minutos = horas * 60 + minutos;
 				}
 			}
+			
 		});
 		Tempo.start();
-
-		try {
-			// Thread.currentThread().sleep (10000);
-			// timerR.stop();
-		} catch (Exception e) {
-		}
 
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
