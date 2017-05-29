@@ -119,7 +119,7 @@ public class PanelDependiente extends JFrame {
 			}
 
 		});
-		
+
 		JButton btnStock = new JButton("Comprobar Stock");
 		btnStock.setForeground(Color.BLACK);
 		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -151,6 +151,24 @@ public class PanelDependiente extends JFrame {
 				// TODO Auto-generated method stub
 				PanelDependiente_CerrarCaja frame17 = new PanelDependiente_CerrarCaja();
 				frame17.setVisible(true);
+				dispose();
+			}
+
+		});
+
+		JButton btnNuevoProducto = new JButton("Nuevo Producto");
+		btnNuevoProducto.setForeground(Color.BLACK);
+		btnNuevoProducto.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnNuevoProducto.setBounds(60, 246, 146, 23);
+		contentPane.add(btnNuevoProducto);
+
+		btnNuevoProducto.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
+				frame20.setVisible(true);
 				dispose();
 			}
 

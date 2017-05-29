@@ -3,17 +3,17 @@ package vortex.modelos;
 public class Productos {
 	private String nombre;
 	private String tipo;
-	private int precio;
+	private double precio;
 	private int cantidad;
 
-	public Productos(String nombre, String tipo, int precio, int cantidad) {
+	public Productos(String nombre, String tipo, double precio, int cantidad) {
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
 
-	public Productos(String nombre, String tipo, int precio) {
+	public Productos(String nombre, String tipo, double precio) {
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.precio = precio;
@@ -28,12 +28,17 @@ public class Productos {
 		return tipo;
 	}
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
 	public int getCantidad() {
 		return cantidad;
+	}
+
+	@Override
+	public String toString() {
+		return "Productos [nombre=" + nombre + ", tipo=" + tipo + ", precio=" + precio + ", cantidad=" + cantidad + "]";
 	}
 
 }

@@ -457,4 +457,20 @@ public class BD_Vortex extends BD_Conector {
 		}
 	}
 
+	public int anadir_Producto(Productos producto) {
+		String cadenaSQL = "INSERT INTO productos (Nombre, Tipo, Precio, Cantidad) VALUES('" + producto.getNombre()
+				+ "','" + producto.getTipo() + "'," + producto.getPrecio() + "," + producto.getCantidad() + ");";
+		System.out.println(cadenaSQL);
+		try {
+			this.abrir();
+			s = c.createStatement();
+			res = s.executeUpdate(cadenaSQL);
+			s.close();
+			this.cerrar();
+			return 1;
+		} catch (SQLException e) {
+			return -1;
+		}
+	}
+
 }
