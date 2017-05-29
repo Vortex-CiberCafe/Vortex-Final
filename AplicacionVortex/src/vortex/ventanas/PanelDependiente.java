@@ -166,7 +166,7 @@ public class PanelDependiente extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+				// TODO Auto-generated method stubsda
 				PanelDependiente_NuevoProducto frame20 = new PanelDependiente_NuevoProducto();
 				frame20.setVisible(true);
 				dispose();

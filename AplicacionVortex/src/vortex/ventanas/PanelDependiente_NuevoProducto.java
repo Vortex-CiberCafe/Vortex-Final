@@ -62,7 +62,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNombre_1 = new JLabel("Nombre:");
+		JLabel lblNombre_1 = new JLabel("Nombre: ");
 		lblNombre_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombre_1.setForeground(Color.BLACK);
 		lblNombre_1.setFont(new Font("Dialog", Font.BOLD, 11));

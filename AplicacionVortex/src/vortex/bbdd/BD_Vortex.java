@@ -180,8 +180,8 @@ public class BD_Vortex extends BD_Conector {
 	public int darConexion(String usu, int minutos) {
 		BD_Vortex bd = new BD_Vortex("mysql-properties.xml");
 
-		String cadenaSQL = "update socio set minutos=" + bd.getMinutoSocio(usu) + " + " + minutos
-				+ " where nick='" + usu + "'";
+		String cadenaSQL = "update socio set minutos=" + bd.getMinutoSocio(usu) + " + " + minutos + " where nick='"
+				+ usu + "'";
 		// System.out.println(cadenaSQL);
 		try {
 			this.abrir();
@@ -456,7 +456,7 @@ public class BD_Vortex extends BD_Conector {
 
 	public int anadir_Producto(Productos producto) {
 		String cadenaSQL = "INSERT INTO productos (Nombre, Tipo, Precio, Cantidad) VALUES('" + producto.getNombre()
-				+ "','" + producto.getTipo() + "'," + producto.getPrecio() + "," + producto.getCantidad() + ");";
+				+ "', '" + producto.getTipo() + "'," + producto.getPrecio() + "," + producto.getCantidad() + ");";
 		System.out.println(cadenaSQL);
 		try {
 			this.abrir();
