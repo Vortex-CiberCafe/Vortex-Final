@@ -106,10 +106,7 @@ public class PanelSocio_Nick extends JFrame {
 				switch (filas) {
 				case 1:
 					Constantes.user = textField_1.getText();
-					PanelSocio frame10 = new PanelSocio();
-					frame10.setVisible(true);
 					dispose();
-					System.out.println("OK");
 					break;
 				case 0:
 					System.out.println("El usuario no existe");

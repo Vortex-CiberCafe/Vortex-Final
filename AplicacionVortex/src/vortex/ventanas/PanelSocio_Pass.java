@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -68,7 +69,7 @@ public class PanelSocio_Pass extends JFrame {
 		lblAntiguoNick.setBounds(69, 57, 142, 29);
 		contentPane.add(lblAntiguoNick);
 
-		textField = new JTextField();
+		textField = new JPasswordField();
 		textField.setBounds(232, 63, 113, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
@@ -80,7 +81,7 @@ public class PanelSocio_Pass extends JFrame {
 		lblNuevoNick.setBounds(69, 111, 142, 29);
 		contentPane.add(lblNuevoNick);
 
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(232, 117, 113, 20);
 		contentPane.add(textField_1);
@@ -92,7 +93,7 @@ public class PanelSocio_Pass extends JFrame {
 		lblRepitePassword.setBounds(69, 165, 142, 29);
 		contentPane.add(lblRepitePassword);
 
-		textField_2 = new JTextField();
+		textField_2 = new JPasswordField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(232, 171, 113, 20);
 		contentPane.add(textField_2);
@@ -123,8 +124,6 @@ public class PanelSocio_Pass extends JFrame {
 					System.out.println("Las contraseñas no coinciden");
 					break;
 				case 1:
-					PanelSocio frame10 = new PanelSocio();
-					frame10.setVisible(true);
 					dispose();
 					break;
 				}

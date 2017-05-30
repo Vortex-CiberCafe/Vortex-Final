@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -170,10 +171,11 @@ public class Login extends JFrame {
 							Charset charset = Charset.forName("UTF-8");
 							salida = Files.newBufferedWriter(ruta, charset, APPEND);
 							PrintWriter salidaLog = new PrintWriter(salida);
-							LocalDate actual = LocalDate.now();
+							LocalDate actual1 = LocalDate.now();
+							LocalTime actual2 = LocalTime.now();
 							salidaLog.println(
 									"\n// User: " + entradaUser.getText() + " con Pass: " + entradaPass.getText()
-											+ " intento hacer login" + " de forma incorrecta en: [" + actual + "] ");
+											+ " intento hacer login" + " de forma incorrecta en: [ " + actual2.getHour() + ":" + actual2.getMinute() + ":" + actual2.getSecond() + " at " + actual1 + "] ");
 							salidaLog.close();
 							salida.close();
 						} catch (IOException e) {
