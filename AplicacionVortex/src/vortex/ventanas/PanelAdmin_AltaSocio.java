@@ -59,7 +59,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Admin - Alta Socio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -71,6 +71,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* DNI del socio */
 		JLabel label = new JLabel("DNI:");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setForeground(Color.BLACK);
@@ -83,6 +84,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 
+		/* Nombre del socio */
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre.setForeground(Color.BLACK);
@@ -95,6 +97,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_1.setBounds(133, 99, 86, 20);
 		contentPane.add(textField_1);
 
+		/* Dirección del socio */
 		JLabel lblDireccion = new JLabel("Direccion:");
 		lblDireccion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDireccion.setForeground(Color.BLACK);
@@ -107,6 +110,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_2.setBounds(133, 139, 86, 20);
 		contentPane.add(textField_2);
 
+		/* Teléfono del socio */
 		JLabel lblTelefono = new JLabel("Telefono:");
 		lblTelefono.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTelefono.setForeground(Color.BLACK);
@@ -118,7 +122,8 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_3.setColumns(10);
 		textField_3.setBounds(133, 179, 86, 20);
 		contentPane.add(textField_3);
-
+		
+		/* Correo del socio */
 		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCorreo.setForeground(Color.BLACK);
@@ -131,6 +136,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_4.setBounds(133, 219, 86, 20);
 		contentPane.add(textField_4);
 
+		/* Nick del socio */
 		JLabel lblNick = new JLabel("Nick:");
 		lblNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNick.setForeground(Color.BLACK);
@@ -143,6 +149,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_5.setBounds(320, 139, 86, 20);
 		contentPane.add(textField_5);
 
+		/* Contraseña del socio */
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPassword.setForeground(Color.BLACK);
@@ -162,6 +169,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		label_1.setBounds(67, 274, 209, 29);
 		contentPane.add(label_1);
 
+		/* Actualiza la base de datos con el nuevo socio */
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
 		btnDarAlta.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -210,6 +218,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 
 		});
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -228,6 +237,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));
