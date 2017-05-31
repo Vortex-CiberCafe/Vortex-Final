@@ -55,6 +55,7 @@ public class PanelDependiente extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -80,6 +81,7 @@ public class PanelDependiente extends JFrame {
 		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
 
+		/* Muestra el dependiente conectado en ese momento */
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
@@ -87,6 +89,7 @@ public class PanelDependiente extends JFrame {
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
 
+		/* Abre el panel para registrar un nuevo producto en la base de datos */
 		JButton btnNuevoProducto = new JButton("Nuevo Producto");
 		btnNuevoProducto.setForeground(Color.BLACK);
 		btnNuevoProducto.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -105,6 +108,7 @@ public class PanelDependiente extends JFrame {
 
 		});
 
+		/* Abre el panel para cobrar al socio por lo productos comprados */
 		JButton btnCobrar = new JButton("Cobrar");
 		btnCobrar.setForeground(Color.BLACK);
 		btnCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -123,6 +127,7 @@ public class PanelDependiente extends JFrame {
 
 		});
 
+		/* Abre el panel para pedir productos ya existentes en la base de datos */
 		JButton btnPedirProductos = new JButton("Pedir Productos");
 		btnPedirProductos.setForeground(Color.BLACK);
 		btnPedirProductos.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -141,6 +146,7 @@ public class PanelDependiente extends JFrame {
 
 		});
 
+		/* Abre el panel para comprobar el stock del producto elegido */
 		JButton btnStock = new JButton("Comprobar Stock");
 		btnStock.setForeground(Color.BLACK);
 		btnStock.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -159,6 +165,7 @@ public class PanelDependiente extends JFrame {
 
 		});
 
+		/* Abre el panel para cerrar la caja y sumar lo recaudado por el dependiente con el resto */
 		JButton btnCaja = new JButton("Cerrar Caja");
 		btnCaja.setForeground(Color.BLACK);
 		btnCaja.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -177,6 +184,7 @@ public class PanelDependiente extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));

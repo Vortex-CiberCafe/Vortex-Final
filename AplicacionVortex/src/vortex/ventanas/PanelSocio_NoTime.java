@@ -75,7 +75,7 @@ public class PanelSocio_NoTime extends JFrame {
 
 		/* Titulo de la ventana Java */
 
-		setTitle(" Vortex");
+		setTitle(" Vortex - Tiempo Agotado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 414, 360);
 

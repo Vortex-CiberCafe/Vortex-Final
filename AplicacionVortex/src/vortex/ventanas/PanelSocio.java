@@ -61,7 +61,9 @@ public class PanelSocio extends JFrame {
 
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
-
+		
+		
+		/* Botón para cerrar la sesión y volver al login */
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -88,6 +90,7 @@ public class PanelSocio extends JFrame {
 		label.setBounds(40, 70, 111, 29);
 		contentPane.add(label);
 
+		/* Muestra el socio conectado en ese momento */
 		JLabel label_1 = new JLabel(Constantes.user);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setForeground(Color.WHITE);
@@ -95,6 +98,7 @@ public class PanelSocio extends JFrame {
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
 
+		/* Abre el panel para modificar el Nick del socio */
 		JButton btnModNick = new JButton("Modificar Nick");
 		btnModNick.setForeground(Color.BLACK);
 		btnModNick.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -112,6 +116,7 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Abre el panel para modificar la contraseña del socio */
 		JButton btnModPass = new JButton("Modificar Password");
 		btnModPass.setForeground(Color.BLACK);
 		btnModPass.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -129,6 +134,7 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Ejecuta MozillaFirefox en su página principal */
 		JButton btnInternet = new JButton("Acceder a Internet");
 		btnInternet.setForeground(Color.BLACK);
 		btnInternet.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -158,6 +164,7 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Ejecuta MozillaFirefox en la página de Gmail */
 		JButton btnCorreo = new JButton("Acceder a correo");
 		btnCorreo.setForeground(Color.BLACK);
 		btnCorreo.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -187,6 +194,7 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Ejecuta MozillaFirefox en la página de Steam */
 		JButton btnSteam = new JButton("Acceder a Steam");
 		btnSteam.setForeground(Color.BLACK);
 		btnSteam.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -216,6 +224,7 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Ejecuta MozillaFirefox en la página de Origin */
 		JButton btnOrigin = new JButton("Acceder a Origin");
 		btnOrigin.setForeground(Color.BLACK);
 		btnOrigin.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -245,6 +254,8 @@ public class PanelSocio extends JFrame {
 
 		});
 
+		/* Campos que contienen las horas, minutos y segundos del Timer */
+		
 		JLabel segundosR = new JLabel("");
 		segundosR.setHorizontalAlignment(SwingConstants.CENTER);
 		segundosR.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -299,6 +310,8 @@ public class PanelSocio extends JFrame {
 		label_5.setBounds(10, 370, 151, 54);
 		contentPane.add(label_5);
 
+		
+		/* Cuenta hacia atrás del tiempo actual del socio */
 		Constantes.minutos = bd.getMinutoSocio(Constantes.user);
 		
 		Timer Tempo = new Timer(1000, new ActionListener() {
@@ -345,6 +358,7 @@ public class PanelSocio extends JFrame {
 		});
 		Tempo.start();
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));

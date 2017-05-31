@@ -50,7 +50,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Dependiente");
+		setTitle(" Vortex Dependiente - Comprobar Stock");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -61,7 +61,8 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
-
+		
+		/* Se recorre la base de datos y mete los productos en un vector y los enseña */
 		JLabel lblUsuarios = new JLabel("Productos:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -87,6 +88,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		label_1.setBounds(201, 162, 186, 29);
 		contentPane.add(label_1);
 
+		/* Botón para comprobar la cantidad restante de dicho producto */
 		JButton btnComprobarStock = new JButton("Comprobar Stock");
 		btnComprobarStock.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarStock.setBounds(161, 118, 151, 23);
@@ -121,6 +123,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 		lblTiempoRestante.setBounds(40, 162, 137, 29);
 		contentPane.add(lblTiempoRestante);
 
+		/* Botón para cerrar este panel y volver al Panel Dependiente */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -139,6 +142,7 @@ public class PanelDependiente_ComprobarStock extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

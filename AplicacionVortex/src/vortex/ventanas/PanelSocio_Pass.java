@@ -50,7 +50,7 @@ public class PanelSocio_Pass extends JFrame {
 		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
-		setTitle(" Vortex Socio");
+		setTitle(" Vortex Socio - Cambiar Contraseña");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -61,7 +61,8 @@ public class PanelSocio_Pass extends JFrame {
 
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
-
+		
+		/* Campo que verifica que el socio sabe su contraseña actual */
 		JLabel lblAntiguoNick = new JLabel("Antigua Password:");
 		lblAntiguoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAntiguoNick.setForeground(Color.WHITE);
@@ -73,7 +74,8 @@ public class PanelSocio_Pass extends JFrame {
 		textField.setBounds(232, 63, 113, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
-
+		
+		/* Campo que recoge la nueva contraseña */
 		JLabel lblNuevoNick = new JLabel("Nueva Password:");
 		lblNuevoNick.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNuevoNick.setForeground(Color.WHITE);
@@ -86,6 +88,7 @@ public class PanelSocio_Pass extends JFrame {
 		textField_1.setBounds(232, 117, 113, 20);
 		contentPane.add(textField_1);
 
+		/* Campo para verifica que es igual la nueva contraseña */
 		JLabel lblRepitePassword = new JLabel("Repite Password:");
 		lblRepitePassword.setHorizontalAlignment(SwingConstants.LEFT);
 		lblRepitePassword.setForeground(Color.WHITE);
@@ -105,6 +108,7 @@ public class PanelSocio_Pass extends JFrame {
 		lblEstaSeguroDe.setBounds(92, 212, 316, 29);
 		contentPane.add(lblEstaSeguroDe);
 
+		/* Botón para cambiar la contraseña, y en caso de haber introducido un campo mal salta error */
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.setForeground(Color.BLACK);
 		btnContinuar.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -132,6 +136,7 @@ public class PanelSocio_Pass extends JFrame {
 
 		});
 
+		/* Botón para cerrar este panel y volver al Panel Socio */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -148,6 +153,7 @@ public class PanelSocio_Pass extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));

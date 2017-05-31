@@ -47,7 +47,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Dependiente");
+		setTitle(" Vortex Dependiente - Cerrar Caja");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -59,6 +59,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Muestra el total de lo recaudado ese día */
 		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -73,6 +74,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 		label_1.setBounds(161, 70, 131, 29);
 		contentPane.add(label_1);
 
+		/* Actualiza el total recaudado sumando el resto con la caja del dependiente */
 		JLabel lblActualizarT = new JLabel("Esta seguro de que desea cerrar la caja?");
 		lblActualizarT.setHorizontalAlignment(SwingConstants.CENTER);
 		lblActualizarT.setForeground(Color.WHITE);
@@ -98,6 +100,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 
 		});
 
+		/* Botón para cerrar este panel y volver al Panel Dependiente */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -116,6 +119,7 @@ public class PanelDependiente_CerrarCaja extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

@@ -61,6 +61,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Se recorre la base de datos, mete los socios en un vector y los enseña */
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -79,6 +80,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
 
+		/* Elimina al socio de la base de datos */
 		JLabel lblEstaSeguroDe = new JLabel("Esta seguro de que desea eliminar a este usuario?");
 		lblEstaSeguroDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstaSeguroDe.setForeground(Color.WHITE);
@@ -113,6 +115,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 
 		});
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -131,6 +134,7 @@ public class PanelAdmin_BajaSocio extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

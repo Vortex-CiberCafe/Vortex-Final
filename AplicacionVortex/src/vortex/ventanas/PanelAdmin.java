@@ -57,6 +57,7 @@ public class PanelAdmin extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton button = new JButton("Cerrar Sesion");
 		button.setForeground(Color.RED);
 		button.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -89,6 +90,7 @@ public class PanelAdmin extends JFrame {
 		label_1.setBounds(150, 70, 111, 29);
 		contentPane.add(label_1);
 
+		/* Abre el panel para introducir un nuevo socio en la base de datos */
 		JButton btnDarAltaSocio = new JButton("Dar Alta Socio");
 		btnDarAltaSocio.setForeground(Color.BLACK);
 		btnDarAltaSocio.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -106,6 +108,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel para  eliminar a un socio de la base de datos*/
 		JButton btnDarBajaSocio = new JButton("Dar Baja Socio");
 		btnDarBajaSocio.setForeground(Color.BLACK);
 		btnDarBajaSocio.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -123,6 +126,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel para  dar minutos al socio seleccionado*/
 		JButton btnDarConexiones = new JButton("Dar Conexion");
 		btnDarConexiones.setForeground(Color.BLACK);
 		btnDarConexiones.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -140,6 +144,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel para ver el último inicio de sesión de dicho socio */
 		JButton btnLastConnects = new JButton("Ultimas Conexiones");
 		btnLastConnects.setForeground(Color.BLACK);
 		btnLastConnects.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -157,6 +162,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel para comprobar los minutos que tiene el socio seleccionado */
 		JButton btnComprobarTiempos = new JButton("Ver Tiempos");
 		btnComprobarTiempos.setForeground(Color.BLACK);
 		btnComprobarTiempos.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -174,6 +180,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel para cerrar la caja y sumar lo recaudado por el admin con el resto */
 		JButton btnCerrarCaja = new JButton("Cerrar Caja");
 		btnCerrarCaja.setForeground(Color.BLACK);
 		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -191,6 +198,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Abre el panel que muestra el dinero recaudado por el admin y el dependiente y calcula el total */
 		JButton btnCajaTotal = new JButton("Caja Total");
 		btnCajaTotal.setForeground(Color.BLACK);
 		btnCajaTotal.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -208,6 +216,7 @@ public class PanelAdmin extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));

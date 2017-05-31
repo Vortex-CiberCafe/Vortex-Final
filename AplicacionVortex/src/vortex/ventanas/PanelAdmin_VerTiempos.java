@@ -50,7 +50,7 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Admin - Ver Tiempos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -62,6 +62,7 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Se recorre la base de datos, mete los socios en un vector y los enseña */
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -87,6 +88,7 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
 
+		/* Muestra la cantidad de minutos restantes de dicho socio */
 		JButton btnComprobarTiempo = new JButton("Comprobar Tiempo");
 		btnComprobarTiempo.setFont(new Font("Dialog", Font.BOLD, 10));
 		btnComprobarTiempo.setBounds(181, 118, 151, 23);
@@ -125,6 +127,7 @@ public class PanelAdmin_VerTiempos extends JFrame {
 		lblTiempoRestante.setBounds(60, 162, 137, 29);
 		contentPane.add(lblTiempoRestante);
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -143,6 +146,7 @@ public class PanelAdmin_VerTiempos extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

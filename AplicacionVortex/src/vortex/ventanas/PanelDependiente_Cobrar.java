@@ -55,7 +55,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Dependiente");
+		setTitle(" Vortex Dependiente - Cobrar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -67,6 +67,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Se recorre la base de datos, mete los socios en un vector y los enseña */
 		JLabel lblSocio = new JLabel("Socio:");
 		lblSocio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSocio.setForeground(Color.WHITE);
@@ -84,6 +85,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		contentPane.add(comboBox_1);
 
+		/* Se recorre la base de datos, mete los productos en un vector y los enseña */
 		JLabel lblProductos = new JLabel("Productos:");
 		lblProductos.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProductos.setForeground(Color.WHITE);
@@ -103,6 +105,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		contentPane.add(comboBox);
 
+		/* Cantidad del producto en cuestión */
 		JLabel lblCantidad = new JLabel("Cantidad:");
 		lblCantidad.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCantidad.setForeground(Color.WHITE);
@@ -115,6 +118,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 		textField.setBounds(189, 144, 123, 20);
 		contentPane.add(textField);
 
+		/* Calculo del precio teniendo en cuenta la catidad del producto */
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPrecio.setForeground(Color.WHITE);
@@ -152,6 +156,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		});
 
+		/* Cobra al socio y resta la cantidad de productos introducida en la base de datos */
 		JLabel lblDeseaCobrar = new JLabel("Desea cobrar?");
 		lblDeseaCobrar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDeseaCobrar.setForeground(Color.WHITE);
@@ -191,6 +196,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		});
 
+		/* Botón para cerrar este panel y volver al Panel Dependiente */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -208,6 +214,7 @@ public class PanelDependiente_Cobrar extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

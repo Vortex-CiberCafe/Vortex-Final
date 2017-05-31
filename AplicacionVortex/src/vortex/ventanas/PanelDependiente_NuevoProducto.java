@@ -53,7 +53,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Dependiente -  Nuevo Producto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -65,6 +65,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Nombre del nuevo producto */
 		JLabel lblNombre_1 = new JLabel("Nombre: ");
 		lblNombre_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre_1.setForeground(Color.BLACK);
@@ -77,6 +78,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 
+		/* La categoría a la que pertenece el producto */
 		JLabel lblNombre = new JLabel("Tipo:");
 		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre.setForeground(Color.BLACK);
@@ -89,6 +91,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		textField_1.setBounds(133, 99, 86, 20);
 		contentPane.add(textField_1);
 
+		/* Precio del nuevo producto */
 		JLabel lblDireccion = new JLabel("Precio:");
 		lblDireccion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDireccion.setForeground(Color.BLACK);
@@ -101,6 +104,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		textField_2.setBounds(133, 139, 86, 20);
 		contentPane.add(textField_2);
 
+		/* Existencias del producto */
 		JLabel lblTelefono = new JLabel("Cantidad:");
 		lblTelefono.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTelefono.setForeground(Color.BLACK);
@@ -113,6 +117,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 		textField_3.setBounds(133, 179, 86, 20);
 		contentPane.add(textField_3);
 
+		/* Da de alta dicho producto en la base de datos */
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
 		btnDarAlta.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -154,6 +159,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 
 		});
 
+		/* Botón para cerrar este panel y volver al Panel Dependiente */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -172,6 +178,7 @@ public class PanelDependiente_NuevoProducto extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label_2 = new JLabel("Vortex\u2122");
 		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 15));

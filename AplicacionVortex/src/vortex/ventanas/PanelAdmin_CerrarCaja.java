@@ -47,7 +47,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Admin - Cerrar Caja");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -59,6 +59,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Muestra el total recaudado por el admin */
 		JLabel lblUsuarios = new JLabel("Caja:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -80,6 +81,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 		lblActualizarT.setBounds(110, 125, 273, 29);
 		contentPane.add(lblActualizarT);
 
+		/* Actualiza el total de ganancias sumándole lo recaudado por el admin y dependiente */
 		JButton btnCerrarCaja = new JButton("Cerrar Caja");
 		btnCerrarCaja.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCerrarCaja.setBounds(271, 178, 113, 23);
@@ -98,6 +100,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 
 		});
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -116,6 +119,7 @@ public class PanelAdmin_CerrarCaja extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

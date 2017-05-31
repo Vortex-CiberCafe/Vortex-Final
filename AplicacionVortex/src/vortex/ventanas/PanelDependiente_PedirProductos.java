@@ -52,7 +52,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Admin - Pedir Productos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -64,6 +64,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Se recorre la base de datos, mete los productos en un vector y los enseña */
 		JLabel lblProductos = new JLabel("Productos:");
 		lblProductos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblProductos.setForeground(Color.WHITE);
@@ -83,6 +84,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 
 		contentPane.add(comboBox);
 
+		/* Cantidad de productos a pedir*/
 		JLabel lblCantidad = new JLabel("Cantidad:");
 		lblCantidad.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCantidad.setForeground(Color.WHITE);
@@ -102,6 +104,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 		lblDeseaPedirEsta.setBounds(139, 178, 273, 29);
 		contentPane.add(lblDeseaPedirEsta);
 
+		/* Actualiza la base de datos con la cantidad del producto seleccionado */
 		JButton btnCobrar = new JButton("Pedir");
 		btnCobrar.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnCobrar.setBounds(299, 223, 113, 23);
@@ -131,6 +134,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 
 		});
 
+		/* Botón para cerrar este panel y volver al Panel Dependiente */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -148,6 +152,7 @@ public class PanelDependiente_PedirProductos extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));

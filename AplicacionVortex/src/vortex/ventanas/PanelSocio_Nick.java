@@ -47,7 +47,7 @@ public class PanelSocio_Nick extends JFrame {
 		int inicioancho = ancho / 3;
 		ancho = ancho / 4;
 		alto = alto / 2;
-		setTitle(" Vortex Socio");
+		setTitle(" Vortex Socio - Cambiar Contraseña");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -55,6 +55,7 @@ public class PanelSocio_Nick extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));

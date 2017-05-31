@@ -53,7 +53,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		ancho = ancho / 4;
 		alto = alto / 2;
 
-		setTitle(" Vortex Admin");
+		setTitle(" Vortex Admin - Dar Conexión");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(inicioancho, inicioalto, 475, 463);
 		contentPane = new JPanel();
@@ -65,6 +65,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		/* Icono Ventana */
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon\\coffeeV.png"));
 
+		/* Se recorre la base de datos, mete los socios en un vector y los enseña */
 		JLabel lblUsuarios = new JLabel("Usuarios:");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.LEFT);
 		lblUsuarios.setForeground(Color.WHITE);
@@ -83,6 +84,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		// comboBox.addItem(bd.ver_socios().get(1));
 		contentPane.add(comboBox);
 
+		/* Cantidad de minutos */
 		JLabel lblTiempo = new JLabel("Tiempo:");
 		lblTiempo.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTiempo.setForeground(Color.WHITE);
@@ -95,6 +97,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		textField.setBounds(161, 124, 123, 20);
 		contentPane.add(textField);
 
+		/* Calcula el precio en relación a la cantidad de minutos introducidos */
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPrecio.setForeground(Color.WHITE);
@@ -131,6 +134,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 		lblActualizarT.setBounds(161, 260, 250, 29);
 		contentPane.add(lblActualizarT);
 
+		/* Actualiza el tiempo restante más el actual introducido */
 		JButton btnActualizar = new JButton("Actualizar");
 		btnActualizar.setFont(new Font("Dialog", Font.BOLD, 11));
 		btnActualizar.setBounds(298, 300, 113, 23);
@@ -166,6 +170,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 		});
 
+		/* Botón para cerrar la sesión y volver al login */
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -184,6 +189,7 @@ public class PanelAdmin_DarConexion extends JFrame {
 
 		});
 
+		/* Trade Mark Vortex */
 		JLabel label = new JLabel("Vortex\u2122");
 		label.setForeground(Color.RED);
 		label.setFont(new Font("Dialog", Font.BOLD, 15));
