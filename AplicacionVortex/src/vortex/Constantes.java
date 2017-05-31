@@ -50,4 +50,28 @@ public class Constantes {
 		} else
 			return false;
 	}
+	
+	public static boolean validarTFNO(String telefono) {
+
+		Pattern tfnoPattern = Pattern.compile("(\\d{1,9})");
+		Matcher m = tfnoPattern.matcher(telefono);
+		if (m.matches()){
+				//System.out.println("tlfn correcto");
+				return true;
+		}
+		return false;
+	}
+	
+	public static boolean validarEMAIL(String email) {
+
+		int contador = 0;
+		int encontrado = email.indexOf("@");
+		if (encontrado == -1){
+				//System.out.println("email erroneo");
+				return false;
+		}
+		//System.out.println("email correcto");
+		return true;
+	}
+	
 }

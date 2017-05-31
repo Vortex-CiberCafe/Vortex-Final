@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -149,7 +150,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		lblPassword.setBounds(248, 174, 67, 29);
 		contentPane.add(lblPassword);
 
-		textField_6 = new JTextField();
+		textField_6 = new JPasswordField();
 		textField_6.setColumns(10);
 		textField_6.setBounds(320, 179, 86, 20);
 		contentPane.add(textField_6);
@@ -183,7 +184,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				 * textField_6.getText());
 				 */
 
-				if (Constantes.validarDNI(textField.getText())) {
+				if (Constantes.validarDNI(textField.getText()) == true && Constantes.validarTFNO(textField_3.getText()) == true && Constantes.validarEMAIL(textField_4.getText()) == true) {
 
 					Socio socio = new Socio(textField.getText(), textField_4.getText(), textField_5.getText(),
 							textField_6.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText(),
@@ -203,7 +204,7 @@ public class PanelAdmin_AltaSocio extends JFrame {
 
 					}
 				} else {
-					label_1.setText("Error al introducir dni");
+					label_1.setText("Error al introducir datos");
 				}
 			}
 
