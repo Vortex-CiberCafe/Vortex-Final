@@ -63,8 +63,6 @@ public class BD_Vortex extends BD_Conector {
 			this.abrir();
 			s = c.createStatement();
 			res = s.executeUpdate(cadenaSQL);
-			while (reg.next()) {
-			}
 			s.close();
 			this.cerrar();
 			return 1;

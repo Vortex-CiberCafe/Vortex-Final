@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import vortex.Constantes;
 import vortex.bbdd.BD_Vortex;
 import vortex.modelos.Socio;
 
@@ -153,6 +154,13 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		textField_6.setBounds(320, 179, 86, 20);
 		contentPane.add(textField_6);
 
+		JLabel label_1 = new JLabel("");
+		label_1.setHorizontalAlignment(SwingConstants.LEFT);
+		label_1.setForeground(Color.RED);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 11));
+		label_1.setBounds(67, 274, 209, 29);
+		contentPane.add(label_1);
+
 		JButton btnDarAlta = new JButton("Dar Alta");
 		btnDarAlta.setForeground(Color.BLACK);
 		btnDarAlta.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -166,28 +174,37 @@ public class PanelAdmin_AltaSocio extends JFrame {
 				// TODO Auto-generated method stub
 
 				// AQUI AÑADES LA INTRODUCCION DE DATOS A LA BBDD
-				System.out.println("DNI: " + textField.getText() + "\nNombre: " + textField_1.getText()
-						+ "\nDireccion: " + textField_2.getText() + "\nTelefono: " + textField_3.getText()
-						+ "\nCorreo: " + textField_4.getText() + "\nNick: " + textField_5.getText() + "\nPassword: "
-						+ textField_6.getText());
+				/*
+				 * System.out.println("DNI: " + textField.getText() +
+				 * "\nNombre: " + textField_1.getText() + "\nDireccion: " +
+				 * textField_2.getText() + "\nTelefono: " +
+				 * textField_3.getText() + "\nCorreo: " + textField_4.getText()
+				 * + "\nNick: " + textField_5.getText() + "\nPassword: " +
+				 * textField_6.getText());
+				 */
 
-				Socio socio = new Socio(textField.getText(), textField_4.getText(), textField_5.getText(),
-						textField_6.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText(), 0,
-						LocalDate.now(), 0, LocalDate.now(), LocalDate.now());
-				int filas = bd.anadir_Socio(socio);
-				switch (filas) {
-				case 1:
-					System.out.println("\nSocio añadido");
-					break;
-				case 0:
-					System.out.println("\nNo añadido");
-					break;
-				case -1:
-					System.out.println("\nProblemas técnicos");
-					break;
+				if (Constantes.validarDNI(textField.getText())) {
 
+					Socio socio = new Socio(textField.getText(), textField_4.getText(), textField_5.getText(),
+							textField_6.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText(),
+							0, LocalDate.now(), 0, LocalDate.now(), LocalDate.now());
+
+					int filas = bd.anadir_Socio(socio);
+					switch (filas) {
+					case 1:
+						label_1.setText("Socio añadido");
+						break;
+					case 0:
+						label_1.setText("El socio ya existe");
+						break;
+					case -1:
+						label_1.setText("El socio ya existe");
+						break;
+
+					}
+				} else {
+					label_1.setText("Error al introducir dni");
 				}
-
 			}
 
 		});
@@ -216,5 +233,5 @@ public class PanelAdmin_AltaSocio extends JFrame {
 		label_2.setBounds(390, 401, 67, 23);
 		contentPane.add(label_2);
 
-	};
+	}
 }
