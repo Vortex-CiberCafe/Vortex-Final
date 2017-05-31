@@ -45,7 +45,10 @@ public class Login extends JFrame {
 	private JComboBox TypeUser;
 
 	/**
-	 * Launch the application.
+	 * Ejecucion de JFrame
+	 * 
+	 * @param args - arguments
+	 * @throws IOException - throws IOException
 	 */
 
 	public static void main(String[] args) throws IOException {

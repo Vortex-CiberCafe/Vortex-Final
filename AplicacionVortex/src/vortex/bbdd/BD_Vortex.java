@@ -21,9 +21,9 @@ public class BD_Vortex extends BD_Conector {
 	}
 
 	/**
-	 * metodo que devuelve un vector con todos los socios del cibercafe
+	 * metodo que devuelve un vector con todos los socios del cibercafe.
 	 * 
-	 * @return Vector<Socio> socio
+	 * @return socio - nos retorna el vector socio.
 	 */
 	public Vector<Socio> ver_socios() {
 		String cadenaSQL = "Select * from socio";
@@ -55,7 +55,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para Añadir Socios a la BBDD
 	 * 
-	 * @param socio
+	 * @param socio - vector socio pasado como parametro
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 
@@ -80,8 +80,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para iniciar sesion como Socio
 	 * 
-	 * @param usu
-	 * @param password
+	 * @param usu - string usuario
+	 * @param password - string password
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int loginSocio(String usu, String password) {
@@ -105,8 +105,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para iniciar sesion como Administrador
 	 * 
-	 * @param usu
-	 * @param password
+	 * @param usu - string usuario
+	 * @param password - string password
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int loginAdmin(String usu, String password) {
@@ -131,8 +131,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para iniciar sesion como Dependiente
 	 * 
-	 * @param usu
-	 * @param password
+	 * @param usu - string usuario
+	 * @param password - string password
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int loginDependiente(String usu, String password) {
@@ -156,9 +156,9 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para cambiar la contraseña desde el panel de Socios
 	 * 
-	 * @param password
-	 * @param passwordNueva1
-	 * @param passwordNueva2
+	 * @param password -  string password (antigua)
+	 * @param passwordNueva1 - string password (nueva)
+	 * @param passwordNueva2 - string password ( repetir nueva )
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int updatePassSocio(String password, String passwordNueva1, String passwordNueva2) {
@@ -193,7 +193,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo paradar de baja a un Socio
 	 * 
-	 * @param usu
+	 * @param usu - string usuario
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 
@@ -214,8 +214,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para añadir minutos a un socio.
 	 * 
-	 * @param usu
-	 * @param minutos
+	 * @param usu - string usuario
+	 * @param minutos - int minutos
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int darConexion(String usu, int minutos) {
@@ -239,8 +239,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para actualizar los minutos disponibles del socio al cerrar sesion
 	 * 
-	 * @param usu
-	 * @param minutos
+	 * @param usu - string usuario
+	 * @param minutos - int minutos
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int guardarConexion(String usu, int minutos) {
@@ -261,7 +261,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para cambiar el nombre de usuario de un socio
 	 * 
-	 * @param usu
+	 * @param usu - string usuario
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int updateNick(String usu) {
@@ -282,7 +282,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para pasar los minutos
 	 * 
-	 * @param nick
+	 * @param nick - string nick
 	 * @return minutos disponibles del socio
 	 */
 	public int getMinutoSocio(String nick) {
@@ -307,7 +307,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para ver la ultima conexion de un socio
 	 * 
-	 * @param usu
+	 * @param usu - string usuario
 	 * @return ultima fecha de conexion
 	 */
 	public LocalDate ver_ultimaConexion(String usu) {
@@ -332,7 +332,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para ver los minutos disponibles de un socio
 	 * 
-	 * @param usu
+	 * @param usu - string usuario
 	 * @return minutos dispobnibles
 	 */
 	public int ver_Tiempos(String usu) {
@@ -356,7 +356,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo que devuelve los productos de la bbdd
 	 * 
-	 * @return Vector<Productos> productos
+	 * @return productos - nos devuelve el vector productos.
 	 */
 	public Vector<Productos> ver_Productos() {
 		String cadenaSQL = "Select * from productos";
@@ -380,8 +380,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para cobrar a un socio por un producto
 	 * 
-	 * @param producto
-	 * @param cantidad1
+	 * @param producto - string producto
+	 * @param cantidad1 - double cantidad1
 	 * @return precio total
 	 */
 	public double cobrar(String producto, double cantidad1) {
@@ -406,7 +406,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo que devuelve el ID_Socio de la bbdd
 	 * 
-	 * @param usu
+	 * @param usu - string usuario
 	 * @return id
 	 */
 	public int verCodSocio(String usu) {
@@ -431,7 +431,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * metodo para devolver el codigo de un producto de la BBDD
 	 * 
-	 * @param nombre
+	 * @param nombre - string nombre
 	 * @return id
 	 */
 	public int verCodProducto(String nombre) {
@@ -456,7 +456,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para ver la cantidad total de un producto en la BBDD
 	 * 
-	 * @param nombre
+	 * @param nombre - string nombre
 	 * @return cantidad disponible
 	 */
 	public int verStock(String nombre) {
@@ -481,9 +481,9 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo que añade un registro en la tabla compras
 	 * 
-	 * @param idSocio
-	 * @param idProducto
-	 * @param cantidad
+	 * @param idSocio - int idSocio
+	 * @param idProducto - int idProducto
+	 * @param cantidad - int cantidad
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int anadirCompra(int idSocio, int idProducto, int cantidad) {
@@ -504,8 +504,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo para restar los productos de la bbdd cuando se hace una compra
 	 * 
-	 * @param idProducto
-	 * @param cantidad
+	 * @param idProducto - int idProducto
+	 * @param cantidad - int cantidad
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int restarProductos(int idProducto, int cantidad) {
@@ -542,8 +542,8 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo que añade mas productos a los que tenemos en la BBDD
 	 * 
-	 * @param idProducto
-	 * @param cantidad
+	 * @param idProducto - int idProducto
+	 * @param cantidad - int cantidad
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int pedirProductos(int idProducto, int cantidad) {
@@ -580,7 +580,7 @@ public class BD_Vortex extends BD_Conector {
 	/**
 	 * Metodo que crea un nuevo producto a la tabla productos
 	 * 
-	 * @param producto
+	 * @param producto - Productos producto (vector)
 	 * @return filas afectadas en la BBDD; -1 si se produce excepcion
 	 */
 	public int anadir_Producto(Productos producto) {

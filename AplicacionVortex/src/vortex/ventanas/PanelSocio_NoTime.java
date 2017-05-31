@@ -42,7 +42,10 @@ public class PanelSocio_NoTime extends JFrame {
 	private JPanel panelOrigen;
 
 	/**
-	 * Launch the application.
+	 * Ejecucion de JFrame
+	 * 
+	 * @param args - arguments
+	 * @throws IOException - throws IOException
 	 */
 
 	public static void main(String[] args) throws IOException {
